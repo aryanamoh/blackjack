@@ -1,0 +1,31 @@
+<html>
+<head>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'people.js') }}"></script>
+    
+    <script>
+        var data = {{data|tojson}} 
+    </script>
+
+
+    <style>
+        #name_entry_container{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <b>Hello people! </b>
+    
+    <div id="name_entry_container">
+        name: <input id="new_name"></input>  <button id="submit_name">Submit</button>
+    </div>
+
+    <div id="people_container">
+    </div>
+
+</body>
+</html>
+

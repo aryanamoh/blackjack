@@ -1,0 +1,48 @@
+<html>
+<head>
+    <!-- TODO: Make a layout.html with then persistent navbar -->
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
+ 
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ 
+   <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+   <!-- JavaScript file-->
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+
+</head>
+<body>
+   
+    <script type="text/javascript">
+        let question = {{question|tojson}}
+
+        $(document).ready(function(){
+            $("#next_button").click(function(){
+                if("{{question.next_question}}" == "end"){
+                    window.location.href = "/"
+                }else{
+                    window.location.href = "/quiz/{{question.next_question}}"
+                }
+            })
+        })
+
+    </script>
+    {{question.quiz_question}}<br>
+    <br>
+    Blackjack: {{question.text}}<br>
+    <img src="{{question.media}}" alt="{{question.media_alt}}"><br>
+    <button id="next_button"> Next </button>
+
+</body>
+</html>
+
+
+
