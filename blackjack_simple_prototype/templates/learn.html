@@ -1,26 +1,6 @@
-<html>
-<head>
-    <!-- TODO: Make a layout.html with then persistent navbar -->
+{% extends 'layout.html' %}
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="data:,">
- 
-    <!-- jquery -->
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
- 
-   <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-
-   <!-- JavaScript file-->
-    <script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
-
-</head>
-<body>
-   
+{% block content %}
     <script type="text/javascript">
         let lesson = {{lesson|tojson}}
 
@@ -43,12 +23,9 @@
     ** Just make sure you have the relative path as the "media" value for the 
     specific object, ie: "media":"/assets/images/diamondjoker.png" as an example
     -->
-    
+
     <img src="{{lesson.media}}" alt="{{lesson.media_alt}}"><br>
     <button id="next_button"> Next </button>
 
-</body>
-</html>
-
-
-
+    <script type="text/javascript" src="{{ url_for('static', filename = 'learn.js') }}"></script>
+{% endblock %}

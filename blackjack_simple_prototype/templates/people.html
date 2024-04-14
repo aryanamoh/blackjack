@@ -1,22 +1,6 @@
-<html>
-<head>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename = 'people.js') }}"></script>
-    
-    <script>
-        var data = {{data|tojson}} 
-    </script>
+{% extends 'layout.html' %}
 
-
-    <style>
-        #name_entry_container{
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
-    </style>
-
-</head>
-<body>
+{% block content %}
     <b>Hello people! </b>
     
     <div id="name_entry_container">
@@ -26,6 +10,11 @@
     <div id="people_container">
     </div>
 
-</body>
-</html>
 
+    
+    <script type="text/javascript" src="{{ url_for('static', filename = 'people.js') }}"></script>
+    
+    <script>
+        var data = {{data|tojson}} 
+    </script>
+{% endblock %}
