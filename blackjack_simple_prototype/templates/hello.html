@@ -1,0 +1,47 @@
+<html>
+<head>
+
+    <!-- TODO: Make a layout.html with then persistent navbar -->
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
+ 
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+ 
+   <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+   <!-- JavaScript file-->
+    <script type="text/javascript" src="{{ url_for('static', filename = 'lesson.js') }}"></script>
+
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            $("#start_button").click(function(){
+                window.location.href = "/learn/1";
+            })
+        })
+    </script>
+
+<b>Hello, Welcome to the Blackjack Homepage! :]</b>
+
+<br><br>
+
+<div id="start_button_container">
+    <!-- Start button should take you to first lesson-->
+    <button id="start_button"> Start Learning </button>
+</div>
+
+</body>
+</html>
+
+
+
