@@ -127,9 +127,16 @@ quiz_questions = {
         },          
 }
 
+total = 0
+
 @app.route('/')
 def home():
     return render_template('hello.html')
+
+@app.route('/last_question')
+def last_question():
+    global total
+    return render_template("quiz.html", question = quiz_questions[str(total + 1)])
 
 @app.route('/learn/<lesson_id>')
 def learn(lesson_id):
@@ -154,6 +161,8 @@ def answer():
    else:
         result = "Wrong, the correct answer was: " + quiz_questions[quizID]['panswers'][quiz_questions[quizID]['answer']]
 
+   global total 
+   total += 1
    quiz_questions[quizID]['result'] = result
    quiz_questions[quizID]['client_response'] = quiz_questions[quizID]['panswers'][answer_index]
    
