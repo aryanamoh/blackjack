@@ -35,7 +35,27 @@ var saveName = function(name){
 
 $(document).ready(function(){
     //when the page loads, display all the names
-    displayNames(data)                        
+    //displayNames(data)                        
+    
+    $("#submit_button").click(function () {
+        
+        let answerIndex = $("input[name='answer']").index($("input[name='answer']:checked"));
+        // Send the selected answer index to the server using AJAX
+        $.ajax({
+            type: "POST",
+            url: "/answer",
+            contentType: "application/json",
+            data: JSON.stringify({ answerIndex: answerIndex, quizId: question.quiz_id }),
+            success: function (response) {
+                console.log(response);
+                $("#quiz_next_button").show();
+                // Optionally, you can redirect or display a message after submitting the answer
+            },
+            error: function (xhr, status, error) {
+                console.error("Error submitting answer:", error);
+            }
+        });
+    });
 
     $("#submit_name").click(function(){                
         var name = $("#new_name").val()

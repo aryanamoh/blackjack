@@ -27,24 +27,104 @@ lessons = {
 quiz_questions = {  
     "1":{
         "quiz_id": "1",
-        "quiz_question": "Some question in Blackjack?",
-        "media":"https://www.blackjackapprenticeship.com/wp-content/uploads/2018/08/Blackjack-hand-signal-for-standing-1.jpg",
+        "quiz_question": "What are the possible values of this hand?",
+        "media":"https://decksandstacks.com/wp-content/uploads/2023/07/Example-of-a-soft-hand-in-Blackjack.png",
         "media_alt":"Quiz question 1 media alt text",
-        "text": "Drop something in this template spot",
-        "answer":"Dynamically hide this element until user answers",
+        "panswers": ["16 and 6", "15 and 6", "16 only", "15 only"],
+        "answer": 0,
         "next_question": "2",
         "client_response":""
         },
     "2":{
         "quiz_id": "2",
-        "quiz_question": "2nd question for the Blackjack?",
-        "media":"https://www.blackjackapprenticeship.com/wp-content/uploads/2018/08/blackjack-hand-signal-doubling-down-1.jpg",
+        "quiz_question": "What is the term for playing two hands when you're dealt two of the same card?",
+        "media":"https://www.playojo.com/blog/wp-content/uploads/2020/11/1-3-768x509.jpg",
         "media_alt":"Quiz question 2 media alt text",
-        "text": "Some text portion of the template",
-        "answer":"Dynamically hide this element until user answers",
+        "panswers": ["Breaking", "Dividing", "Splitting", "Seperating"],
+        "answer": 2,
+        "next_question": "3",
+        "client_response":""
+        },
+    "3":{
+        "quiz_id": "3",
+        "quiz_question": "When is it good to take insurance?",
+        "media":"/static/assets/images/insurance.png",
+        "media_alt":"Quiz question 2 media alt text",
+        "panswers": ["Always take insurance", "Never take insurance", "Only if you have a bad hand", "When you're caught in a losing streak"],
+        "answer": 1,
+        "next_question": "4",
+        "client_response":""
+        },
+    "4":{
+        "quiz_id": "4",
+        "quiz_question": "What does a soft hand mean?",
+        "media":"/static/assets/images/insurance.png",
+        "media_alt":"Quiz question 2 media alt text",
+        "panswers": ["A hand with no face cards", "A bad hand", "A hand with an ace", "A hand with two identical cards"],
+        "answer": 2,
+        "next_question": "5",
+        "client_response":""
+        },
+    "5":{
+        "quiz_id": "5",
+        "quiz_question": "Should you surrender?",
+        "media":"/static/assets/images/surrender.png",
+        "media_alt":"Quiz question 2 media alt text",
+        "panswers": ["No, I should hit", "No, I should stand", "No, I should double", "Yes"],
+        "answer": 3,
+        "next_question": "6",
+        "client_response":""
+        },
+    "6":{
+        "quiz_id": "6",
+        "quiz_question": "When is it good to take insurance?",
+        "media":"/static/assets/images/insurance.png",
+        "media_alt":"Quiz question 2 media alt text",
+        "panswers": ["Always take insurance", "Never take insurance", "Only if you have a bad hand", "When you're caught in a losing streak'"],
+        "answer": 1,
+        "next_question": "7",
+        "client_response":""
+        },
+    "7":{
+        "quiz_id": "7",
+        "quiz_question": "When is it good to take insurance?",
+        "media":"/static/assets/images/insurance.png",
+        "media_alt":"Quiz question 2 media alt text",
+        "panswers": ["Always take insurance", "Never take insurance", "Only if you have a bad hand", "When you're caught in a losing streak'"],
+        "answer": 1,
+        "next_question": "8",
+        "client_response":""
+        },       
+    "8":{
+        "quiz_id": "8",
+        "quiz_question": "When is it good to take insurance?",
+        "media":"/static/assets/images/insurance.png",
+        "media_alt":"Quiz question 2 media alt text",
+        "panswers": ["Always take insurance", "Never take insurance", "Only if you have a bad hand", "When you're caught in a losing streak'"],
+        "answer": 1,
         "next_question": "end",
         "client_response":""
-        },                               
+        },
+    "9":{
+        "quiz_id": "9",
+        "quiz_question": "When is it good to take insurance?",
+        "media":"/static/assets/images/insurance.png",
+        "media_alt":"Quiz question 2 media alt text",
+        "panswers": ["Always take insurance", "Never take insurance", "Only if you have a bad hand", "When you're caught in a losing streak'"],
+        "answer": 1,
+        "next_question": "10",
+        "client_response":""
+        },
+    "10":{
+        "quiz_id": "10",
+        "quiz_question": "When is it good to take insurance?",
+        "media":"/static/assets/images/insurance.png",
+        "media_alt":"Quiz question 2 media alt text",
+        "panswers": ["Always take insurance", "Never take insurance", "Only if you have a bad hand", "When you're caught in a losing streak'"],
+        "answer": 1,
+        "next_question": "end",
+        "client_response":""
+        },          
 }
 
 @app.route('/')
@@ -63,6 +143,21 @@ def quiz(quiz_id):
     question = quiz_questions[quiz_id]
     return render_template('quiz.html', question = question)
 
+@app.route('/answer', methods=['POST'])
+def answer():
+    
+   data = request.json
+   answer_index = int(data.get('answerIndex'))
+   quizID = data.get('quizId')
+   if answer_index == quiz_questions[quizID]['answer']:
+        result = "Correct"
+   else:
+        result = "Wrong, the correct answer was: " + quiz_questions[quizID]['panswers'][quiz_questions[quizID]['answer']]
+
+   quiz_questions[quizID]['result'] = result
+   quiz_questions[quizID]['client_response'] = quiz_questions[quizID]['panswers'][answer_index]
+   
+   return result
 
 # skeleton code used to build up to midterm page 
 # current_id = 2

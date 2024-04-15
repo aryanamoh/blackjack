@@ -1,11 +1,15 @@
 {% extends 'layout.html' %}
 
+
 {% block content %}
     <script type="text/javascript">
         let question = {{question|tojson}}
 
         $(document).ready(function(){
-            $("#next_button").click(function(){
+            if ("{{question.next_question}}" == "end") {
+                $("#quiz_next_button").text("Return Home")
+            }
+            $("#quiz_next_button").click(function () {
                 if("{{question.next_question}}" == "end"){
                     window.location.href = "/"
                 }else{
@@ -16,9 +20,15 @@
     </script>
     {{question.quiz_question}}<br>
     <br>
-    Blackjack: {{question.text}}<br>
+    
     <img src="{{question.media}}" alt="{{question.media_alt}}"><br>
-    <button id="next_button"> Next </button>
-
-    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz.js') }}"></script>
+    {% for answer in question.panswers %}
+        <input type="radio" id="answer{{loop.index}}" name="answer" value="{{answer}}">
+        <label for="answer{{loop.index}}">{{answer}}</label><br>
+    {% endfor %}
+ <button type="button" id="submit_button"> Submit </button>
+   
+    <button id="quiz_next_button"> Next </button>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/quiz.js') }}"></script>
+    
 {% endblock %}
