@@ -22,6 +22,7 @@
     <br>
     
     <img src="{{question.media}}" alt="{{question.media_alt}}"><br>
+    <!-- This creates the possible answers for each given question in DB -->
     {% for answer in question.panswers %}
         <input type="radio" id="answer{{loop.index}}" name="answer" value="{{answer}}">
         <label for="answer{{loop.index}}">{{answer}}</label><br>
