@@ -1,31 +1,28 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <script type="text/javascript">
-        let lesson = {{lesson|tojson}}
+    <h1>Learning Modules</h1>
+    
+    <div class="row">
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson 1</h5>
+                    <p class="card-text">Introduction to Blackjack</p>
+                    <a href="/lesson/1" class="btn btn-primary">Start</a>
 
-        $(document).ready(function(){
-            $("#next_button").click(function(){
-                if("{{lesson.next_lesson}}" == "end"){
-                    window.location.href = "/quiz/1"
-                }else{
-                    window.location.href = "/learn/{{lesson.next_lesson}}"
-                }
-            })
-        })
-    </script>
-    {{lesson.title}}<br>
-    <br>
-    Blackjack: {{lesson.text}}<br>
-    <!-- If we want to store images locally, this syntax tends to work 
-    <img src="{{ url_for('static', filename=lesson.media) }}" alt="Testing">
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Lesson 2</h5>
+                    <p class="card-text">Basic Strategy</p>
+                    <a href="/lesson/2" class="btn btn-primary">Start</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    ** Just make sure you have the relative path as the "media" value for the 
-    specific object, ie: "media":"/assets/images/diamondjoker.png" as an example
-    -->
-
-    <img src="{{lesson.media}}" alt="{{lesson.media_alt}}"><br>
-    <button id="next_button"> Next </button>
-
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/learn.js') }}"></script>
 {% endblock %}
