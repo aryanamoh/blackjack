@@ -38,7 +38,7 @@ $(document).ready(function(){
     //displayNames(data)                        
     
     $("#submit_button").click(function () {
-        
+        $("input[type='radio']").attr("disabled", true);
         let answerIndex = $("input[name='answer']").index($("input[name='answer']:checked"));
         // Send the selected answer index to the server using AJAX
         $.ajax({
@@ -49,6 +49,20 @@ $(document).ready(function(){
             success: function (response) {
                 console.log(response);
                 $("#quiz_next_button").show();
+                $("#submit_button").hide();
+                if (question.next_question == "end") {
+                    $(".progress-bar").css("width", "100%");
+                    $(".progress-bar").text("100%");
+                }
+                else {
+                    let currentWidth = $(".progress-bar").width();
+                    console.log(currentWidth)
+                    let newWidth = currentWidth + 111.594 ; // 10% increase
+                   
+                    $(".progress-bar").width(newWidth);
+                    let currentWidthText = parseInt($(".progress-bar").text());
+                    $(".progress-bar").text(currentWidthText + 10 + "%");
+                }
                 // Optionally, you can redirect or display a message after submitting the answer
             },
             error: function (xhr, status, error) {
@@ -56,6 +70,19 @@ $(document).ready(function(){
             }
         });
     });
+
+    if (question.next_question == "end") {
+        $("#quiz_next_button").text("View Results")
+    }
+    $("#quiz_next_button").click(function () {
+        if (question.next_question == "end") {
+            window.location.href = "/"
+        } else {
+
+            window.location.href = "/quiz/" + question.next_question
+        }
+    })
+
 
     $("#submit_name").click(function(){                
         var name = $("#new_name").val()

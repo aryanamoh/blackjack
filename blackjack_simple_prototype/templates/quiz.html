@@ -1,30 +1,38 @@
+<!-- TODO: update for 2 modules -->
 {% extends 'layout.html' %}
 
-
 {% block content %}
-    
-    <h1>Quizzes</h1>
+<script type="text/javascript">
+        let question = {{question|tojson}}
 
-    <div class="row">
-        <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Quiz 1</h5>
-                    <p class="card-text">Introduction to Blackjack</p>
-                    <a href="/question/1/1" class="btn btn-primary">Start</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Quiz 2</h5>
-                    <p class="card-text">Basic Strategy</p>
-                    <a href="/question/2/1" class="btn btn-primary">Start</a>
-                </div>
-            </div>
-        </div>
-    </div>
+       
+</script>
+{{question.quiz_question}}
+<br>
+<br>
 
+<img src="{{question.media}}" alt="{{question.media_alt}}">
+<br>
+<!-- This creates the possible answers for each given question in DB -->
+    {% for answer in question.panswers %}
+<input type="radio" id="answer{{loop.index}}" name="answer" value="{{answer}}">
+<label for="answer{{loop.index}}">{{answer}}</label>
+<br>
+    {% endfor %}
+
+<button type="button" id="submit_button"> Submit </button>
+
+<button id="quiz_next_button"> Next </button>
+
+<br>
+<br>
+
+<div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+   
+    <div class="progress-bar text-bg-success progress-bar-striped progress-bar-animated" style="width: {{ question.progress }}">{{ question.progress }}</div>
     
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/quiz.js') }}"></script>
+
 {% endblock %}

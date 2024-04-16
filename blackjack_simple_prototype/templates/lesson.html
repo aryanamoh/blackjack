@@ -9,7 +9,7 @@
         $(document).ready(function(){
             $("#next_button").click(function(){
                 if("{{lesson.next_lesson}}" == "end"){
-                    window.location.href = "/question/1/1"
+                    window.location.href = "/quiz_start"
                 }else{
                     window.location.href = "/lesson/1/{{lesson.next_lesson}}"
                 }
