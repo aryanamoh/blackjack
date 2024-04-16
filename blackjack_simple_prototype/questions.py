@@ -56,9 +56,6 @@ quiz_questions = {
             "client_response":"",
             "progress": "40%"
         },
-    
-    
-    
         "6":{
             "quiz_id": "6",
             "quiz_question": "What are the possible values of this hand?",

@@ -13,6 +13,14 @@
 
 <img src="{{question.media}}" alt="{{question.media_alt}}">
 <br>
+
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <p id="popup_text">This is a popup!</p>
+  </div>
+</div>
+
 <!-- This creates the possible answers for each given question in DB -->
     {% for answer in question.panswers %}
 <input type="radio" id="answer{{loop.index}}" name="answer" value="{{answer}}">
@@ -20,9 +28,9 @@
 <br>
     {% endfor %}
 
-<button type="button" id="submit_button"> Submit </button>
+<button class="btn" type="button" id="submit_button"> Submit </button>
 
-<button id="quiz_next_button"> Next </button>
+<button class="btn" id="quiz_next_button"> Next </button>
 
 <br>
 <br>

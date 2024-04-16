@@ -8,6 +8,7 @@ from questions import quiz_questions
 
 app = Flask(__name__)
 
+score = 0
 
 ########################
 #        ROUTES        #
@@ -16,6 +17,15 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return render_template('hello.html')
+
+@app.route('/results')
+def results():
+    global quiz_questions 
+    global score
+    tmp = score 
+    score = 0
+    total = int(len(quiz_questions))
+    return render_template('results.html', score = tmp, total=total)
 
 @app.route('/learn')
 def learn():
@@ -44,7 +54,9 @@ def answer():
    answer_index = int(data.get('answerIndex'))
    quizID = data.get('quizId')
    if answer_index == quiz_questions[quizID]['answer']:
-        result = "Correct"
+        result = "Correct!"
+        global score 
+        score += 1
    else:
         result = "Wrong, the correct answer was: " + quiz_questions[quizID]['panswers'][quiz_questions[quizID]['answer']]
 
