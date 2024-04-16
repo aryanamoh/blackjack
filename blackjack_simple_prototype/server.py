@@ -127,6 +127,7 @@ quiz_questions = {
         },          
 }
 
+score = 0
 total = 0
 
 @app.route('/')
@@ -138,6 +139,10 @@ def last_question():
     global total
     return render_template("quiz.html", question = quiz_questions[str(total + 1)])
 
+@app.route("/results")
+def results():
+    return jsonify({"score" : score, "total" : total})
+
 @app.route('/learn/<lesson_id>')
 def learn(lesson_id):
 
@@ -146,17 +151,19 @@ def learn(lesson_id):
 
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
-    
+ 
     question = quiz_questions[quiz_id]
     return render_template('quiz.html', question = question)
 
 @app.route('/answer', methods=['POST'])
 def answer():
-    
+ 
    data = request.json
    answer_index = int(data.get('answerIndex'))
    quizID = data.get('quizId')
    if answer_index == quiz_questions[quizID]['answer']:
+        global score 
+        score += 1
         result = "Correct"
    else:
         result = "Wrong, the correct answer was: " + quiz_questions[quizID]['panswers'][quiz_questions[quizID]['answer']]
