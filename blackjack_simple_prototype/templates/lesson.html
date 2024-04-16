@@ -1,0 +1,33 @@
+{% comment %} TODO: update for 2 modules {% endcomment %}
+
+{% extends 'layout.html' %}
+
+{% block content %}
+    <script type="text/javascript">
+        let lesson = {{lesson|tojson}}
+
+        $(document).ready(function(){
+            $("#next_button").click(function(){
+                if("{{lesson.next_lesson}}" == "end"){
+                    window.location.href = "/quiz/1"
+                }else{
+                    window.location.href = "/lesson/{{lesson.next_lesson}}"
+                }
+            })
+        })
+    </script>
+    {{lesson.title}}<br>
+    <br>
+    Blackjack: {{lesson.text}}<br>
+    <!-- If we want to store images locally, this syntax tends to work 
+    <img src="{{ url_for('static', filename=lesson.media) }}" alt="Testing">
+
+    ** Just make sure you have the relative path as the "media" value for the 
+    specific object, ie: "media":"/assets/images/diamondjoker.png" as an example
+    -->
+
+    <img src="{{lesson.media}}" alt="{{lesson.media_alt}}"><br>
+    <button id="next_button"> Next </button>
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/learn.js') }}"></script>
+{% endblock %}
