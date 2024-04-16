@@ -75,9 +75,9 @@ img {
 }
 
 .btn {
-    background-color: #6cb370; /* light green */
+   --bs-btn-bg: #6cb370 !important; /* light green */
     color: #fff; /* white */
-    border: 2px solid #4e8c57;
+    --bs-btn-border-color: 2px solid #4e8c57 !important;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
