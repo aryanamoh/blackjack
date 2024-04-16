@@ -1,23 +1,17 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <b>Hello, Welcome to the Blackjack Homepage! :]</b>
+    <h1>Hello, Welcome to the Blackjack Homepage! :]</h1>
 
     <br><br>
 
     <div id="start_button_container">
         <!-- Start button should take you to first lesson-->
+
         <button class="btn" id="start_button"> Start Learning </button>
+
     </div>
 
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/learn.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/home.js') }}"></script>
 
-    <script type="text/javascript">
-
-        $(document).ready(function(){
-            $("#start_button").click(function(){
-                window.location.href = "/learn";
-            })
-        })
-    </script>
 {% endblock %}

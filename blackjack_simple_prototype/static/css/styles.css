@@ -2,6 +2,10 @@
    display: none;
 }
 
+.lesson-img, .quiz-img {
+   height: 400px;
+}
+
 .popup {
   display: none;
   position: fixed;
