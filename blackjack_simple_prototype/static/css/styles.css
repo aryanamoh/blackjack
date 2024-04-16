@@ -1,3 +1,7 @@
 #quiz_next_button {
    display: none;
 }
+
+.lesson-img, .quiz-img {
+   height: 400px;
+}
