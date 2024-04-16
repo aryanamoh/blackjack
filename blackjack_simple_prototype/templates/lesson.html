@@ -1,4 +1,4 @@
-{% comment %} TODO: update for 2 modules {% endcomment %}
+<!-- TODO: update for 2 modules -->
 
 {% extends 'layout.html' %}
 
@@ -9,9 +9,9 @@
         $(document).ready(function(){
             $("#next_button").click(function(){
                 if("{{lesson.next_lesson}}" == "end"){
-                    window.location.href = "/quiz/1"
+                    window.location.href = "/question/1/1"
                 }else{
-                    window.location.href = "/lesson/{{lesson.next_lesson}}"
+                    window.location.href = "/lesson/1/{{lesson.next_lesson}}"
                 }
             })
         })
@@ -28,6 +28,13 @@
 
     <img src="{{lesson.media}}" alt="{{lesson.media_alt}}"><br>
     <button id="next_button"> Next </button>
+
+    <br>
+    <br>
+
+    <div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar text-bg-success progress-bar-striped progress-bar-animated" style="width: 75%">75%</div>
+    </div>
 
     <script type="text/javascript" src="{{ url_for('static', filename = 'js/learn.js') }}"></script>
 {% endblock %}
