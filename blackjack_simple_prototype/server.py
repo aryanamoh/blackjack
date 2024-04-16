@@ -27,11 +27,15 @@ def lesson(module_id, lesson_id):
     lesson = lessons[module_id][lesson_id]
     return render_template('lesson.html', lesson = lesson)
 
-@app.route('/quiz/<module_id>/<quiz_id>')
-def quiz(module_id, quiz_id):
+@app.route('/quiz')
+def quiz():
+    return render_template('quiz.html')
+
+@app.route('/question/<module_id>/<quiz_id>')
+def question(module_id, quiz_id):
     
     question = quiz_questions[module_id][quiz_id]
-    return render_template('quiz.html', question = question)
+    return render_template('question.html', question = question)
 
 @app.route('/answer', methods=['POST'])
 def answer():
