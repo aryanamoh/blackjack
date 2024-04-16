@@ -1,0 +1,18 @@
+<!-- TODO: update for 2 modules -->
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<br>
+<!-- This creates the possible answers for each given question in DB -->
+
+<div>Congratulations on finishing the quiz!</div>
+<div>You got {{ score }} out of {{ total }} questions.</div>
+<button id="home_button" class="btn">Home</button>
+
+<br>
+<br>
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/results.js') }}"></script>
+
+{% endblock %}
