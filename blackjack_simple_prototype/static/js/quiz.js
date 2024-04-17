@@ -51,7 +51,7 @@ $(document).ready(function() {
         console.log(response);
         $("#quiz_next_button").show();
         $("#submit_button").hide();
-
+        if (response !== "Correct!") { $("#popup").fadeIn(); }
         $("#popup_text").text(response);
         if (question.next_question == "end") {
           $(".progress-bar").css("width", "100%");
@@ -74,7 +74,6 @@ $(document).ready(function() {
       }
     });
 
-    $("#popup").fadeIn();
     if (leave) { window.location.href = "/results"; }
   });
 
