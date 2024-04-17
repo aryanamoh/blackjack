@@ -66,7 +66,8 @@ def client():
     #update user's start time 
     lessons[module_id][lesson_id]["start_time"] = data["formattedTime"]
     
-    # return the module & lesson which the user has opened 
+    # uncomment if you wish to see the updated time for each lesson
+    # print(lessons[module_id][lesson_id]["start_time"])
     return lessons[module_id][lesson_id]
 
 @app.route('/answer', methods=['POST'])
