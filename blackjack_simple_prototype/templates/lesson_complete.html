@@ -1,9 +1,36 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <h1>Lesson Complete!</h1>
+    <script type="text/javascript">
 
-    <h3>Module: {{module_id}}</h3>
+        // grab the lesson which stores the next module_id in 
+        // lesson["next_module_id"]
+        let lesson = {{lesson|tojson}}
 
-    <button id="next_lesson_button" class="btn">Next</button>
+        $(document).ready(function(){
+
+            // logic to control the type of user feedback given learning module
+            // or quiz coming next 
+            if(Number.isInteger(lesson.next_module_id)){
+                $("h3").empty().text("Move onto module: " + lesson.next_module_id);
+            }
+            else{
+                $("h3").empty().text("Tackle the quiz!");
+            }
+
+            $("#next_module_button").click(function(){
+                if("{{lesson.next_module_id}}" == "Quiz"){
+                    window.location.href = "/quiz_start"
+                }else{
+                    window.location.href = "/lesson/{{lesson.next_module_id}}/1"
+                }
+            })
+        })
+    </script>
+    <h1>Congratulations on finishing Module: {{module_id}}</h1>
+
+    <!-- header3 gets populated given the logic on the next_module_id -->
+    <h3></h3>
+
+    <button id="next_module_button" class="btn">Next</button>
 {% endblock %}

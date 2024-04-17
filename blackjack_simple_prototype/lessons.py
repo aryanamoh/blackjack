@@ -19,7 +19,8 @@ lessons = {
             "text": "Ace can be of value 1 or 11",
             "next_lesson": "end",
             "start_time":0
-        }
+        },
+        "next_module_id": 2
     },
     
     "2": {
@@ -40,6 +41,7 @@ lessons = {
             "text": "Ace can be of value 1 or 11",
             "next_lesson": "end",
             "start_time":0
-        }
+        },
+        "next_module_id": "Quiz"
     }
 }

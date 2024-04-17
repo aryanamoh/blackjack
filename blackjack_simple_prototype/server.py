@@ -43,7 +43,9 @@ def lesson(module_id, lesson_id):
 
 @app.route('/lesson_complete/<module_id>')
 def lesson_complete(module_id):
-    return render_template('lesson_complete.html', module_id = module_id)
+    
+    lesson = lessons[module_id]
+    return render_template('lesson_complete.html', module_id = module_id, lesson = lesson)
 
 
 @app.route('/quiz/<quiz_id>')
