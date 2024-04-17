@@ -9,9 +9,9 @@
         $(document).ready(function(){
             $("#next_button").click(function(){
                 if("{{lesson.next_lesson}}" == "end"){
-                    window.location.href = "/quiz_start"
+                    window.location.href = "/lesson_complete/{{module_id}}"
                 }else{
-                    window.location.href = "/lesson/1/{{lesson.next_lesson}}"
+                    window.location.href = "/lesson/{{module_id}}/{{lesson.next_lesson}}"
                 }
             })
         })

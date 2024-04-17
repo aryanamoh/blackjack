@@ -39,7 +39,12 @@ def quiz_start():
 def lesson(module_id, lesson_id):
 
     lesson = lessons[module_id][lesson_id]
-    return render_template('lesson.html', lesson = lesson)
+    return render_template('lesson.html', lesson = lesson, module_id = module_id, lesson_id = lesson_id)
+
+@app.route('/lesson_complete/<module_id>')
+def lesson_complete(module_id):
+    return render_template('lesson_complete.html', module_id = module_id)
+
 
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
