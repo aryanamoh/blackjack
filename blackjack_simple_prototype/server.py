@@ -53,6 +53,21 @@ def quiz(quiz_id):
     question = quiz_questions[quiz_id]
     return render_template('quiz.html', question = question)
 
+@app.route('/client', methods=['POST'])
+def client():
+    data = request.json
+    # grab the current module and lesson to update client's start time
+    formattedTime = data["formattedTime"]
+    pathname = data["pathname"]
+    # splits the string by the delimiter "/"
+    pathname_parts = pathname.split("/")
+    # grab the last two strings 
+    module_id, lesson_id = pathname_parts[-2:]
+    #update user's start time 
+    lessons[module_id][lesson_id]["start_time"] = data["formattedTime"]
+    
+    # return the module & lesson which the user has opened 
+    return lessons[module_id][lesson_id]
 
 @app.route('/answer', methods=['POST'])
 def answer():
