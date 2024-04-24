@@ -51,7 +51,7 @@ def lesson_complete(module_id):
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
     question = quiz_questions[quiz_id]
-    return render_template('quiz.html', question = question)
+    return render_template('quiz.html', question = question, index=quiz_id)
 
 @app.route('/client', methods=['POST'])
 def client():

@@ -37,6 +37,10 @@ $(document).ready(function() {
   //when the page loads, display all the names
   //displayNames(data)                        
 
+  $("#back_button").click(function() {
+    window.history.back();
+  });
+
   $("#submit_button").click(function() {
     $("input[type='radio']").attr("disabled", true);
     let answerIndex = $("input[name='answer']").index($("input[name='answer']:checked"));

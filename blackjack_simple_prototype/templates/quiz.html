@@ -4,14 +4,28 @@
 {% block content %}
 <script type="text/javascript">
         let question = {{question|tojson}}
-
-       
+        let index = {{index|tojson}}
 </script>
-{{question.quiz_question}}
+<div class="row">
+<div class="col-1">
+</div>
+<div class="col-10">
+  <h3>Question #{{index}}</h3>
+</div>
+<div class="col-1">
+</div>
+</div>
+
+<div class="row">
+<div class="col-1">
+</div>
+<div class="col-5">
+  {{question.quiz_question}}
 <br>
 <br>
 
 <img class="quiz-img" src="{{question.media}}" alt="{{question.media_alt}}">
+</div>
 <br>
 
 <div id="popup" class="popup">
@@ -21,24 +35,34 @@
   </div>
 </div>
 
-<!-- This creates the possible answers for each given question in DB -->
+<div class="col-5">
+  <div class="answer-container">
     {% for answer in question.panswers %}
+    <!-- This creates the possible answers for each given question in DB -->
 <input type="radio" id="answer{{loop.index}}" name="answer" value="{{answer}}">
 <label for="answer{{loop.index}}">{{answer}}</label>
 <br>
     {% endfor %}
+  </div>
+</div>
+<div class="col-1">
+</div>
+</div>
 
+<div class="button-container">
+<button class="btn" type="button" id="back_button"> Back </button>
 <button class="btn" type="button" id="submit_button"> Submit </button>
 
 <button class="btn" id="quiz_next_button"> Next </button>
+</div>
 
 <br>
 <br>
 
 <div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-   
+ 
     <div class="progress-bar text-bg-success progress-bar-striped progress-bar-animated" style="width: {{ question.progress }}">{{ question.progress }}</div>
-    
+ 
 </div>
 
 <script type="text/javascript" src="{{ url_for('static', filename = 'js/quiz.js') }}"></script>

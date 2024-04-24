@@ -2,8 +2,37 @@
    display: none;
 }
 
-.lesson-img, .quiz-img {
+.lesson-img {
    height: 400px;
+}
+
+.roboto-condensed {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.quiz-img {
+    width: 100%; 
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.answer-container {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.col-5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .popup {
@@ -74,6 +103,15 @@ img {
     object-fit: contain; /* ensures the image is fully visible without cropping */
 }
 
+.navbar {
+    background-color: #6cb370; /* light green */
+}
+
+.button-container {
+  text-align: center; /* This will center the buttons within the container */
+  padding: 10px 0; /* Add some padding for spacing above and below */
+}
+
 .btn {
    --bs-btn-bg: #6cb370 !important; /* light green */
     color: #fff; /* white */
@@ -82,6 +120,7 @@ img {
     border-radius: 5px;
     cursor: pointer;
     /* transition: background-color 0.3s ease; */
+    margin: 0 5px;
 }
 
 
