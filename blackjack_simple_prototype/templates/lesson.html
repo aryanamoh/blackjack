@@ -4,14 +4,23 @@
 
 {% block content %}
     <script type="text/javascript">
-        let lesson = {{lesson|tojson}}
+        let lesson = {{lesson|tojson}} 
 
         $(document).ready(function(){
+
             $("#next_button").click(function(){
                 if("{{lesson.next_lesson}}" == "end"){
                     window.location.href = "/lesson_complete/{{module_id}}"
                 }else{
                     window.location.href = "/lesson/{{module_id}}/{{lesson.next_lesson}}"
+                }
+            })
+            $("#back_button").click(function(){
+                if( ({{lesson.lesson_id}} - 1) < 1){
+                    window.location.href = "/learn"
+                }else{
+                    let previous_lesson_id = {{lesson.lesson_id}}  - 1
+                    window.location.href = "/lesson/{{module_id}}/"+ previous_lesson_id
                 }
             })
         })
@@ -31,6 +40,8 @@
     <br>
     <img class="lesson-img" src="{{lesson.media}}" alt="{{lesson.media_alt}}">
     <br> <br>
+    <!-- Send user back to module selection if they clicked "back" at first lesson within module-->
+    <button id="back_button" type="button" class="btn">Back</button>
     <button id="next_button" type="button" class="btn">Next</button>
 
     <br>
