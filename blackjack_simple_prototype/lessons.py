@@ -132,7 +132,7 @@ lessons = {
                           "The dealer always starts with a card face down",
                           "You have 11.",
                           "You should always draw a card on 11 or less because you can't go over 21.",
-                          ["This is called Hitting","hit_button"],
+                          ["This is called Hitting","player_hit_button"],
                           ["Your new card gives you a total of 20. It would be hard to get 21 from here, so you want to Stand","stand_button"],
                           "Since you chose to stand, it is now the dealer's turn",
                           "The dealer reveals they had a 10.",
