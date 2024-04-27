@@ -1,3 +1,24 @@
+:root {
+  --accent-color: #4e8c57; /* dark green */
+  --main-color: #6cb370; /* light green */
+  --light-gray: #aaaaaa;
+  --dark-gray: #6c757d;
+}
+
+.outfit-400 {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.outfit-900 {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
 #quiz_next_button {
    display: none;
 }
@@ -57,7 +78,7 @@
 }
 
 .close {
-  color: #aaa;
+  color: var(--light-gray);
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -79,7 +100,7 @@
 }
 
 .answer-container {
-    border: 2px solid #2e6643; /* dark green border */
+    border: 2px solid var(--accent-color); /* dark green border */
     border-radius: 10px; /* rounded corners */
     width: 95%; /* fill 95% of its container's width */
     margin: 0 auto; /* center the div horizontally */
@@ -104,7 +125,7 @@ img {
 }
 
 .navbar {
-    background-color: #6cb370; /* light green */
+    background-color: var(--main-color); /* light green */
 }
 
 .button-container {
@@ -112,24 +133,41 @@ img {
   padding: 10px 0; /* Add some padding for spacing above and below */
 }
 
-.btn {
-   --bs-btn-bg: #6cb370 !important; /* light green */
-    color: #fff; /* white */
-    --bs-btn-border-color: 2px solid #4e8c57 !important;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    /* transition: background-color 0.3s ease; */
-    margin: 0 5px;
+.btn-outline-secondary {
+  --bs-btn-color: var(--accent-color) !important;
+  --bs-btn-border-color: var(--accent-color) !important;
+  --bs-btn-hover-bg: var(--accent-color) !important;
+  --bs-btn-hover-border-color: var(--accent-color) !important;
+  --bs-btn-active-bg: var(--accent-color) !important;
+  --bs-btn-active-border-color: var(--accent-color) !important;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--accent-color) !important;
+  --bs-btn-border-color: var(--accent-color) !important;
+  --bs-btn-hover-bg: var(--accent-color) !important;
+  --bs-btn-hover-border-color: var(--accent-color) !important;
+  --bs-btn-active-bg: var(--accent-color) !important;
+  --bs-btn-active-border-color: var(--accent-color) !important;
+  --bs-btn-disabled-bg: var(--accent-color) !important;
+  --bs-btn-disabled-border-color: var(--accent-color) !important;
+}
+
+.pad {
+    padding: 60px;
+}
+
+.center {
+    text-align: center;
 }
 
 
-button {
-    background-color: #6cb370; /* light green */
-    color: #fff; /* white */
-    border: 2px solid #4e8c57;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    /* transition: background-color 0.3s ease; */
+#title_header {
+    font-size: 60px;
+    font-weight: 700;
+    margin-top: 40px;
+}
+
+p {
+    font-size: 24px;
 }
