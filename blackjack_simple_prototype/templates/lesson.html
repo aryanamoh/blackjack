@@ -8,6 +8,9 @@
 
         $(document).ready(function(){
 
+             console.log(lesson.media_array)
+             console.log(lesson.text_array)
+
             $("#next_button").click(function(){
                 if("{{lesson.next_lesson}}" == "end"){
                     window.location.href = "/lesson_complete/{{module_id}}"
@@ -18,10 +21,16 @@
             $("#back_button").click(function(){
                 if( ({{lesson.lesson_id}} - 1) < 1){
                     window.location.href = "/learn"
-                }else{
+                } else {
                     let previous_lesson_id = {{lesson.lesson_id}}  - 1
                     window.location.href = "/lesson/{{module_id}}/"+ previous_lesson_id
                 }
+            })
+            $("#next_lesson").click(function(){
+                
+                // go through each index of the lesson.media_array & lesson.text_array 
+                // 
+
             })
         })
     </script>
@@ -46,6 +55,38 @@
 
     <br>
     <br>
+    <button id="next_lesson" type="button" class="btn">Next Lesson</button>
+   
+    <div class="row">
+        <!-- Allowing for the iteration of each lesson text and mapped card images -->
+
+        
+        <div class="col-2" style="margin-left:35%;">
+            <div class="row container card-container" style="flex-wrap: unset;">
+                <div class="box left">
+                    Dealer Left Card
+                </div>
+                <div class="box right">
+                    Dealer Right Card
+                </div>
+            </div>
+
+            <div class="row container card-container">
+                                
+            </div>
+        </div>
+        
+    <div class="col-2" style="margin-left:35%;">
+            <div class="row container card-container" style="flex-wrap: unset;">
+                <div class="box left">Player Left Card</div>
+                <div class="box right">Player Right Card</div>
+            </div>
+
+            <div class="row container card-container">
+                                
+            </div>
+        </div></div>
+    
 
     <!--
     <div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">

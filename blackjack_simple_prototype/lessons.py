@@ -3,6 +3,8 @@
 
 def card_image(rank, suit):
     card_dir = "/static/assets/images/card_images/"
+    if not rank or not suit:
+        return ""
     return f"{card_dir}{str(rank)}_of_{suit}.png"
 
 lesson1_text = [
@@ -97,65 +99,65 @@ lesson_media = [
     [
         
         [
-            (4, "clubs.png").
-            # ("jack", "card.png").
-            (9, "spades.png").
-            (2, "hearts.png"
+            (4, "clubs"),
+            ("back", "card"),
+            (9, "spades"),
+            (2, "hearts"),
         ],
         
         [
-            (4, "clubs.png").
-            # ("jack", "card.png").
-            (9, "spades.png").
-            (2, "hearts.png"
+            (4, "clubs"),
+            ("jack", "card"),
+            (9, "spades"),
+            (2, "hearts"),
         ],
         
         [
-            (4, "clubs.png").
-            # (back, "card.png").
-            (9, "spades.png").
-            (2, "hearts.png"
+            (4, "clubs"),
+            ("back", "card"),
+            (9, "spades"),
+            (2, "hearts"),
         ],
         
         [
-            (4, "clubs.png").
-            # (back, "card.png").
-            (9, "spades.png").
-            (2, "hearts.png").
-            (9, "spades.png"
+            (4, "clubs"),
+            ("back", "card"),
+            (9, "spades"),
+            (2, "hearts"),
+            (9, "spades"),
         ],
         
         [
-            (4, "clubs.png").
-            # (back, "card.png").
-            (9, "spades.png").
-            (2, "hearts.png").
-            (9, "spades.png"
+            (4, "clubs"),
+            ("back", "card"),
+            (9, "spades"),
+            (2, "hearts"),
+            (9, "spades"),
         ],
         
         [
-            (4, "clubs.png").
-            ("jack", "card.png").
-            (9, "spades.png").
-            (2, "hearts.png").
-            (9, "spades.png"
+            (4, "clubs"),
+            ("back", "card"),
+            (9, "spades"),
+            (2, "hearts"),
+            (9, "spades"),
         ],
         
         [
-            (4, "clubs.png").
-            (10, "diamonds.png").
-            (9, "spades.png").
-            (2, "hearts.png").
-            (9, "spades.png"
+            (4, "clubs"),
+            (10, "diamonds"),
+            (9, "spades"),
+            (2, "hearts"),
+            (9, "spades"),
         ],
         
         [
-            (4, "clubs.png").
-            (10, "diamonds.png").
-            (10, "diamonds.png").
-            (9, "spades.png").
-            (2, "hearts.png").
-            (9, "spades.png"
+            (4, "clubs"),
+            (10, "diamonds"),
+            (10, "diamonds"),
+            (9, "spades"),
+            (2, "hearts"),
+            (9, "spades"),
         ],
         
         [
@@ -178,8 +180,8 @@ lesson_media = [
         
     ],
 
-    [ 
-        ["","","",""],
+    [
+        [("",""),("",""),("",""),("","")],
         
         [
             ("jack", "diamonds"),
@@ -192,8 +194,7 @@ lesson_media = [
             ("jack", "diamonds"),
             ("back", "card"),
             ("ace", "clubs"),
-            "",
-            "",
+            ("",""), ("",""),
             ("ace", "clubs,png")
         ],
         
@@ -218,7 +219,7 @@ lesson_media = [
     ],
 
     [
-        ["","","",""],
+        [("",""),("",""),("",""),("","")],
         
         [
             ("4", "clubs"),
@@ -239,10 +240,8 @@ lesson_media = [
 
     ],
     [
-        [
-            "","","",""
-        ],
-        
+        [("",""),("",""),("",""),("","")],
+ 
         [
             ("ace", "clubs"),
             ("back", "card"),
@@ -260,6 +259,16 @@ lesson_media = [
     ]
 ]
 
+def list_of_cards(idx):
+    lst = []
+    for hand in lesson_media[idx]:
+        inner_lst = []
+        for rank, suit in hand:
+                inner_lst.append(card_image(rank, suit))
+        lst.append(inner_lst)
+    return lst
+
+
 lessons = {  
     "1": {
         "1":{
@@ -274,7 +283,8 @@ lessons = {
                           "The player wants to get as close to 21 as possible without going over",
                           "When the dealer has a 17 or more, they can't draw another card",
                           "You have 20 so you win!"],
-            "media_array" : [card_image(rank, suit) for rank, suit in lesson_media[0] ]
+            # "media_array" : [card_image(rank, suit) for rank, suit in list_of_cards(0)]
+            "media_array" : list_of_cards(0)
         },
         "2":{
             "lesson_id": "2",
@@ -297,7 +307,8 @@ lessons = {
                           "The seven is 7.",
                           "The ace is 1.",
                           "1 + 7 + 10 = 18. The hand is HARD because the ace can no longer have two values."],
-            "media_array" : [card_image(rank, suit) for rank, suit in lesson_media[1] ]
+            "media_array" : list_of_cards(1)
+        
         },
         "3":{
             "lesson_id": "3",
@@ -318,7 +329,7 @@ lessons = {
                           "The dealer is required to hit when their hand is under 17.",
                           "They draw another 10 for a total of 24. Since they have more than 21 they Bust!",
                           "Busting means your hand is more than 21 and you lose."],
-            "media_array" : [card_image(rank, suit) for rank, suit in lesson_media[2]],
+            "media_array" : list_of_cards(2)
         },
         "4":{
             "lesson_id": "4",
@@ -334,7 +345,7 @@ lessons = {
                           ["The dealer will give you a new card for each hand and you can choose to stay or hit for each.",
                             "player_hit_button","player_stand_button"],
                           "You have 21 for both hands and the dealer has 17 so you win twice!",],
-            "media_array" : [card_image(rank, suit) for rank, suit in lesson_media[3]],
+            "media_array" : list_of_cards(3)
         },
         "5":{
             "lesson_id": "5",
@@ -348,7 +359,8 @@ lessons = {
                           ["Before you've hit on a new hand, you're allowed to Double instead.","player_double_button"],
                           ["If your hand is larger than the dealer's or the dealer busts, you win double your bet!","dealer_hit"],
                           ""],
-            "media_array" : [card_image(rank, suit) for rank, suit in lesson_media[4]],
+            
+            "media_array" : list_of_cards(4)
         },
         "6":{
             "lesson_id": "6",
@@ -364,7 +376,7 @@ lessons = {
                            If you take it and they have 21, you won't lose your bet. 
                            But it's never worth it.''',"player_hit_button"],
                           ],
-            "media_array" : [card_image(rank, suit) for rank, suit in lesson_media[5]],
+            "media_array" : list_of_cards(5)
         },
         
         "next_module_id": 2
