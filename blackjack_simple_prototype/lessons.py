@@ -4,7 +4,7 @@
 def card_image(rank, suit):
     card_dir = "/static/assets/images/card_images/"
     if not rank or not suit:
-        return ""
+        return f"{card_dir}back_of_card.png"
     return f"{card_dir}{str(rank)}_of_{suit}.png"
 
 lesson1_text = [
