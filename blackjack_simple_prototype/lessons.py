@@ -3,7 +3,10 @@
 
 def card_image(rank, suit):
     card_dir = "/static/assets/images/card_images/"
-    if not rank or not suit:
+    
+    # handle the case where we don't want to show the back of the cards
+    # for an empty slot 
+    if rank=="_" or suit=="_" or not rank or not suit:
         return f"{card_dir}back_of_card.png"
     return f"{card_dir}{str(rank)}_of_{suit}.png"
 
@@ -57,30 +60,46 @@ lesson_media = [
             ("king", "clubs2"),
             ("king", "spades2")
         ],
-        [
+        [   ("",""),
+            ("",""),
             ("ace", "clubs"),
             (7, "diamonds"),
         ],
         [
+            ("",""),
+            ("",""),
             ("ace", "clubs"),
             (7, "diamonds"),
         ],
         [
+            ("",""),
+            ("",""),
+            ("ace", "clubs"),
+            (7, "diamonds"),
+        ],
+        [
+            ("",""),
+            ("",""),
             ("ace", "clubs"),
             (7, "diamonds"),
             ("king", "spades2"),
         ],
         [
+            ("",""),
+            ("",""),
             ("ace", "clubs"),
             (7, "diamonds"),
             ("king", "spades2"),
         ],
         [
+            ("",""),
+            ("",""),
             ("ace", "clubs"),
             (7, "diamonds"),
             ("king", "spades2"),
         ],
         [
+            ("",""),
             ("king", "spades2"),
             ("ace", "clubs"),
             (7, "diamonds"),
@@ -89,25 +108,27 @@ lesson_media = [
             (7, "diamonds"),
             ("king", "spades2"),
             ("ace", "clubs"),
+            ("","")
         ],
         [
-            (7, "diamonds"),
-            ("king", "spades2"),
             ("ace", "clubs"),
+            (7, "diamonds"),
+            ("",""),
+            ("",""),
+            ("king", "spades2"),
+        ],
+        [
+            ("ace", "clubs"),
+            (7, "diamonds"),
+            ("",""),
+            ("",""),
+            ("king", "spades2"),
         ],
     ],
     [
-        
         [
             (4, "clubs"),
             ("back", "card"),
-            (9, "spades"),
-            (2, "hearts"),
-        ],
-        
-        [
-            (4, "clubs"),
-            ("jack", "card"),
             (9, "spades"),
             (2, "hearts"),
         ],
@@ -124,9 +145,29 @@ lesson_media = [
             ("back", "card"),
             (9, "spades"),
             (2, "hearts"),
-            (9, "spades"),
         ],
         
+        [
+            (4, "clubs"),
+            ("back", "card"),
+            (9, "spades"),
+            (2, "hearts"),
+        ],
+        
+        [
+            (4, "clubs"),
+            ("back", "card"),
+            (9, "spades"),
+            (2, "hearts"),
+            (9, "spades"),
+        ],
+        [
+            (4, "clubs"),
+            ("back", "card"),
+            (9, "spades"),
+            (2, "hearts"),
+            (9, "spades"),
+        ],
         [
             (4, "clubs"),
             ("back", "card"),
@@ -137,12 +178,11 @@ lesson_media = [
         
         [
             (4, "clubs"),
-            ("back", "card"),
+            (10, "diamonds"),
             (9, "spades"),
             (2, "hearts"),
             (9, "spades"),
         ],
-        
         [
             (4, "clubs"),
             (10, "diamonds"),
@@ -154,7 +194,6 @@ lesson_media = [
         [
             (4, "clubs"),
             (10, "diamonds"),
-            (10, "diamonds"),
             (9, "spades"),
             (2, "hearts"),
             (9, "spades"),
@@ -162,32 +201,31 @@ lesson_media = [
         
         [
             (4, "clubs"),
-            (10 , "diamonds"),
-            (10 , "diamonds"),
-            (9 , "spades"),
-            (2 , "hearts"),
-            (9 , "spades")
-        ],
-        
-        [
-            (4, "clubs"),
-            (10, "diamonds"),
             (10, "diamonds"),
             (9, "spades"),
             (2, "hearts"),
+            (10, "diamonds"),
+            (9, "spades")
+        ],
+        [
+            (4, "clubs"),
+            (10, "diamonds"),
+            (9, "spades"),
+            (2, "hearts"),
+            (10, "diamonds"),
             (9, "spades")
         ]
         
     ],
 
     [
-        [("",""),("",""),("",""),("","")],
+        [("_","_"),("_","_"),("_","_"),("_","_")],
         
         [
             ("jack", "diamonds"),
             ("back", "card"),
             ("ace", "clubs"),
-            ("ace", "clubs,png"),
+            ("ace", "clubs"),
         ],
         
         [
@@ -195,7 +233,7 @@ lesson_media = [
             ("back", "card"),
             ("ace", "clubs"),
             ("",""), ("",""),
-            ("ace", "clubs,png")
+            ("ace", "clubs")
         ],
         
         [
@@ -226,16 +264,21 @@ lesson_media = [
             ("back", "card"),
             ("9", "spades"),
             ("2", "hearts"),
-            ("jack", "diamonds2"),
         ],
-        
         [
             ("4", "clubs"),
-            ("8", "hearts"),
-            ("king", "hearts2"),
+            ("back", "card"),
             ("9", "spades"),
             ("2", "hearts"),
             ("jack", "diamonds2"),
+        ],
+        [
+            ("4", "clubs"),
+            ("8", "hearts"),
+            ("9", "spades"),
+            ("2", "hearts"),
+            ("jack", "diamonds2"),
+            ("king", "hearts2"),
         ]
 
     ],
@@ -279,11 +322,11 @@ lessons = {
             "text": "Goal of blackjack is to beat the dealer.....",
             "next_lesson": "2",
             "start_time":0,
-            "text_array":["The object of blackjack is to beat the dealer",
-                          "The player wants to get as close to 21 as possible without going over",
-                          "When the dealer has a 17 or more, they can't draw another card",
-                          "You have 20 so you win!"],
-            # "media_array" : [card_image(rank, suit) for rank, suit in list_of_cards(0)]
+            "text_array":[
+                          ["The object of blackjack is to beat the dealer","text"],
+                          ["The player wants to get as close to 21 as possible without going over","player"],
+                          ["When the dealer has a 17 or more, they can't draw another card","dealer"],
+                          ["You have 20 so you win!","player"]],
             "media_array" : list_of_cards(0)
         },
         "2":{
@@ -294,19 +337,21 @@ lessons = {
             "text": "Ace can be of value 1 or 11",
             "next_lesson": "3",
             "start_time":0,
-            "text_array":["Let's learn the value of the cards.",
-                          "Numbers add their face value.",
-                          "Face cards are all worth 10.",
-                          "Aces are worth 1 or 11.",
-                          "This hand is 8 OR an 18",
-                          "It is called a SOFT hand because you can choose the hand's value of 8 or 18",
-                          "Asking for another card is called HITTING.",
-                          "Hitting gave us a 10. Now we have 18.",
-                          "This is called a HARD hand.",
-                          "The King is 10.",
-                          "The seven is 7.",
-                          "The ace is 1.",
-                          "1 + 7 + 10 = 18. The hand is HARD because the ace can no longer have two values."],
+            "text_array":[
+                         ["Let's learn the value of the cards.","text"],
+                          ["Numbers add their face value.","player_dealer_both"],
+                          ["Face cards are all worth 10.","player_dealer_both"],
+                          ["Aces are worth 1 or 11.","player"],
+                          ["This hand is 8 OR an 18","player"],
+                          ["It is called a SOFT hand because you can choose the hand's value of 8 or 18","player"],
+                          ["Asking for another card is called HITTING.","player"],
+                          ["Hitting gave us a 10. Now we have 18.","player"],
+                          ["This is called a HARD hand.","player"],
+                          ["The King is 10.","dealer_player"],
+                          ["The seven is 7.","dealer_player"],
+                          ["The ace is 1.","dealer"],
+                          ["1 + 7 + 10 = 18. The hand is HARD because the ace can no longer have two values.","dealer"]
+                          ],
             "media_array" : list_of_cards(1)
         
         },
@@ -318,17 +363,20 @@ lessons = {
             "text": "You will like to hold onto your current hand",
             "next_lesson": "4",
             "start_time":0,
-            "text_array":["Let's play a game! We'll tell you what to do.",
-                          "The dealer always starts with a card face down",
-                          "You have 11.",
-                          "You should always draw a card on 11 or less because you can't go over 21.",
-                          ["This is called Hitting","player_hit_button"],
-                          ["Your new card gives you a total of 20. It would be hard to get 21 from here, so you want to Stand","stand_button"],
-                          "Since you chose to stand, it is now the dealer's turn",
-                          "The dealer reveals they had a 10.",
-                          "The dealer is required to hit when their hand is under 17.",
-                          "They draw another 10 for a total of 24. Since they have more than 21 they Bust!",
-                          "Busting means your hand is more than 21 and you lose."],
+            "text_array":[
+                          ["Let's play a game! We'll tell you what to do.","text"],
+                          ["The dealer always starts with a card face down","dealer"],
+                          ["You have 11.","player"],
+                          ["You should always draw a card on 11 or less because you can't go over 21.","player"],
+                          ["This is called Hitting","player"],
+                          ["Your new card gives you a total of 20. It would be hard to get 21 from here, so you want to Stand","player"],
+                          ["Standing means you're done and it's the next player's turn.","player_dealer"],
+                          ["Since you chose to stand, it is now the dealer's turn","dealer_player"],
+                          ["The dealer reveals they had a 10.","dealer_player"],
+                          ["The dealer is required to hit when their hand is under 17.","dealer_player"],
+                          ["They draw another 10 for a total of 24. Since they have more than 21 they Bust!","dealer_player"],
+                          ["Busting means your hand is more than 21 and you lose.","dealer_player"]
+                        ],
             "media_array" : list_of_cards(2)
         },
         "4":{
@@ -339,12 +387,13 @@ lessons = {
             "text": "Ask the friendly dealer for another card to your hand",
             "next_lesson": "5",
             "start_time":0,
-            "text_array":["There are a few more terms you should know. The first is called Splitting.",
-                          ["Being dealt two identical cards aallows you to Split.","split_button"],
-                          "Splitting allows you to split your hand into two hands.",
-                          ["The dealer will give you a new card for each hand and you can choose to stay or hit for each.",
-                            "player_hit_button","player_stand_button"],
-                          "You have 21 for both hands and the dealer has 17 so you win twice!",],
+            "text_array":[
+                          ["There are a few more terms you should know. The first is called Splitting.","text"],
+                          ["Being dealt two identical cards allows you to Split.","player"],
+                          ["Splitting allows you to split your hand into two hands.","player"],
+                          ["The dealer will give you a new card for each hand and you can choose to stay or hit for each.","player"],
+                          ["You have 21 for both hands and the dealer has 17 so you win twice!","player"]
+                        ],
             "media_array" : list_of_cards(3)
         },
         "5":{
@@ -355,10 +404,12 @@ lessons = {
             "text": "Insure that you'll only use x of your bet",
             "next_lesson": "6",
             "start_time":0,
-            "text_array":["Next you'll learn how to Double",
-                          ["Before you've hit on a new hand, you're allowed to Double instead.","player_double_button"],
-                          ["If your hand is larger than the dealer's or the dealer busts, you win double your bet!","dealer_hit"],
-                          ""],
+            "text_array":[
+                          ["Next you'll learn how to Double","text"],
+                          ["Before you've hit on a new hand, you're allowed to Double instead.","player"],
+                          ["The dealer will deal you one card sideways and you can't hit again.","player_sideways"],
+                          ["If your hand is larger than the dealer's or the dealer busts, you win double your bet!","player_sideways_dealer"]
+                          ],
             
             "media_array" : list_of_cards(4)
         },
@@ -370,11 +421,12 @@ lessons = {
             "text": "No, not like the living legend",
             "next_lesson": "end",
             "start_time":0,
-            "text_array":["The last thing you need to know is Insurance",
-                          ["If the dealer shows an ace, you'll be offered Insurance. Don't Take It. EVER!","no_insurance_button"],
+            "text_array":[
+                          ["The last thing you need to know is Insurance","dealer"],
+                          ["If the dealer shows an ace, you'll be offered Insurance. Don't Take It. EVER!","dealer"],
                           ['''Insurance is a house advantage. 
                            If you take it and they have 21, you won't lose your bet. 
-                           But it's never worth it.''',"player_hit_button"],
+                           But it's never worth it.''',"dealer"],
                           ],
             "media_array" : list_of_cards(5)
         },
@@ -383,23 +435,47 @@ lessons = {
     },
     
     "2": {
+        
         "1":{
             "lesson_id": "1",
-            "title": "What is basic strategy?",
-            "media":"/static/assets/images/basic_strategy.png",
+            "title": "What is blackjack and how does a player win or lose?",
+            "media":"/static/assets/images/card_images/ace_of_spades.png",
             "media_alt":"Lesson 1 media alt text",
-            "text": "Try wrapping your head around this baby :)",
+            "text": "Goal of blackjack is to beat the dealer.....",
             "next_lesson": "2",
-            "start_time":0
+            "start_time":0,
+            "text_array":[
+                          ["The object of blackjack is to beat the dealer","text"],
+                          ["The player wants to get as close to 21 as possible without going over","player"],
+                          ["When the dealer has a 17 or more, they can't draw another card","dealer"],
+                          ["You have 20 so you win!","player"]],
+            # "media_array" : [card_image(rank, suit) for rank, suit in list_of_cards(0)]
+            "media_array" : list_of_cards(0)
         },
         "2":{
             "lesson_id": "2",
-            "title": "What do the cards mean?....",
-            "media":"https://www.blackjackapprenticeship.com/wp-content/uploads/2018/08/how-to-play-blackjack-card-values-min.jpg",
+            "title": "What do the cards mean?",
+            "media":"/static/assets/images/card_images/2_of_clubs.png",
             "media_alt":"Lesson 2 media alt text",
             "text": "Ace can be of value 1 or 11",
-            "next_lesson": "end",
-            "start_time":0
+            "next_lesson": "3",
+            "start_time":0,
+            "text_array":[
+                         ["Let's learn the value of the cards.","text"],
+                          ["Numbers add their face value.","player_dealer"],
+                          ["Face cards are all worth 10.","player_dealer"],
+                          ["Aces are worth 1 or 11.","player"],
+                          ["This hand is 8 OR an 18","player"],
+                          ["It is called a SOFT hand because you can choose the hand's value of 8 or 18","player"],
+                          ["Asking for another card is called HITTING.","player"],
+                          ["Hitting gave us a 10. Now we have 18.","player"],
+                          ["This is called a HARD hand.","player"],
+                          ["The King is 10.","dealer_player"],
+                          ["The seven is 7.","dealer_player"],
+                          ["The ace is 1.","dealer"],
+                          ["1 + 7 + 10 = 18. The hand is HARD because the ace can no longer have two values.","dealer"]
+                          ],
+            "media_array" : list_of_cards(1)
         },
         "next_module_id": "Quiz"
     }
