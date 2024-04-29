@@ -1,18 +1,21 @@
-from flask import Flask
-from flask import render_template
-from flask import Response, request, jsonify
+from flask import Flask, render_template, Response, request, jsonify
 
 # Importing the lessons and quiz questions
 from lessons import lessons
 from questions import quiz_questions
 
-app = Flask(__name__)
-
 score = 0
+
+app = Flask(__name__)
+@app.errorhandler(404) 
+
 
 ########################
 #        ROUTES        #
 ########################
+
+def not_found(e): 
+  return render_template("404.html") 
 
 @app.route('/')
 def home():
