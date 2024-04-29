@@ -35,13 +35,29 @@ var saveName = function(name) {
 
 $(document).ready(function() {
   //when the page loads, display all the names
-  //displayNames(data)                        
+  //displayNames(data)
+
+   
 
   $("#back_button").click(function() {
-    window.history.back();
+      if (question.quiz_id >= 2) {
+          var url = "/quiz/" + (parseInt(question.quiz_id) - 1);
+          
+          window.location.href = url;
+      }
+      else {
+          window.location.href = "/quiz_start";
+      }
+      
   });
 
-  $("#submit_button").click(function() {
+    $("#submit_button").click(function () {
+        if ($("input[name='answer']:checked").length === 0) {
+            // If no option is selected, display an error message
+             $("#popup").fadeIn() 
+            $("#popup_text").text("Please select an answer to continue.");
+            return; // Exit the function to prevent further execution
+        }
     $("input[type='radio']").attr("disabled", true);
     let answerIndex = $("input[name='answer']").index($("input[name='answer']:checked"));
     let leave = false;
@@ -97,6 +113,31 @@ $(document).ready(function() {
     }
   })
 
+    var lockAnswersIfNeeded = function () {
+        if (question.answersLocked) {
+           
+            $("input[type='radio']").attr("disabled", true);
+            $("#submit_button").hide();
+            $("#quiz_next_button").show();
+
+            var clientResponse = question.client_response;
+            console.log(clientResponse)
+            // Find the index of the client response in questions.panswers
+            var userResponseIndex = -1; // Initialize to -1 if not found
+            $.each(question.panswers, function (index, answer) {
+                if (answer === clientResponse) {
+                    userResponseIndex = index;
+                    return false; // Break out of the loop once found
+                }
+            });
+            // Check the corresponding radio button
+            $("input[name='answer']").eq(userResponseIndex).prop('checked', true);
+        }
+       
+    };
+
+    // Call the function to lock answers if needed upon page load
+    lockAnswersIfNeeded();
 
   $("#submit_name").click(function() {
     var name = $("#new_name").val()
