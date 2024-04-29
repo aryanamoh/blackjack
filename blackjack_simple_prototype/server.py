@@ -1,18 +1,23 @@
-from flask import Flask, redirect, url_for
-from flask import render_template
-from flask import Response, request, jsonify
+from flask import Flask, redirect, url_for, render_template, Response, request, jsonify
 
 # Importing the lessons and quiz questions
 from lessons import lessons
 from questions import quiz_questions
+
 progress = "0%"
+score = 0
+
 app = Flask(__name__)
+@app.errorhandler(404) 
 
 
 
 ########################
 #        ROUTES        #
 ########################
+
+def not_found(e): 
+  return render_template("404.html") 
 
 @app.route('/')
 def home():
@@ -51,6 +56,10 @@ def go_to_quiz():
             goto = question_data['quiz_id']
             break;
     return goto
+
+@app.route('/learn_table')
+def learn_table():
+    return render_template('learn_table.html')
 
 @app.route('/quiz_start')
 def quiz_start():

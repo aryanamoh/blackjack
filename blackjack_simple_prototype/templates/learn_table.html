@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+ 
+
+    <!-- Content -->
+    <div class="row">
+        <div id="learn-table" class="center-div"> </div>
+    </div>
+
+    <div class="center mt-4">
+        <button class="btn btn-primary start-walkthrough">BEGIN</button>
+    </div> 
+
+    <!-- Spotlight Overlay -->
+    <div class="overlay">
+        <div class="highlight"></div>
+        <div class="walkthrough-popup">
+        <p class="message"></p>
+        <button class="btn btn-primary next-step">Next</button>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/learn_table.js') }}"></script>
+{% endblock %}
