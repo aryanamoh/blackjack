@@ -6,13 +6,71 @@
 <br>
 <!-- This creates the possible answers for each given question in DB -->
 
-<div>Congratulations on finishing the quiz!</div>
-<div>You got {{ score }} out of {{ total }} questions.</div>
-<button id="home_button" class="btn">Home</button>
+<div class="congrats">Quiz Complete!</div>
+<div class="score" style="color: {% if score >= 8 %}green{% elif score >= 5 %}orange{% else %}red{% endif %};">
+    {{ score }}/{{ total }}
+    {% if score >= 8 %}
+    <span class="result-text">Nice job!</span>
+    {% elif score >= 5 %}
+    <span class="result-text">Needs Work!</span>
+    {% else %}
+    <span class="result-text">Try again!</span>
+    {% endif %}
+</div>
+<div class="results_box">
+    <div class="row">
+        <div class="youranswers">Your Answers:</div>
+    </div>
+    <div class="row">
 
-<br>
-<br>
+        <div class="col-6">
 
-<script type="text/javascript" src="{{ url_for('static', filename = 'js/results.js') }}"></script>
+            {% for question_id, question_data in questions.items() %}
+            {% if loop.index <= 5 %}
+            <div class="question_result">
+                Question #<a href="/quiz/{{loop.index}}">{{loop.index}}</a>: {{question_data.client_response}}
+                {% if question_data.client_response == question_data.panswers[question_data.answer] %}
+                <i class="fas fa-circle" style="color: #4e8c57; "></i>
+                {% else %}
+                <i class="fas fa-ban" style="color: grey;"></i>
+                {% endif %}
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="col-1"></div>
+        <div class="col-4">
 
-{% endblock %}
+            {% for question_id, question_data in questions.items() %}
+            {% if loop.index > 5 %}
+            <div class="question_result2">
+                Question #<a href="/quiz/{{loop.index}}">{{loop.index}}</a>: {{question_data.client_response}}
+                {% if question_data.client_response == question_data.panswers[question_data.answer] %}
+                <i class="fas fa-circle" style="color: #4e8c57; "></i>
+                {% else %}
+                <i class="fas fa-ban" style="color: grey;"></i>
+                {% endif %}
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        </div>
+    </div>
+<div class="button-container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-4">
+            <button class="btn btn-outline-secondary" type="button" id="retake_button"> Retake </button>
+            </div>
+        <div class="col-4">
+            <button class="btn btn-outline-secondary" type="button" id="home_button">Home </button>
+        </div>
+        </div>
+
+    </div>
+    <br>
+    <br>
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/results.js') }}"></script>
+
+    {% endblock %}

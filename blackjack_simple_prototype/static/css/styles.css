@@ -132,6 +132,7 @@ img {
 .button-container {
   text-align: center; /* This will center the buttons within the container */
   padding: 10px 0; /* Add some padding for spacing above and below */
+  padding-top: 20px;
 }
 
 .btn-outline-secondary {
@@ -172,6 +173,173 @@ img {
 p {
     font-size: 24px;
 }
+
+
+.card-table {
+    background-color: #3b5323; /* Green fill color */
+    border: 2px solid #A9A9A9; /* Thin grey border */
+    border-radius: 25px; /* Rounded corners for a nicer look */
+    width: 700px; /* Adjust width as needed */
+    height: 600px; /* Adjust height as needed */
+    padding: 20px; /* Add some padding inside the table */
+    padding-bottom: 20px;
+}
+.questionnum {
+    text-align:center;
+    font-size: 25px;
+}
+.thequestion {
+    text-align: center;
+    padding-bottom: 20px;
+}
+.card1 {
+    width: 100px;  
+    height: 150px;
+    z-index: 1;
+}
+.cardback {
+    width: 100px;
+    height: 150px;
+    z-index: 25;
+    background-image: url('/../assets/images/back.png');
+}
+.card2 {
+    width: 100px;
+    height: 150px;
+    display: flex;
+    justify-content:center;
+}
+.buffer {
+    height: 270px;
+}
+.results_box {
+    width: 1170px;
+    height: 350px;
+    border: 2px solid #A9A9A9;
+    border-radius: 25px;
+    background: #eee;
+    margin-left: 58px;
+}
+.question_result {
+    font-size: 22px;
+    padding-top: 20px;
+    padding-left: 40px;
+    
+}
+.question_result2 {
+    font-size: 22px;
+    padding-top: 20px;
+    padding-left: 60px;
+    
+}
+.fa-circle {
+    font-size: 16px;
+    padding-left: 10px;
+}
+.fa-ban {
+    font-size: 16px;
+    padding-left: 10px;
+}
+.youranswers {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 25px;
+}
+.congrats {
+    text-align: center;
+    font-size: 50px;
+    padding-bottom: 10px;
+}
+.score {
+    text-align: center;
+    font-size: 35px;
+    padding-bottom: 30px;
+}
+.result-text {
+    color: black;
+}
+#retake_button {
+    width: 150px;
+    height: 75px;
+    font-size: 30px;
+}
+#home_button {
+    width: 150px;
+    height: 75px;
+    font-size: 30px;
+}
+@keyframes moveDealerCardAnimation1 {
+    0% {
+        transform: translate(378%, 0%);
+    }
+    /* Move cards off-screen to the top left */
+    100% {
+        transform: translate(190%, 0);
+    }
+    /* Move cards to their final position */
+}
+
+@keyframes moveDealerCardAnimation2 {
+    0% {
+        transform: translate(380%, 0%);
+    }
+    /* Move cards off-screen to the top left */
+    100% {
+        transform: translate(189%, 0);
+    }
+    /* Move cards to their final position */
+}
+
+@keyframes movePlayerCardAnimation1 {
+    0% {
+        transform: translate(280%, -280%);
+    }
+    /* Move cards off-screen to the top left */
+    100% {
+        transform: translate(0, 0);
+    }
+    /* Move cards to their final position */
+}
+
+@keyframes movePlayerCardAnimation2 {
+    0% {
+        transform: translate(190%, -280%);
+    }
+    /* Move cards off-screen to the top left */
+    100% {
+        transform: translate(0, 0);
+    }
+    /* Move cards to their final position */
+}
+
+.moveDealerCard1 {
+    transform: translate(476%, 0%);
+    animation: moveDealerCardAnimation1 1s forwards;
+    animation-delay: 1s;
+    z-index: 1
+}
+
+.moveDealerCard2 {
+    transform: translate(375%, 0%);
+    animation: moveDealerCardAnimation2 1s forwards;
+    animation-delay: 2s;
+    z-index: 1
+}
+
+.movePlayerCard1 {
+    transform: translate(288%, -280%);
+    animation: movePlayerCardAnimation1 1s forwards;
+    animation-delay: 0.5s;
+    z-index: 1
+}
+
+.movePlayerCard2 {
+    transform: translate(188%, -280%);
+    animation: movePlayerCardAnimation2 1s forwards;
+    animation-delay: 1.5s;
+    z-index: 1
+}
+
 
 .overlay {
   position: fixed;
@@ -228,3 +396,4 @@ p {
 .center-div {
   margin: auto !important;
 }
+
