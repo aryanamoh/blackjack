@@ -38,7 +38,7 @@
     <h1>Learning Modules<h1>
     
     <h3>Lesson: {{lesson.title}}</h3>
-   {{lesson.text}}<br>
+   {{lesson.text_array[0]}}<br>
     <!-- If we want to store images locally, this syntax tends to work 
     <img src="{{ url_for('static', filename=lesson.media) }}" alt="Testing">
 
@@ -47,7 +47,42 @@
     -->
 
     <br>
-    <img class="lesson-img" src="{{lesson.media}}" alt="{{lesson.media_alt}}">
+    <!-- <img class="lesson-img" src="{{lesson.media}}" alt="{{lesson.media_alt}}"> -->
+    <div class="row">
+      <!-- Allowing for the iteration of each lesson text and mapped card images -->
+      
+      <div class="col-2 dark-green" style="margin-left:35%;">
+          <div class="row container card-container" style="flex-wrap: unset;">
+              <div class="box left">
+                <img class="lesson-img" src="{{lesson.media_array[0][0]}}" alt="{{lesson.media_alt}}">
+              </div>
+              <div class="box right">
+                <img class="lesson-img" src="{{lesson.media_array[0][1]}}" alt="{{lesson.media_alt}}">
+              </div>
+          </div>
+
+          <div class="row container card-container">
+                              
+          </div>
+      </div>
+      
+      <div class="col-2" style="margin-left:35%;">
+              <div class="row container card-container" style="flex-wrap: unset;">
+                  <div class="box left">
+                    <img class="lesson-img" src="{{lesson.media_array[0][2]}}" alt="{{lesson.media_alt}}">
+                  </div>
+                  <div class="box right">
+                    <img class="lesson-img" src="{{lesson.media_array[0][3]}}" alt="{{lesson.media_alt}}">
+                  </div>
+              </div>
+
+              <div class="row container card-container">
+                                  
+              </div>
+          </div>
+      </div>
+  
+    </div>
     <br> <br>
     <!-- Send user back to module selection if they clicked "back" at first lesson within module-->
     <button id="back_button" type="button" class="btn">Back</button>
@@ -57,37 +92,6 @@
     <br>
     <button id="next_lesson" type="button" class="btn">Next Lesson</button>
    
-    
-    <div class="row">
-        <!-- Allowing for the iteration of each lesson text and mapped card images -->
-
-        
-        <div class="col-2" style="margin-left:35%;">
-            <div class="row container card-container" style="flex-wrap: unset;">
-                <div class="box left">
-                    Dealer Left Card
-                </div>
-                <div class="box right">
-                    Dealer Right Card
-                </div>
-            </div>
-
-            <div class="row container card-container">
-                                
-            </div>
-        </div>
-        
-    <div class="col-2" style="margin-left:35%;">
-            <div class="row container card-container" style="flex-wrap: unset;">
-                <div class="box left">Player Left Card</div>
-                <div class="box right">Player Right Card</div>
-            </div>
-
-            <div class="row container card-container">
-                                
-            </div>
-        </div></div>
-    
 
     <!--
     <div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">

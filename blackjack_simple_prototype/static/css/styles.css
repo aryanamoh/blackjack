@@ -152,8 +152,8 @@ card-container {
   display: flex; /* To center content inside each box */
   justify-content: space-around; /* Horizontally center content */
   align-items: center; /* Vertically center content */
-  background-color: #f0f0f0; /* Just for visibility */
-  border: 1px solid #ccc; /* Just for visibility */
+  /* background-color: #f0f0f0; /* Just for visibility */ */
+  /* border: 1px solid #ccc; /* Just for visibility */ */
 }
 
 /* Additional styling to differentiate the boxes if needed */
@@ -163,4 +163,8 @@ card-container {
 
 .right {
   margin-left: 10%; /* Optional space between boxes */
+}
+
+dark-green {
+    background-color: #2e6643; /* dark green border */
 }
