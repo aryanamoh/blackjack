@@ -1,14 +1,14 @@
-from flask import Flask
+from flask import Flask, redirect, url_for
 from flask import render_template
 from flask import Response, request, jsonify
 
 # Importing the lessons and quiz questions
 from lessons import lessons
 from questions import quiz_questions
-
+progress = "0%"
 app = Flask(__name__)
 
-score = 0
+
 
 ########################
 #        ROUTES        #
@@ -20,16 +20,37 @@ def home():
 
 @app.route('/results')
 def results():
-    global quiz_questions 
-    global score
-    tmp = score 
+    global quiz_questions
+    for question_id, question_data in quiz_questions.items():
+        if question_data['answersLocked'] == False:
+            quiz_id = question_data['quiz_id']
+            return redirect(url_for('quiz', quiz_id=quiz_id))
+     
     score = 0
+    for question_id, question_data in quiz_questions.items():
+    
+        client_response = question_data["client_response"]
+        correct_answer = question_data["panswers"][question_data["answer"]]
+    
+    
+        if client_response == correct_answer:
+       
+            score += 1
     total = int(len(quiz_questions))
-    return render_template('results.html', score = tmp, total=total)
+    return render_template('results.html', score = score, total=total, questions = quiz_questions)
 
 @app.route('/learn')
 def learn():
     return render_template('learn.html')
+
+@app.route('/go_to_quiz')
+def go_to_quiz():
+    goto = "0"
+    for question_id, question_data in quiz_questions.items():
+        if question_data['answersLocked'] == False:
+            goto = question_data['quiz_id']
+            break;
+    return goto
 
 @app.route('/quiz_start')
 def quiz_start():
@@ -51,7 +72,26 @@ def lesson_complete(module_id):
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
     question = quiz_questions[quiz_id]
-    return render_template('quiz.html', question = question, index=quiz_id)
+    for i in range(1, int(quiz_id)):
+        i_str = str(i)
+        if quiz_questions[i_str]['answersLocked'] == False:
+            quiz_id = quiz_questions[i_str]['quiz_id']
+            question = quiz_questions[quiz_id]
+            return redirect(url_for('quiz', quiz_id=quiz_id))
+            break;
+    return render_template('quiz.html', question = question, index=quiz_id, progress=progress)
+
+@app.route('/retake')
+def retake():
+    global progress
+    quiz_id = "1"
+    progress = "0%"
+    question = quiz_questions[quiz_id]
+    for question_id, question_data in quiz_questions.items():
+        question_data['answersLocked'] = False
+        question_data['client_response'] = ""
+
+    return render_template('quiz.html', question = question, index=quiz_id, progress=progress)
 
 @app.route('/client', methods=['POST'])
 def client():
@@ -72,19 +112,26 @@ def client():
 
 @app.route('/answer', methods=['POST'])
 def answer():
-    
+   global progress
    data = request.json
    answer_index = int(data.get('answerIndex'))
    quizID = data.get('quizId')
    if answer_index == quiz_questions[quizID]['answer']:
         result = "Correct!"
-        global score 
-        score += 1
+        
    else:
         result = "Wrong, the correct answer was: " + quiz_questions[quizID]['panswers'][quiz_questions[quizID]['answer']]
 
    quiz_questions[quizID]['result'] = result
+   quiz_questions[quizID]['answersLocked'] = True
    quiz_questions[quizID]['client_response'] = quiz_questions[quizID]['panswers'][answer_index]
+   progress_value = int(progress[:-1])  # Remove the '%' sign and convert to integer
+    # Increase progress by 10%
+   progress_value += 10
+    # Limit progress to 100%
+   progress_value = min(progress_value, 100)
+    # Convert progress back to string format
+   progress = f"{progress_value}%"
    
    return result
 

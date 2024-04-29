@@ -4,7 +4,8 @@
 {% block content %}
 <script type="text/javascript">
         let question = {{question|tojson}}
-        let index = {{index|tojson}}
+        let index = {{ index| tojson}}
+        let progress = {{ progress| tojson}}
 </script>
 
 
@@ -18,11 +19,9 @@
             <div class="row">
                 <div class="card2">
                     {% for card_image in question.card_images_dealer %}
-                    
-                    <div class="card1"><img src="{{ card_image }}" /></div>
-                    
+                    <div class="card1 moveDealerCard{{ loop.index }}"><img src="{{ card_image }}" /></div>
                     {% endfor %}
-
+                    <div class="col-5"></div><div class="cardback"><img src="/../static/assets/images/back.png" /></div>
                 </div>
             </div>
             <div class="buffer"></div>
@@ -30,7 +29,7 @@
                 <div class="card2">
                     {% for card_image in question.card_images_player %}
 
-                    <div class="card1"><img src="{{ card_image }}" /></div>
+                    <div class="card1 movePlayerCard{{ loop.index }}"><img src="{{ card_image }}" /></div>
                     
                     {% endfor %}
 
@@ -79,7 +78,7 @@
 
 <div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
  
-    <div class="progress-bar text-bg-success progress-bar-striped progress-bar-animated" style="width: {{ question.progress }}">{{ question.progress }}</div>
+    <div class="progress-bar text-bg-success progress-bar-striped progress-bar-animated" style="width: {{ progress }}">{{ progress }}</div>
  
 </div>
 
