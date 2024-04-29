@@ -34,6 +34,11 @@ def results():
 def learn():
     return render_template('learn.html')
 
+
+@app.route('/learn_table')
+def learn_table():
+    return render_template('learn_table.html')
+
 @app.route('/quiz_start')
 def quiz_start():
     return render_template('quiz_start.html')
