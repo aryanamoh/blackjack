@@ -1,18 +1,20 @@
 
 $(document).ready(function(){
 
-    if(Number.isInteger(lesson.next_module_id)){
-        $("#next_module_button").empty().text("MOVE TO MODULE " + lesson.next_module_id);
-    }
-    else{
+    console.log(next_module_id);
+
+    if(next_module_id == "Quiz"){
         $("#next_module_button").empty().text("START THE QUIZ");
+    }else{
+        $("#next_module_button").empty().text("MOVE TO MODULE " + next_module_id);
     }
 
     $("#next_module_button").click(function(){
-        if("{{lesson.next_module_id}}" == "Quiz"){
+        
+        if(next_module_id == "Quiz"){
             window.location.href = "/quiz_start"
         }else{
-            window.location.href = "/lesson/{{lesson.next_module_id}}/1"
+            window.location.href = "/lesson/" + next_module_id + "/1"
         }
     })
 

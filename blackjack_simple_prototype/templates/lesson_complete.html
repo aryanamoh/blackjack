@@ -1,13 +1,6 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <script type="text/javascript">
-
-        // lesson["next_module_id"]
-        let lesson = {{lesson|tojson}}
-        
-    </script>
-  
 
     <div class="row center py-4">
 
@@ -20,6 +13,11 @@
         </div>
     </div>
 
- 
+    <script type="text/javascript">
+        let lesson = {{lesson|tojson}}
+        let next_module_id = '{{lesson["next_module_id"]}}'
+    </script>
     <script type="text/javascript" src="{{ url_for('static', filename = 'js/lesson_complete.js') }}"></script>
+    
+
 {% endblock %}
