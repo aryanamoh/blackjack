@@ -4,8 +4,14 @@ quiz_questions = {
         "1":{
             "quiz_id": "1",
             "quiz_question": "What are the possible values of this hand?",
-            "media":"https://decksandstacks.com/wp-content/uploads/2023/07/Example-of-a-soft-hand-in-Blackjack.png",
-            "media_alt":"Quiz question 1 media alt text",
+           'card_images_dealer': [
+            '/../static/assets/images/diamondjoker.png',
+            '/../static/assets/images/diamondjoker.png'
+            ],
+            'card_images_player': [
+            '/../static/assets/images/diamondjoker.png',
+            '/../static/assets/images/diamondjoker.png'
+            ],
             "panswers": ["16 and 6", "15 and 6", "16 only", "15 only"],
             "answer": 0,
             "next_question": "2",
