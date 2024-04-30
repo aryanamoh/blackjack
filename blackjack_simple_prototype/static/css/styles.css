@@ -177,13 +177,9 @@ p {
 
 
 .card-table {
-    background-color: #3b5323; /* Green fill color */
-    border: 2px solid #A9A9A9; /* Thin grey border */
-    border-radius: 25px; /* Rounded corners for a nicer look */
     width: 700px; /* Adjust width as needed */
-    height: 600px; /* Adjust height as needed */
+    height: 450px; /* Adjust height as needed */
     padding: 20px; /* Add some padding inside the table */
-    padding-bottom: 20px;
 }
 .questionnum {
     text-align:center;
@@ -218,15 +214,16 @@ p {
     height: 350px;
     border: 2px solid #A9A9A9;
     border-radius: 25px;
-    background: #eee;
+    /* background: #eee; */
     margin-left: 58px;
+    border-width: 1px;
 }
 .question_result {
     /* font-size: 22px; */
     /* padding-top: 10px; */
     padding-left: 40px;
-    
 }
+
 .question_result2 {
     /* font-size: 22px; */
     /* padding-top: 10px; */
@@ -268,6 +265,11 @@ p {
     height: 75px;
     font-size: 30px;
 } */
+
+button {
+  font-size: 18px !important;
+}
+
 @keyframes moveDealerCardAnimation1 {
     0% {
         transform: translate(378%, 0%);
@@ -417,16 +419,21 @@ dark-green {
 }
 
 #learn-table {
+    width: 1000px;
+    height: 550px !important;
+}
+
+#learn-table, .card-table {
     background-color: var(--table-color);
     border: 2px solid black;
     border-radius: 30px;
     padding: 20px;
     margin: 20px;
     color: white;
-    width: 1000px;
-    height: 500px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 }
+
+
 
 .center-div {
   margin: auto !important;
@@ -444,4 +451,8 @@ dark-green {
 
 .module-text {
     z-index: 5;
+}
+
+.module-card {
+    background-image: url('/../assets/images/green_shadow_card.png');
 }

@@ -6,7 +6,6 @@
 
     <div class="col">
         <h1 id="title_header" class="outfit-900">QUIZ COMPLETE</h1>
-       
         <div class="score" style="color: {% if score >= 8 %}green{% elif score >= 5 %}orange{% else %}red{% endif %};">
             <p>{{ score }}/{{ total }}
             {% if score >= 8 %}
@@ -15,6 +14,7 @@
             <span class="result-text">Needs Work!</span>
             {% else %}
             <span class="result-text">Try again!</span>
+
             {% endif %} </p>
         </div>
     </div>
@@ -85,6 +85,13 @@
     </div>
 </div>
 <!--
+
+            {% endif %}
+            </p>
+        </div>
+    </div>
+</div>
+
 <div class="results_box">
     <div class="row">
         <div class="youranswers">Your Answers:</div>
