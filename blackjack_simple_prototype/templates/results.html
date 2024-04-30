@@ -2,14 +2,10 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-
-<br>
-<!-- This creates the possible answers for each given question in DB -->
-<div class="row center">
+<div class="row center pt-2">
 
     <div class="col">
         <h1 id="title_header" class="outfit-900">QUIZ COMPLETE</h1>
-
         <div class="score" style="color: {% if score >= 8 %}green{% elif score >= 5 %}orange{% else %}red{% endif %};">
             <p>{{ score }}/{{ total }}
             {% if score >= 8 %}
@@ -18,12 +14,83 @@
             <span class="result-text">Needs Work!</span>
             {% else %}
             <span class="result-text">Try again!</span>
+
+            {% endif %} </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col">
+        <div class="card center-div">
+            <div class="card-body">
+                <div class="row">
+                    <p class="card-text">Your Answers:</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-6">
+            
+                        {% for question_id, question_data in questions.items() %}
+                        {% if loop.index <= 5 %}
+                        <div class="question_result">
+                            <p>
+                                Question #<a href="/quiz/{{loop.index}}">{{loop.index}}</a>: {{question_data.client_response}}
+                                {% if question_data.client_response == question_data.panswers[question_data.answer] %}
+                                <i class="fas fa-circle" style="color: #4e8c57; "></i>
+                                {% else %}
+                                <i class="fas fa-ban" style="color: grey;"></i>
+                                {% endif %}
+                            </p>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-4">
+            
+                        {% for question_id, question_data in questions.items() %}
+                        {% if loop.index > 5 %}
+                        <div class="question_result2">
+                            <p>
+                                Question #<a href="/quiz/{{loop.index}}">{{loop.index}}</a>: {{question_data.client_response}}
+                                {% if question_data.client_response == question_data.panswers[question_data.answer] %}
+                                <i class="fas fa-circle" style="color: #4e8c57; "></i>
+                                {% else %}
+                                <i class="fas fa-ban" style="color: grey;"></i>
+                                {% endif %}
+                            </p>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1"></div>
+</div>
+
+
+<div class="row center pt-4">
+
+    <div class="col">
+      
+        <button class="btn btn-outline-secondary" type="button" id="retake_button"> RETAKE THE QUIZ </button>
+        <button class="btn btn-primary" type="button" id="home_button"> RETURN HOME </button>
+ 
+    </div>
+</div>
+<!--
+
             {% endif %}
             </p>
         </div>
     </div>
 </div>
-
 
 <div class="results_box">
     <div class="row">
@@ -62,8 +129,9 @@
             {% endif %}
             {% endfor %}
         </div>
-        </div>
     </div>
+</div>
+
 <div class="button-container">
     <div class="row">
         <div class="col-2"></div>
@@ -73,11 +141,10 @@
         <div class="col-4">
             <button class="btn btn-primary" type="button" id="home_button">HOME </button>
         </div>
-        </div>
-
     </div>
-    <br>
-    <br>
+</div>
+-->
+
 
     <script type="text/javascript" src="{{ url_for('static', filename = 'js/results.js') }}"></script>
 

@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // Function to handle button click event
-    $("#startQuizButton").click(function () {
+    $("#start_quiz_button").click(function () {
         // Perform AJAX call
         $.ajax({
             url: "/go_to_quiz",
@@ -19,5 +19,9 @@ $(document).ready(function () {
                 }
             }
         });
+    });
+
+    $("#return_home_button").click(function () {
+        window.location.href = "/";
     });
 });

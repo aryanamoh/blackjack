@@ -1,16 +1,17 @@
 :root {
-  --accent-color: #4e8c57; /* dark green */
-  --main-color: rgb(108, 179, 112); /* light green */
+  --accent-color: #14532F;/*#4e8c57;  dark green */
+  --main-color: #7FB285; /* light green */
   --table-color: rgb(20,83,47);
   --light-gray: #aaaaaa;
   --dark-gray: #6c757d;
 }
 
-.outfit-400 {
+.outfit-400 {   
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+  font-size: large;
 }
 
 .outfit-900 {
@@ -222,14 +223,15 @@ p {
     border-width: 1px;
 }
 .question_result {
-    padding-top: 20px;
+    /* font-size: 22px; */
+    /* padding-top: 10px; */
     padding-left: 40px;
 }
+
 .question_result2 {
-    font-size: 22px;
-    padding-top: 20px;
+    /* font-size: 22px; */
+    /* padding-top: 10px; */
     padding-left: 60px;
-    
 }
 .fa-circle {
     font-size: 16px;
@@ -271,6 +273,7 @@ p {
 button {
   font-size: 24px !important;
 }
+
 @keyframes moveDealerCardAnimation1 {
     0% {
         transform: translate(378%, 0%);
@@ -280,6 +283,41 @@ button {
         transform: translate(190%, 0);
     }
     /* Move cards to their final position */
+}
+
+card-container {
+  width: 100%;  /* Container takes full width of the body */
+  height: 100%; /* Container takes full height of the body */
+  display: flex; /* Enables flexbox */
+  justify-content: space-between; /* Spaces children evenly */
+  align-items: center; /* Vertically center children */
+  padding: 0 5%; /* Optional: Adds padding on the sides */
+  flex-wrap: nowrap;
+  flex-wrap: unset;
+}
+
+
+.box {
+  width: 20%;  /* Each box takes up 40% of the container width */
+  height: 80%; /* Each box takes up 80% of the container height */
+  display: flex; /* To center content inside each box */
+  justify-content: space-around; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  /* background-color: #f0f0f0; /* Just for visibility */
+  /* border: 1px solid #ccc; /* Just for visibility */
+}
+
+/* Additional styling to differentiate the boxes if needed */
+.left {
+  margin-right: 10%; /* Optional space between boxes */
+}
+
+.right {
+  margin-left: 10%; /* Optional space between boxes */
+}
+
+dark-green {
+    background-color: #2e6643; /* dark green border */
 }
 
 @keyframes moveDealerCardAnimation2 {
@@ -399,4 +437,17 @@ button {
 .center-div {
   margin: auto !important;
 }
+.answerResult {
+    display: none;
+    font-size: 35px;
+    color: #4e8c57;
+    padding-top: 20px;
+}
 
+.module-img {
+    z-index: 1;
+}
+
+.module-text {
+    z-index: 5;
+}

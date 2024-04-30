@@ -4,12 +4,22 @@
 
     <div class="row center py-4">
 
+        <div class="col-md-3">
+            <img src="{{ url_for('static', filename = 'assets/images/diamondjoker.png') }}" class="" style="width:150px; transform: rotate(310deg) translate(0px, 10px);" alt="Basic Strategy Chart">
+            <img src="{{ url_for('static', filename = 'assets/images/diamondjoker.png') }}" class="" style="width:150px; transform: rotate(10deg) translate(20px, 10px);" alt="Basic Strategy Chart">
+        </div>
+
         <div class="col">
             <h1 id="title_header" class="outfit-900">GOOD WORK</h1>
             <p>You completed Module {{module_id}}!</p>
             <br> <br> <br>
             <button id="return_home_button" class="btn btn-outline-secondary">RETURN HOME</button>
             <button id="next_module_button" class="btn btn-primary">NEXT</button>
+        </div>
+
+        <div class="col-md-3">
+            <img src="{{ url_for('static', filename = 'assets/images/diamondjoker.png') }}" class="" style="width:150px; transform: rotate(500deg) translate(0px, 150px);" alt="Basic Strategy Chart">
+            <img src="{{ url_for('static', filename = 'assets/images/diamondjoker.png') }}" class="" style="width:150px; transform: rotate(280deg) translate(0px, 150px);" alt="Basic Strategy Chart">
         </div>
     </div>
 

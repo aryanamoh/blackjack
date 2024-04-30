@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var steps = [
-      { selector: '#learn-table', message: 'This is the blackjack table.' }
+      { selector: '#learn-table', message: 'This is the blackjack table.' },
+      { selector: '#card_on_table', message: 'This is a card on the table.' }
       // Add more steps as needed
     ];
     var currentStep = 0;

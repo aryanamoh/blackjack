@@ -1,11 +1,54 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <h1>Learning Modules</h1>
+    <div class="row center py-4">
+
+        <div class="col-2">
+        </div>
+        <div class="col">
+            <h1 id="title_header" class="outfit-900">LEARNING MODULES</h1>
+            <p>Click on a module to begin!</p>
+
+            <div class="row pt-3">
+                <div class="col">
+                    <div class="card-module">
+                        <img class="module-img" src="{{ url_for('static', filename = 'assets/images/green_shadow_card.png') }}">
+                    </div>
+                    <!--
+                    <div class="card center-div">
+                        <div class="card-body">
+                            <h5 class="card-title">Lesson 1</h5>
+                            <p class="card-text">Introduction to Blackjack</p>
+                            <a href="/lesson/1/1" class="btn btn-primary">START</a>
+                        </div>
+                    </div>
+                    -->
+                </div>
+                <div class="col">
+                    <div class="card-module">
+                        <img class="module-img" src="{{ url_for('static', filename = 'assets/images/green_shadow_card.png') }}">
+                    </div>
+                    <!--
+                    <div class="card center-div">
+                        <div class="card-body">
+                            <h5 class="card-title">Lesson 2</h5>
+                            <p class="card-text">Basic Strategy</p>
+                            <a href="/lesson/2/1" class="btn btn-primary">START</a>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            </div>
+    </div>
     
+    <!--
     <div class="row">
-        <div class="col-4">
-            <div class="card">
+        <div class="col-3"></div>
+        <div class="col-3">
+            <div class="card center-div">
                 <div class="card-body">
                     <h5 class="card-title">Lesson 1</h5>
                     <p class="card-text">Introduction to Blackjack</p>
@@ -13,8 +56,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-4">
-            <div class="card">
+        <div class="col-3">
+            <div class="card center-div">
                 <div class="card-body">
                     <h5 class="card-title">Lesson 2</h5>
                     <p class="card-text">Basic Strategy</p>
@@ -22,6 +65,7 @@
                 </div>
             </div>
         </div>
+        <div class="col-3"></div>
     </div>
-
+-->
 {% endblock %}
