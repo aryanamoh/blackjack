@@ -218,15 +218,16 @@ p {
     height: 350px;
     border: 2px solid #A9A9A9;
     border-radius: 25px;
-    background: #eee;
+    /* background: #eee; */
     margin-left: 58px;
+    border-width: 1px;
 }
 .question_result {
     /* font-size: 22px; */
     /* padding-top: 10px; */
     padding-left: 40px;
-    
 }
+
 .question_result2 {
     /* font-size: 22px; */
     /* padding-top: 10px; */
@@ -268,6 +269,11 @@ p {
     height: 75px;
     font-size: 30px;
 } */
+
+button {
+  font-size: 24px !important;
+}
+
 @keyframes moveDealerCardAnimation1 {
     0% {
         transform: translate(378%, 0%);
