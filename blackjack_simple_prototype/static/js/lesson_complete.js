@@ -4,7 +4,7 @@ $(document).ready(function(){
     console.log(next_module_id);
 
     if(next_module_id == "Quiz"){
-        $("#next_module_button").empty().text("START THE QUIZ");
+        $("#next_module_button").empty().text("CONTINUE");
     }else{
         $("#next_module_button").empty().text("MOVE TO MODULE " + next_module_id);
     }
