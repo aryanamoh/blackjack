@@ -71,7 +71,10 @@ $(document).ready(function() {
         console.log(response);
         $("#quiz_next_button").show();
         $("#submit_button").hide();
-        if (response !== "Correct!") { $("#popup").fadeIn(); }
+          if (response !== "Correct!") { $("#popup").fadeIn(); }
+          else {
+              $(".answerResult").css("display", "block");
+          }
         $("#popup_text").text(response);
         if (question.next_question == "end") {
           $(".progress-bar").css("width", "100%");
