@@ -77,7 +77,6 @@ def lesson_complete(module_id):
     lesson = lessons[module_id]
     return render_template('lesson_complete.html', module_id = module_id, lesson = lesson)
 
-
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
     question = quiz_questions[quiz_id]
