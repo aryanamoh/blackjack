@@ -431,3 +431,9 @@ dark-green {
 .center-div {
   margin: auto !important;
 }
+.answerResult {
+    display: none;
+    font-size: 35px;
+    color: #4e8c57;
+    padding-top: 20px;
+}
