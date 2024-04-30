@@ -85,23 +85,35 @@
         })
     </script>
 
-    <h1>Learning Modules<h1>
+    <div class="row">
+        <div id="learn-table" class="center-div">     
+            <img id="card_on_table" src="{{ url_for('static', filename = 'assets/images/JDiamond.png') }}" alt="Learn Table" style="width: 100px; height: auto; transform: translate(400px, 20px);">
+        </div>
+    </div>
+
+    <div class="center pt-4">
+        <button id="back_button" type="button" class="btn btn-outline-secondary">BACK</button>
+        <button id="next_button" type="button" class="btn btn-primary">NEXT</button>
+    </div>
+
+
+    <!--<h1>Learning Modules<h1>
     
     <h3>Lesson: {{lesson.title}}</h3>
     <div id="lesson_text"></div>
     <button id="next_lesson" type="button" class="btn">Next Text Blurb</button>
    
-    <!-- If we want to store images locally, this syntax tends to work 
+     If we want to store images locally, this syntax tends to work 
     <img src="{{ url_for('static', filename=lesson.media) }}" alt="Testing">
 
     ** Just make sure you have the relative path as the "media" value for the 
     specific object, ie: "media":"/assets/images/diamondjoker.png" as an example
-    -->
+    
 
     <br>
-    <!-- <img class="lesson-img" src="{{lesson.media}}" alt="{{lesson.media_alt}}"> -->
+   <img class="lesson-img" src="{{lesson.media}}" alt="{{lesson.media_alt}}"> 
     <div class="row">
-      <!-- Allowing for the iteration of each lesson text and mapped card images -->
+    Allowing for the iteration of each lesson text and mapped card images
       
       <div class="col-2 dark-green" style="margin-left:35%;">
           <div class="row container card-container" id="dealer_hand" style="flex-wrap: unset;">
@@ -136,11 +148,9 @@
   
     </div>
     <br> <br>
-
+-->
     <!-- Send user back to module selection if they clicked "back" at first lesson within module-->
-    <button id="back_button" type="button" class="btn btn-outline-secondary">Back</button>
-    <button id="next_button" type="button" class="btn">Next</button>
-
+    
 
     <br>
     <br>
