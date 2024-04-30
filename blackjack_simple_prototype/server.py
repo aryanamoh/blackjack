@@ -54,7 +54,7 @@ def go_to_quiz():
     for question_id, question_data in quiz_questions.items():
         if question_data['answersLocked'] == False:
             goto = question_data['quiz_id']
-            break;
+            break
     return goto
 
 @app.route('/learn_table')

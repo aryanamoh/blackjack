@@ -5,18 +5,26 @@
 
 <br>
 <!-- This creates the possible answers for each given question in DB -->
+<div class="row center">
 
-<div class="congrats">Quiz Complete!</div>
-<div class="score" style="color: {% if score >= 8 %}green{% elif score >= 5 %}orange{% else %}red{% endif %};">
-    {{ score }}/{{ total }}
-    {% if score >= 8 %}
-    <span class="result-text">Nice job!</span>
-    {% elif score >= 5 %}
-    <span class="result-text">Needs Work!</span>
-    {% else %}
-    <span class="result-text">Try again!</span>
-    {% endif %}
+    <div class="col">
+        <h1 id="title_header" class="outfit-900">QUIZ COMPLETE</h1>
+
+        <div class="score" style="color: {% if score >= 8 %}green{% elif score >= 5 %}orange{% else %}red{% endif %};">
+            <p>{{ score }}/{{ total }}
+            {% if score >= 8 %}
+            <span class="result-text">Nice job!</span>
+            {% elif score >= 5 %}
+            <span class="result-text">Needs Work!</span>
+            {% else %}
+            <span class="result-text">Try again!</span>
+            {% endif %}
+            </p>
+        </div>
+    </div>
 </div>
+
+
 <div class="results_box">
     <div class="row">
         <div class="youranswers">Your Answers:</div>
@@ -60,10 +68,10 @@
     <div class="row">
         <div class="col-2"></div>
         <div class="col-4">
-            <button class="btn btn-outline-secondary" type="button" id="retake_button"> Retake </button>
+            <button class="btn btn-outline-secondary" type="button" id="retake_button"> RETAKE </button>
             </div>
         <div class="col-4">
-            <button class="btn btn-outline-secondary" type="button" id="home_button">Home </button>
+            <button class="btn btn-primary" type="button" id="home_button">HOME </button>
         </div>
         </div>
 
