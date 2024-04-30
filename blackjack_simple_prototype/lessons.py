@@ -178,7 +178,7 @@ lesson_media = [
         
         [
             (4, "clubs"),
-            (10, "diamonds"),
+            ("back", "card"),
             (9, "spades"),
             (2, "hearts"),
             (9, "spades"),
@@ -371,9 +371,9 @@ lessons = {
                           ["This is called Hitting","player"],
                           ["Your new card gives you a total of 20. It would be hard to get 21 from here, so you want to Stand","player"],
                           ["Standing means you're done and it's the next player's turn.","player_dealer"],
-                          ["Since you chose to stand, it is now the dealer's turn","dealer_player"],
-                          ["The dealer reveals they had a 10.","dealer_player"],
-                          ["The dealer is required to hit when their hand is under 17.","dealer_player"],
+                          ["Since you chose to stand, it is now the dealer's turn","player_dealer"],
+                          ["The dealer reveals they had a 10.","player_dealer"],
+                          ["The dealer is required to hit when their hand is under 17.","player_dealer"],
                           ["They draw another 10 for a total of 24. Since they have more than 21 they Bust!","dealer_player"],
                           ["Busting means your hand is more than 21 and you lose.","dealer_player"]
                         ],
@@ -426,7 +426,7 @@ lessons = {
                           ["If the dealer shows an ace, you'll be offered Insurance. Don't Take It. EVER!","dealer"],
                           ['''Insurance is a house advantage. 
                            If you take it and they have 21, you won't lose your bet. 
-                           But it's never worth it.''',"dealer"],
+                           But it's never worth it.''',"player_dealer"],
                           ],
             "media_array" : list_of_cards(5)
         },
