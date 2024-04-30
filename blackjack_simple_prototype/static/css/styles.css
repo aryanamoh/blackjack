@@ -1,3 +1,25 @@
+:root {
+  --accent-color: #4e8c57; /* dark green */
+  --main-color: rgb(108, 179, 112); /* light green */
+  --table-color: rgb(20,83,47);
+  --light-gray: #aaaaaa;
+  --dark-gray: #6c757d;
+}
+
+.outfit-400 {   
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.outfit-900 {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
 #quiz_next_button {
    display: none;
 }
@@ -57,7 +79,7 @@
 }
 
 .close {
-  color: #aaa;
+  color: var(--light-gray);
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -79,7 +101,7 @@
 }
 
 .answer-container {
-    border: 2px solid #2e6643; /* dark green border */
+    border: 2px solid var(--accent-color); /* dark green border */
     border-radius: 10px; /* rounded corners */
     width: 95%; /* fill 95% of its container's width */
     margin: 0 auto; /* center the div horizontally */
@@ -104,34 +126,157 @@ img {
 }
 
 .navbar {
-    background-color: #6cb370; /* light green */
+    background-color: var(--main-color); /* light green */
 }
 
 .button-container {
   text-align: center; /* This will center the buttons within the container */
   padding: 10px 0; /* Add some padding for spacing above and below */
+  padding-top: 20px;
 }
 
-.btn {
-   --bs-btn-bg: #6cb370 !important; /* light green */
-    color: #fff; /* white */
-    --bs-btn-border-color: 2px solid #4e8c57 !important;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    /* transition: background-color 0.3s ease; */
-    margin: 0 5px;
+.btn-outline-secondary {
+  --bs-btn-color: var(--accent-color) !important;
+  --bs-btn-border-color: var(--accent-color) !important;
+  --bs-btn-hover-bg: var(--accent-color) !important;
+  --bs-btn-hover-border-color: var(--accent-color) !important;
+  --bs-btn-active-bg: var(--accent-color) !important;
+  --bs-btn-active-border-color: var(--accent-color) !important;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--accent-color) !important;
+  --bs-btn-border-color: var(--accent-color) !important;
+  --bs-btn-hover-bg: var(--accent-color) !important;
+  --bs-btn-hover-border-color: var(--accent-color) !important;
+  --bs-btn-active-bg: var(--accent-color) !important;
+  --bs-btn-active-border-color: var(--accent-color) !important;
+  --bs-btn-disabled-bg: var(--accent-color) !important;
+  --bs-btn-disabled-border-color: var(--accent-color) !important;
+}
+
+.pad {
+    padding: 60px;
+}
+
+.center {
+    text-align: center;
 }
 
 
-button {
-    background-color: #6cb370; /* light green */
-    color: #fff; /* white */
-    border: 2px solid #4e8c57;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    /* transition: background-color 0.3s ease; */
+#title_header {
+    font-size: 60px;
+    font-weight: 700;
+    margin-top: 40px;
+}
+
+p {
+    font-size: 24px;
+}
+
+
+.card-table {
+    background-color: #3b5323; /* Green fill color */
+    border: 2px solid #A9A9A9; /* Thin grey border */
+    border-radius: 25px; /* Rounded corners for a nicer look */
+    width: 700px; /* Adjust width as needed */
+    height: 600px; /* Adjust height as needed */
+    padding: 20px; /* Add some padding inside the table */
+    padding-bottom: 20px;
+}
+.questionnum {
+    text-align:center;
+    font-size: 25px;
+}
+.thequestion {
+    text-align: center;
+    padding-bottom: 20px;
+}
+.card1 {
+    width: 100px;  
+    height: 150px;
+    z-index: 1;
+}
+.cardback {
+    width: 100px;
+    height: 150px;
+    z-index: 25;
+    background-image: url('/../assets/images/back.png');
+}
+.card2 {
+    width: 100px;
+    height: 150px;
+    display: flex;
+    justify-content:center;
+}
+.buffer {
+    height: 270px;
+}
+.results_box {
+    width: 1170px;
+    height: 350px;
+    border: 2px solid #A9A9A9;
+    border-radius: 25px;
+    background: #eee;
+    margin-left: 58px;
+}
+.question_result {
+    font-size: 22px;
+    padding-top: 20px;
+    padding-left: 40px;
+    
+}
+.question_result2 {
+    font-size: 22px;
+    padding-top: 20px;
+    padding-left: 60px;
+    
+}
+.fa-circle {
+    font-size: 16px;
+    padding-left: 10px;
+}
+.fa-ban {
+    font-size: 16px;
+    padding-left: 10px;
+}
+.youranswers {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 25px;
+}
+.congrats {
+    text-align: center;
+    font-size: 50px;
+    padding-bottom: 10px;
+}
+.score {
+    text-align: center;
+    font-size: 35px;
+    padding-bottom: 30px;
+}
+.result-text {
+    color: black;
+}
+#retake_button {
+    width: 150px;
+    height: 75px;
+    font-size: 30px;
+}
+#home_button {
+    width: 150px;
+    height: 75px;
+    font-size: 30px;
+}
+@keyframes moveDealerCardAnimation1 {
+    0% {
+        transform: translate(378%, 0%);
+    }
+    /* Move cards off-screen to the top left */
+    100% {
+        transform: translate(190%, 0);
+    }
+    /* Move cards to their final position */
 }
 
 card-container {
@@ -167,4 +312,122 @@ card-container {
 
 dark-green {
     background-color: #2e6643; /* dark green border */
+}
+
+@keyframes moveDealerCardAnimation2 {
+    0% {
+        transform: translate(380%, 0%);
+    }
+    /* Move cards off-screen to the top left */
+    100% {
+        transform: translate(189%, 0);
+    }
+    /* Move cards to their final position */
+}
+
+@keyframes movePlayerCardAnimation1 {
+    0% {
+        transform: translate(280%, -280%);
+    }
+    /* Move cards off-screen to the top left */
+    100% {
+        transform: translate(0, 0);
+    }
+    /* Move cards to their final position */
+}
+
+@keyframes movePlayerCardAnimation2 {
+    0% {
+        transform: translate(190%, -280%);
+    }
+    /* Move cards off-screen to the top left */
+    100% {
+        transform: translate(0, 0);
+    }
+    /* Move cards to their final position */
+}
+
+.moveDealerCard1 {
+    transform: translate(476%, 0%);
+    animation: moveDealerCardAnimation1 1s forwards;
+    animation-delay: 1s;
+    z-index: 1
+}
+
+.moveDealerCard2 {
+    transform: translate(375%, 0%);
+    animation: moveDealerCardAnimation2 1s forwards;
+    animation-delay: 2s;
+    z-index: 1
+}
+
+.movePlayerCard1 {
+    transform: translate(288%, -280%);
+    animation: movePlayerCardAnimation1 1s forwards;
+    animation-delay: 0.5s;
+    z-index: 1
+}
+
+.movePlayerCard2 {
+    transform: translate(188%, -280%);
+    animation: movePlayerCardAnimation2 1s forwards;
+    animation-delay: 1.5s;
+    z-index: 1
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: none;
+}
+
+.highlight {
+  position: absolute;
+  box-sizing: border-box;
+  z-index: 99999;
+  box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
+  border-radius: 10px;
+}
+
+.walkthrough-popup {
+  position: absolute;
+  max-width: 300px; /* Adjust max-width as needed */
+  top: 0; /* Initial position, will be updated by JavaScript */
+  left: 0; /* Initial position, will be updated by JavaScript */
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 100000; /* Higher than highlight */
+}
+
+.walkthrough-popup .message {
+  margin-bottom: 10px;
+}
+
+.next-step {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 100001; /* Higher than popup */
+}
+
+#learn-table {
+    background-color: var(--table-color);
+    border: 2px solid black;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 20px;
+    color: white;
+    width: 1000px;
+    height: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.center-div {
+  margin: auto !important;
 }

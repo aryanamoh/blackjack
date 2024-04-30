@@ -4,64 +4,81 @@
 {% block content %}
 <script type="text/javascript">
         let question = {{question|tojson}}
-        let index = {{index|tojson}}
+        let index = {{ index| tojson}}
+        let progress = {{ progress| tojson}}
 </script>
-<div class="row">
-<div class="col-1">
-</div>
-<div class="col-10">
-  <h3>Question #{{index}}</h3>
-</div>
-<div class="col-1">
-</div>
-</div>
+
 
 <div class="row">
-<div class="col-1">
-</div>
-<div class="col-5">
-  {{question.quiz_question}}
-<br>
-<br>
 
-<img class="quiz-img" src="{{question.media}}" alt="{{question.media_alt}}">
-</div>
-<br>
+    <div class="col-6">
+        
+        <br>
+        <br>
+        <div class="card-table">
+            <div class="row">
+                <div class="card2">
+                    {% for card_image in question.card_images_dealer %}
+                    <div class="card1 moveDealerCard{{ loop.index }}"><img src="{{ card_image }}" /></div>
+                    {% endfor %}
+                    <div class="col-5"></div><div class="cardback"><img src="/../static/assets/images/back.png" /></div>
+                </div>
+            </div>
+            <div class="buffer"></div>
+            <div class="row">
+                <div class="card2">
+                    {% for card_image in question.card_images_player %}
 
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="close">&times;</span>
-    <p id="popup_text">This is a popup!</p>
-  </div>
+                    <div class="card1 movePlayerCard{{ loop.index }}"><img src="{{ card_image }}" /></div>
+                    
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <p id="popup_text">This is a popup!</p>
+        </div>
+    </div>
+    <div class="col-1">
+    </div>
+    <div class="col-5">
+        <div class="row">
+            <div class="questionnum">Question #{{index}}</div>
+            <div class="thequestion">{{question.quiz_question}}</div>
+        </div>
+        <div class="answer-container">
+            {% for answer in question.panswers %}
+            <!-- This creates the possible answers for each given question in DB -->
+            <input type="radio" id="answer{{loop.index}}" name="answer" value="{{answer}}">
+            <label for="answer{{loop.index}}">{{answer}}</label>
+            <br>
+            {% endfor %}
+        </div>
+        <div class="button-container">
+            <button class="btn btn-outline-secondary" type="button" id="back_button"> Back </button>
+            <button class="btn btn-primary" type="button" id="submit_button"> Submit </button>
+
+            <button class="btn btn-primary" id="quiz_next_button"> Next </button>
+        </div>
+    </div>
+
 </div>
 
-<div class="col-5">
-  <div class="answer-container">
-    {% for answer in question.panswers %}
-    <!-- This creates the possible answers for each given question in DB -->
-<input type="radio" id="answer{{loop.index}}" name="answer" value="{{answer}}">
-<label for="answer{{loop.index}}">{{answer}}</label>
-<br>
-    {% endfor %}
-  </div>
-</div>
-<div class="col-1">
-</div>
-</div>
 
-<div class="button-container">
-<button class="btn" type="button" id="back_button"> Back </button>
-<button class="btn" type="button" id="submit_button"> Submit </button>
-
-<button class="btn" id="quiz_next_button"> Next </button>
-</div>
 
 <br>
 <br>
 
 <div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
  
-    <div class="progress-bar text-bg-success progress-bar-striped progress-bar-animated" style="width: {{ question.progress }}">{{ question.progress }}</div>
+    <div class="progress-bar text-bg-success progress-bar-striped progress-bar-animated" style="width: {{ progress }}">{{ progress }}</div>
  
 </div>
 
