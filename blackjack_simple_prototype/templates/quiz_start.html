@@ -3,18 +3,33 @@
 
 {% block content %}
 
-<h1>Quiz</h1>
+<div class="row center py-4">
 
-<div class="row">
-    <div class="col-6">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Quiz</h5>
-                <p class="card-text">Blackjack Quiz</p>
-                <button id="startQuizButton" class="btn btn-primary">Start</button>
-            </div>
-        </div>
+    <div class="col-md-3"> 
+        <img src="{{ url_for('static', filename = 'assets/images/diamondjoker.png') }}" class="" style="width:150px; transform: rotate(12deg) translate(80px,15px);" alt="Basic Strategy Chart">
     </div>
+
+    <div class="col">
+        <h1 id="title_header" class="outfit-900">TEST YOUR KNOWLEDGE</h1>
+        <p>Complete the quiz!</p>
+        
+        <button class="btn btn-outline-secondary" id="return_home_button"> RETURN HOME </button>
+        <button class="btn btn-primary" id="start_quiz_button"> BEGIN </button>
+    </div>
+
+    <div class="col-md-3"> 
+        <img src="{{ url_for('static', filename = 'assets/images/diamondjoker.png') }}" class="" style="width:150px; transform: rotate(10deg) translate(0px, 150px);" alt="Basic Strategy Chart">
+        <img src="{{ url_for('static', filename = 'assets/images/diamondjoker.png') }}" class="" style="width:150px; transform: rotate(330deg) translate(0px,280px);" alt="Basic Strategy Chart">
+    </div>
+</div>
+
+<div class="row center pt-4">
+    <div class="col-md-1"> </div>
+    <div class="col">
+        
+    </div>
+    <div class="col-md-1"> </div>
+</div>
 
     <script type="text/javascript" src="{{ url_for('static', filename = 'js/quiz_start.js') }}"></script>
 
