@@ -1,6 +1,6 @@
 :root {
-  --accent-color: #4e8c57; /* dark green */
-  --main-color: rgb(108, 179, 112); /* light green */
+  --accent-color: #14532F;/*#4e8c57;  dark green */
+  --main-color: #7FB285; /* light green */
   --table-color: rgb(20,83,47);
   --light-gray: #aaaaaa;
   --dark-gray: #6c757d;
@@ -11,6 +11,7 @@
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
+  font-size: large;
 }
 
 .outfit-900 {
@@ -221,16 +222,15 @@ p {
     margin-left: 58px;
 }
 .question_result {
-    font-size: 22px;
-    padding-top: 20px;
+    /* font-size: 22px; */
+    /* padding-top: 10px; */
     padding-left: 40px;
     
 }
 .question_result2 {
-    font-size: 22px;
-    padding-top: 20px;
+    /* font-size: 22px; */
+    /* padding-top: 10px; */
     padding-left: 60px;
-    
 }
 .fa-circle {
     font-size: 16px;
@@ -258,7 +258,7 @@ p {
 .result-text {
     color: black;
 }
-#retake_button {
+/* #retake_button {
     width: 150px;
     height: 75px;
     font-size: 30px;
@@ -267,7 +267,7 @@ p {
     width: 150px;
     height: 75px;
     font-size: 30px;
-}
+} */
 @keyframes moveDealerCardAnimation1 {
     0% {
         transform: translate(378%, 0%);
