@@ -271,7 +271,7 @@ p {
 } */
 
 button {
-  font-size: 24px !important;
+  font-size: 18px !important;
 }
 
 @keyframes moveDealerCardAnimation1 {
@@ -450,4 +450,8 @@ dark-green {
 
 .module-text {
     z-index: 5;
+}
+
+.module-card {
+    background-image: url('/../assets/images/green_shadow_card.png');
 }
