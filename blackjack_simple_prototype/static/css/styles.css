@@ -468,70 +468,70 @@ dark-green {
     width: 100px; 
     height: auto; 
     position: absolute;
-    transform: translate(300px, 20px);
+    transform: translate(275px, 20px);
 }
 
 #card-2 {
     width: 100px; 
     height: auto; 
     position: absolute;
-    transform: translate(400px, 20px);
+    transform: translate(375px, 20px);
 }
 
 #card-3 {
     width: 100px; 
     height: auto; 
     position: absolute;
-    transform: translate(500px, 20px);
+    transform: translate(475px, 20px);
 }
 
 #card-4 {
     width: 100px; 
     height: auto; 
     position: absolute;
-    transform: translate(600px, 20px);
+    transform: translate(575px, 20px);
 }
 
 #card-5 {
     width: 100px; 
     height: auto; 
     position: absolute;
-    transform: translate(300px, 400px);
+    transform: translate(275px, 400px);
 }
 
 #card-6 {
     width: 100px; 
     height: auto; 
     position: absolute;
-    transform: translate(400px, 400px);
+    transform: translate(375px, 400px);
 }
 
 #card-7 {
     width: 100px; 
     height: auto; 
     position: absolute;
-    transform: translate(500px, 400px);
+    transform: translate(475px, 400px);
 }
 
 #card-8 {
     width: 100px; 
     height: auto; 
     position: absolute;
-    transform: translate(600px, 400px);
+    transform: translate(575px, 400px);
 }
 
 #card-split-7 {
     width: 100px; 
     height: auto; 
     position: absolute;
-    transform: translate(550px, 400px);
+    transform: translate(525px, 400px);
 }
 
 #card-split-8 {
     width: 100px; 
     height: auto; 
     position: absolute;
-    transform: translate(650px, 400px);
+    transform: translate(625px, 400px);
 }
 
 #mid-table-text {
@@ -573,4 +573,14 @@ dark-green {
     border-radius: 50%;
     margin-top: 10px;
     box-shadow: #333 2px 2px 2px;
+}
+
+#dealer-label {
+    position: absolute;
+    transform: translate(430px, -10px);
+}
+
+#you-label {
+    position: absolute;
+    transform: translate(450px, 540px);
 }
