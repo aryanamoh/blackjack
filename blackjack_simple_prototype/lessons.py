@@ -12,6 +12,9 @@ def card_image(card):
     
     else:
         
+        if(rank == "back" and suit == "card"):
+            return f"{card_dir}back.png"
+        
         if(suit[0] == "h"):
             suit = "Heart"
         if(suit[0] == "c"):
