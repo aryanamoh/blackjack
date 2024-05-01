@@ -50,7 +50,7 @@ function set_table() {
             class_name = "card-" + (i + 5);
         }
 
-        let url = dealer[i];
+        let url = player[i];
         $("#learn-table").append(`<img class=${class_name} src=${url} alt="Playing Card"></img>`);
     }
 
