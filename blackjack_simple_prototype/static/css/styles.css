@@ -420,7 +420,7 @@ dark-green {
 
 #learn-table {
     width: 1000px;
-    height: 550px !important;
+    height: 600px;
 }
 
 #learn-table, .card-table {
@@ -455,4 +455,83 @@ dark-green {
 
 .module-card {
     background-image: url('/../assets/images/green_shadow_card.png');
+}
+
+#deck-card {
+    width: 100px; 
+    height: auto; 
+    position: absolute;
+    transform: translate(800px, 20px);
+}
+
+#card-1 {
+    width: 100px; 
+    height: auto; 
+    position: absolute;
+    transform: translate(300px, 20px);
+}
+
+#card-2 {
+    width: 100px; 
+    height: auto; 
+    position: absolute;
+    transform: translate(400px, 20px);
+}
+
+#card-3 {
+    width: 100px; 
+    height: auto; 
+    position: absolute;
+    transform: translate(500px, 20px);
+}
+
+#card-4 {
+    width: 100px; 
+    height: auto; 
+    position: absolute;
+    transform: translate(600px, 20px);
+}
+
+#card-5 {
+    width: 100px; 
+    height: auto; 
+    position: absolute;
+    transform: translate(300px, 400px);
+}
+
+#card-6 {
+    width: 100px; 
+    height: auto; 
+    position: absolute;
+    transform: translate(400px, 400px);
+}
+
+#card-7 {
+    width: 100px; 
+    height: auto; 
+    position: absolute;
+    transform: translate(500px, 400px);
+}
+
+#card-8 {
+    width: 100px; 
+    height: auto; 
+    position: absolute;
+    transform: translate(600px, 400px);
+}
+
+#mid-table-text {
+    width: 400px;
+    height: 150px;
+    position: absolute;
+    transform: translate(300px, 200px);
+    background-color: yellow;
+}
+
+#left-table-text {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    transform: translate(0px, 100px);
+    background-color: pink;
 }
