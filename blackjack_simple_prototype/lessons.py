@@ -544,8 +544,8 @@ lessons = [[
             "title" : titles[module][lesson],
             "text" : lesson_text[module][lesson][screen],
             "spotlight" : lesson_spotlight[module][lesson][screen],
-            "next_screen" : [(module + 1), #% len(lesson_text)""",
-                             (lesson + 1) % len(lesson_text[module]),
+            "next_screen" : [(module + (0 if lesson + 1 < len(lesson_text[module]) else 1)), #% len(lesson_text)""",
+                             (lesson + (0 if screen + 1 < len(lesson_screens) else 1)) % len(lesson_text[module]),
                              (screen + 1) % len(lesson_screens)],
             # "media_array" : lesson_media[module][lesson][screen],
             "media_array" : filename_generator(lesson_media[module][lesson][screen]),
@@ -1216,3 +1216,8 @@ lessons = {
 
 
 """
+
+for mod in lessons:
+    for les in mod:
+        for scr in les:
+            print(scr["next_screen"])
