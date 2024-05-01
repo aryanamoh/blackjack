@@ -4,7 +4,6 @@
 
 {% block content %}
 
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/learn.js') }}"></script>
     <script type="text/javascript">
         let lesson = {{lesson|tojson}} 
         let current_lesson = lesson.text_array[0][0]
@@ -85,9 +84,21 @@
         })
     </script>
 
-    <div class="row">
-        <div id="learn-table" class="center-div">     
-            <img id="card_on_table" src="{{ url_for('static', filename = 'assets/images/back.png') }}" alt="Learn Table" style="width: 100px; height: auto; transform: translate(400px, 20px);">
+    <div class="row center">
+        <h1 id="title_header" class="outfit-900 pb-3">INTRODUCTION TO BLACKJACK</h1>
+        <div id="learn-table" class="center-div"> 
+            <div id="left-table-text"></div>
+            <div id="mid-table-text"></div>
+
+            <img id="deck-card" src="{{ url_for('static', filename = 'assets/images/back.png') }}" alt="Learn Table">
+            <img id="card-1" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
+            <img id="card-2" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
+            <img id="card-3" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
+            <img id="card-4" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
+            <img id="card-5" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
+            <img id="card-6" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
+            <img id="card-7" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
+            <img id="card-8" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
         </div>
     </div>
 
@@ -150,14 +161,14 @@
     <br> <br>
 -->
     <!-- Send user back to module selection if they clicked "back" at first lesson within module-->
-    
 
-    <br>
-    <br>
-   
 
     <!--
     <div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
         <div class="progress-bar text-bg-success progress-bar-striped progress-bar-animated" style="width: 75%">75%</div>
     </div> -->
+
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/lesson.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/learn.js') }}"></script>
+
 {% endblock %}
