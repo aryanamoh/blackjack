@@ -29,7 +29,8 @@ def card_image(card):
         else:
             return f"{card_dir}{str(rank[0]).capitalize()}{suit}.png"
     
-
+# ("back", "card")
+# ("",""), ("","")
 lesson_media = [
     [
         [
@@ -52,12 +53,12 @@ lesson_media = [
         ],
         [
             [
-                [(10, "diamonds"), (2, "hearts")],
-                [(3, "diamonds"), (4, "clubs")]
+                [("",""), ("","")],
+                [("",""), ("","")]
             ],
             [
-                [(10, "diamonds"), (2, "hearts")],
-                [(3, "diamonds"), (4, "clubs")]
+                [("",""), ("","")],
+                [("",""), ("","")]
             ],
             [
                 [("jack", "diamonds"), ("queen", "hearts2")],
@@ -88,20 +89,20 @@ lesson_media = [
                 [("ace", "clubs"), (7, "diamonds"), ("king", "spades2")],
             ],
             [
-                [("",""), ("king", "spades2")],
-                [("ace", "clubs"), (7, "diamonds")],
+                [("",""), ("","")],
+                [("ace", "clubs"), (7, "diamonds"), ("king", "spades2")],
             ],
             [
-                [(7, "diamonds"), ("king", "spades2")],
-                [("ace", "clubs"), ("","")]
+                [("",""), ("","")],
+                [("ace", "clubs"), (7, "diamonds"), ("king", "spades2")],
             ],
             [
-                [("ace", "clubs"), (7, "diamonds")],
-                [("",""), ("",""), ("king", "spades2")],
+                [("",""), ("","")],
+                [("ace", "clubs"), (7, "diamonds"), ("king", "spades2")],
             ],
             [
-                [("ace", "clubs"), (7, "diamonds")],
-                [("",""), ("",""), ("king", "spades2")],
+                [("",""), ("","")],
+                [("ace", "clubs"), (7, "diamonds"), ("king", "spades2")],
             ],
         ],
         [
@@ -407,6 +408,82 @@ lesson_spotlight= [
     ]
 ]
 
+# " Hit, Stand, Double, Split, Discard, Deal, Nothing"
+
+lesson_interactions = [
+    [
+        [
+            "Deal",
+            "Nothing",
+            "Nothing",
+            "Discard"
+        ],
+        [
+            "Nothing",
+            "Nothing",
+            "Deal",
+            ["Discard","Deal"],
+            "Nothing",
+            "Nothing",
+            "Hit",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Discard"
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+    ],
+       [
+        [
+            "Deal",
+            "Nothing",
+            "Nothing",
+            "Discard"
+        ],
+        [
+            "Nothing",
+            "Nothing",
+            "Deal",
+            ["Discard","Deal"],
+            "Nothing",
+            "Nothing",
+            "Hit",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Discard"
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+       ]
+]
+
+
 lesson_text = [
     [
         [
@@ -553,9 +630,10 @@ lessons = [[
             # "media_array" : lesson_media[module][lesson][screen],
             "media_array" : filename_generator(lesson_media[module][lesson][screen]),
             "start_time" : 0,
+            "lesson_interactions": lesson_interactions[module][lesson]
         } for screen in range(len(lesson_screens))
     ] for lesson, lesson_screens in enumerate(lesson_text[module])
-] for module in range(len(lesson_text))]
+] for module in range(len(lesson_text))] 
 
 # for module in lessons:
 #      for lesson in module:
