@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="row center py-4">
+    <h1>Page Not Found </h1>
+  
+    <p>Oops! Looks like the page doesn't exist anymore</p> <br>
+</div>
+
+<div class="center py-4">
+    <button id="home_button" class="btn btn-primary"> GO HOME </button>
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/404.js') }}"></script>
+  
+{% endblock %}

@@ -1,40 +1,23 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <script type="text/javascript">
 
-        // grab the lesson which stores the next module_id in 
-        // lesson["next_module_id"]
-        let lesson = {{lesson|tojson}}
+    <div class="row center py-4">
 
-        $(document).ready(function(){
-
-            // logic to control the type of user feedback given learning module
-            // or quiz coming next 
-            if(Number.isInteger(lesson.next_module_id)){
-                $("h3").empty().text("Move onto module: " + lesson.next_module_id);
-            }
-            else{
-                $("h3").empty().text("Tackle the quiz!");
-            }
-
-            $("#next_module_button").click(function(){
-                if("{{lesson.next_module_id}}" == "Quiz"){
-                    window.location.href = "/quiz_start"
-                }else{
-                    window.location.href = "/lesson/{{lesson.next_module_id}}/1"
-                }
-            })
-        })
-    </script>
-    <div>
-      <h1>GOOD WORK</h1>
-      <h4>You completed Module {{module_id}}</h1>
-
+        <div class="col">
+            <h1 id="title_header" class="outfit-900">GOOD WORK</h1>
+            <p>You completed Module {{module_id}}!</p>
+            <br> <br> <br>
+            <button id="return_home_button" class="btn btn-outline-secondary">RETURN HOME</button>
+            <button id="next_module_button" class="btn btn-primary">NEXT</button>
+        </div>
     </div>
 
-    <!-- header3 gets populated given the logic on the next_module_id -->
-    <h3></h3>
+    <script type="text/javascript">
+        let lesson = {{lesson|tojson}}
+        let next_module_id = '{{lesson["next_module_id"]}}'
+    </script>
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/lesson_complete.js') }}"></script>
+    
 
-    <button id="next_module_button" class="btn">Next</button>
 {% endblock %}
