@@ -1,28 +1,28 @@
-let interaction = 'N';
+// let interaction = 'N';
 
-$(document).ready(function(){
-    $("#learn-table").empty();
+// $(document).ready(function(){
+//     $("#learn-table").empty();
 
-    $("#next_button").click(function(){
-        window.location.href = '/lesson/1/1/';
-    });
+//     $("#next_button").click(function(){
+//         window.location.href = '/lesson/1/1/';
+//     });
 
-    $(document).keydown(function(event) {
-        if (event.key === 'H') {
-            // Handle the key down event for H key
-            // Your code here
-        } else if (event.key === 'T') {
-            // Handle the key down event for T key
-            // Your code here
-        } else if (event.key === 'S') {
-            // Handle the key down event for S key
-            // Your code here
-        } else if (event.key === 'D') {
-            // Handle the key down event for D key
-            // Your code here
-        }
-    });
-});
+//     $(document).keydown(function(event) {
+//         if (event.key === 'H') {
+//             // Handle the key down event for H key
+//             // Your code here
+//         } else if (event.key === 'T') {
+//             // Handle the key down event for T key
+//             // Your code here
+//         } else if (event.key === 'S') {
+//             // Handle the key down event for S key
+//             // Your code here
+//         } else if (event.key === 'D') {
+//             // Handle the key down event for D key
+//             // Your code here
+//         }
+//     });
+// });
     // let scr = {{screen|tojson}};
     // let spotlight = screen.spotlight;
     // let dealer = lesson.media_array[0];
