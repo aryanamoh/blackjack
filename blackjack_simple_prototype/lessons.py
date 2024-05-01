@@ -12,6 +12,9 @@ def card_image(card):
     
     else:
         
+        if(rank == "back" and suit == "card"):
+            return f"{card_dir}back.png"
+        
         if(suit[0] == "h"):
             suit = "Heart"
         if(suit[0] == "c"):
@@ -550,6 +553,7 @@ lessons = [[
             # "media_array" : lesson_media[module][lesson][screen],
             "media_array" : filename_generator(lesson_media[module][lesson][screen]),
             "start_time" : 0,
+            "lesson_interaction": lesson_interaction[module][lesson]
         } for screen in range(len(lesson_screens))
     ] for lesson, lesson_screens in enumerate(lesson_text[module])
 ] for module in range(len(lesson_text))]
