@@ -407,6 +407,80 @@ lesson_spotlight= [
     ]
 ]
 
+# " Hit, Stand, Double, Split, Discard, Deal, Nothing"
+lesson_interaction = [
+    [
+        [
+            "Deal",
+            "Nothing",
+            "Nothing",
+            "Discard"
+        ],
+        [
+            "Nothing",
+            "Nothing",
+            "Deal",
+            ["Discard","Deal"],
+            "Nothing",
+            "Nothing",
+            "Hit",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Discard"
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+    ],
+       [
+        [
+            "Deal",
+            "Nothing",
+            "Nothing",
+            "Discard"
+        ],
+        [
+            "Nothing",
+            "Nothing",
+            "Deal",
+            ["Discard","Deal"],
+            "Nothing",
+            "Nothing",
+            "Hit",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Discard"
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+       ]
+]
+
 lesson_text = [
     [
         [
@@ -553,7 +627,7 @@ lessons = [[
             # "media_array" : lesson_media[module][lesson][screen],
             "media_array" : filename_generator(lesson_media[module][lesson][screen]),
             "start_time" : 0,
-            "lesson_interaction": lesson_interaction[module][lesson]
+            "lesson_interaction": lesson_interaction[module]
         } for screen in range(len(lesson_screens))
     ] for lesson, lesson_screens in enumerate(lesson_text[module])
 ] for module in range(len(lesson_text))]
