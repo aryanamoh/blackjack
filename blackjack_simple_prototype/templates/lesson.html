@@ -1,88 +1,39 @@
-<!-- TODO: update for 2 modules -->
 
 {% extends 'layout.html' %}
 
 {% block content %}
 
     <script type="text/javascript">
-        let lesson = {{lesson|tojson}} 
-        let current_lesson = lesson.text_array[0][0]
-        let current_hands = lesson.media_array[0]
-        let current_spotlight = lesson.text_array[0][1]
-        
-        $(document).ready(function(){
+        let lesson = {{screen|tojson}};            
+        let scrn_id = {{screen_id|tojson}};
+        let spotlight = screen.spotlight;
+        let dealer = lesson.media_array[0];
+        let player = lesson.media_array[1];
+        let text = lesson.text;
+        let next_screen = lesson.next_screen;
 
-            // Populate w/ initial content:
-            // First text blurb
-            displayText(current_lesson)
+        console.log("Lesson Screen");
+        console.log(lesson);
 
-            // First set of cards we want to display
-            displayCards(current_hands)
+        console.log("Lesson Screen ID")
+        console.log(scrn_id);
 
-            
+        console.log("Spotlight");
+        console.log(spotlight);
 
-            let pointer = 1
+        console.log("Dealer");
+        console.log(dealer);
 
-            $("#next_button").click(function(){
-                if("{{lesson.next_lesson}}" == "end"){
-                    window.location.href = "/lesson_complete/{{module_id}}"
-                }else{
-                    window.location.href = "/lesson/{{module_id}}/{{lesson.next_lesson}}"
-                }
-            })
-            $("#back_button").click(function(){
-                if( ({{lesson.lesson_id}} - 1) < 1){
-                    window.location.href = "/learn"
-                } else {
-                    let previous_lesson_id = {{lesson.lesson_id}}  - 1
-                    window.location.href = "/lesson/{{module_id}}/"+ previous_lesson_id
-                }
-            })
-            $("#next_lesson").click(function(){
-                
-                // go through each index of the lesson.media_array & lesson.text_array
-                if(pointer < lesson.text_array.length){
-                    
-                    // Text field is stored at index 0 
-                    current_lesson = lesson.text_array[pointer][0]
+        console.log("Player");
+        console.log(player);
 
-                    // Location of spotlight is held at index 1
+        console.log("Text");
+        console.log(text);
 
-                    /*
-                    TODO: need logic that maps player, dealer, 
-                    text, player_dealer, player_sideways_dealer to corresponding
-                    divs to highlight. Ie: if current_spotlight contains "player"
-                    then highlight the specific div for the player's hands 
+        console.log("Next Screen");
+        console.log(next_screen);
 
-                    If you want we can get more specific, player_left or player_right,
-                    let me know 
-
-                    */
-                    // stores the string with the divs that need to be highlighted
-                    current_spotlight = lesson.text_array[pointer][1]
-
-                    // grab the dealer & player's hands 
-                    current_hands = lesson.media_array[pointer]
-                    prev_hands = lesson.media_array[pointer-1]
-                    
-                    displayCards(current_hands)
-
-                    // update the lesson text html or text blurb 
-                    displayText(current_lesson)               
-            
-                    // increment out pointer for the next time interaction is recorded 
-                    pointer +=1 
-                    console.log(current_lesson, current_hands, "Current_hands length: "+current_hands.length, "spotlight on: "+current_spotlight)
-                }else{
-                    // TODO: 
-                    // Highlight the next button when done displaying text & images 
-                    $("#next_button").click();
-                    console.log("no more text blurbs bub.")
-                }
-
-            })
-        })
-    </script>
+    </script> 
 
     <div id="learn-legend">
         Press <span class="legend-button">H</span> to Hit <br>
@@ -93,12 +44,14 @@
 
     <div class=" center">
         <h1 id="title_header" class="outfit-900 pb-3">INTRODUCTION TO BLACKJACK</h1>
-        
-        <div id="learn-table" class="center-div"> 
-            <div id="left-table-text"></div>
+ 
+        <div id="learn-table" class="center-div">
+            
+            <div id="left-table-text"></div> 
             <div id="mid-table-text"></div>
 
-            <img id="deck-card" src="{{ url_for('static', filename = 'assets/images/back.png') }}" alt="Learn Table">
+            <!--
+            <img id="deck-card" src="{{ url_for('static', filename = 'assets/images/back_of_card.png') }}" alt="Learn Table">
             <img id="card-1" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
             <img id="card-2" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
             <img id="card-3" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
@@ -107,6 +60,7 @@
             <img id="card-6" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
             <img id="card-split-7" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
             <img id="card-split-8" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
+            -->
         </div>
     </div>
 
@@ -116,67 +70,9 @@
     </div>
 
 
-    <!--<h1>Learning Modules<h1>
-    
-    <h3>Lesson: {{lesson.title}}</h3>
-    <div id="lesson_text"></div>
-    <button id="next_lesson" type="button" class="btn">Next Text Blurb</button>
-   
-     If we want to store images locally, this syntax tends to work 
-    <img src="{{ url_for('static', filename=lesson.media) }}" alt="Testing">
+    <script type="text/javascript" src="{{ url_for('static', filename = 'js/screen.js') }}"></script>
 
-    ** Just make sure you have the relative path as the "media" value for the 
-    specific object, ie: "media":"/assets/images/diamondjoker.png" as an example
-    
-
-    <br>
-   <img class="lesson-img" src="{{lesson.media}}" alt="{{lesson.media_alt}}"> 
-    <div class="row">
-    Allowing for the iteration of each lesson text and mapped card images
-      
-      <div class="col-2 dark-green" style="margin-left:35%;">
-          <div class="row container card-container" id="dealer_hand" style="flex-wrap: unset;">
-              <div class="box left" id="dealer_left">
-                <img class="lesson-img" src="{{lesson.media_array[0][0]}}" alt="{{lesson.media_alt}}">
-              </div>
-              <div class="box right" id="dealer_right">
-                <img class="lesson-img" src="{{lesson.media_array[0][1]}}" alt="{{lesson.media_alt}}">
-              </div>
-          </div>
-
-          <div class="row container card-container">
-                              
-          </div>
-      </div>
-      
-      <div class="col-2" style="margin-left:35%;">
-              <div class="row container card-container" id="player_hand" style="flex-wrap: unset;">
-                  <div class="box left" id="player_left">
-                    <img class="lesson-img" src="{{lesson.media_array[0][2]}}" alt="{{lesson.media_alt}}">
-                  </div>
-                  <div class="box right" id="player_right">
-                    <img class="lesson-img" src="{{lesson.media_array[0][3]}}" alt="{{lesson.media_alt}}">
-                  </div>
-              </div>
-
-              <div class="row container card-container">
-                                  
-              </div>
-          </div>
-      </div>
-  
-    </div>
-    <br> <br>
--->
-    <!-- Send user back to module selection if they clicked "back" at first lesson within module-->
-
-
-    <!--
-    <div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar text-bg-success progress-bar-striped progress-bar-animated" style="width: 75%">75%</div>
-    </div> -->
-
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/lesson.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename = 'js/learn.js') }}"></script>
+    <!--<script type="text/javascript" src="{{ url_for('static', filename = 'js/lesson_screen.js') }}"></script>
+     <script type="text/javascript" src="{{ url_for('static', filename = 'js/learn.js') }}"></script> -->
 
 {% endblock %}

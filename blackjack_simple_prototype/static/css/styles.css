@@ -457,77 +457,77 @@ dark-green {
     background-image: url('/../assets/images/green_shadow_card.png');
 }
 
-#deck-card {
+.deck-card {
     width: 100px; 
     height: auto; 
     position: absolute;
     transform: translate(800px, 20px);
 }
 
-#card-1 {
+.card-1 {
     width: 100px; 
     height: auto; 
     position: absolute;
     transform: translate(300px, 20px);
 }
 
-#card-2 {
+.card-2 {
     width: 100px; 
     height: auto; 
     position: absolute;
     transform: translate(400px, 20px);
 }
 
-#card-3 {
+.card-3 {
     width: 100px; 
     height: auto; 
     position: absolute;
     transform: translate(500px, 20px);
 }
 
-#card-4 {
+.card-4 {
     width: 100px; 
     height: auto; 
     position: absolute;
     transform: translate(600px, 20px);
 }
 
-#card-5 {
+.card-5 {
     width: 100px; 
     height: auto; 
     position: absolute;
     transform: translate(300px, 400px);
 }
 
-#card-6 {
+.card-6 {
     width: 100px; 
     height: auto; 
     position: absolute;
     transform: translate(400px, 400px);
 }
 
-#card-7 {
+.card-7 {
     width: 100px; 
     height: auto; 
     position: absolute;
     transform: translate(500px, 400px);
 }
 
-#card-8 {
+.card-8 {
     width: 100px; 
     height: auto; 
     position: absolute;
     transform: translate(600px, 400px);
 }
 
-#card-split-7 {
+.card-split-7 {
     width: 100px; 
     height: auto; 
     position: absolute;
     transform: translate(550px, 400px);
 }
 
-#card-split-8 {
+.card-split-8 {
     width: 100px; 
     height: auto; 
     position: absolute;

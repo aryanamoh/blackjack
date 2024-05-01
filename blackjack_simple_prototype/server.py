@@ -65,17 +65,16 @@ def learn_table():
 def quiz_start():
     return render_template('quiz_start.html')
 
-@app.route('/lesson/<module_id>/<lesson_id>')
-def lesson(module_id, lesson_id):
-
-    lesson = lessons[module_id][lesson_id]
-    return render_template('lesson.html', lesson = lesson, module_id = module_id, lesson_id = lesson_id)
+@app.route('/lesson/<module_id>/<lesson_id>/<screen_id>')
+def lesson(module_id, lesson_id, screen_id):
+    screen = lessons[int(module_id) - 1][int(lesson_id) - 1][int(screen_id) - 1]
+    return render_template('lesson.html', screen=screen, module_id=int(module_id) - 1, lesson_id=int(lesson_id) - 1, screen_id=int(screen_id) - 1)
 
 @app.route('/lesson_complete/<module_id>')
 def lesson_complete(module_id):
     
-    lesson = lessons[module_id]
-    return render_template('lesson_complete.html', module_id = module_id, lesson = lesson)
+    lesson = lessons[int(module_id) - 1]
+    return render_template('lesson_complete.html', module_id = int(module_id) - 1, lesson = lesson)
 
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
@@ -112,11 +111,11 @@ def client():
     # grab the last two strings 
     module_id, lesson_id = pathname_parts[-2:]
     #update user's start time 
-    lessons[module_id][lesson_id]["start_time"] = data["formattedTime"]
+    lessons[int(module_id) - 1][int(lesson_id) - 1][0]["start_time"] = data["formattedTime"]
     
     # uncomment if you wish to see the updated time for each lesson
     # print(lessons[module_id][lesson_id]["start_time"])
-    return lessons[module_id][lesson_id]
+    return lessons[int(module_id) - 1][int(lesson_id) - 1]
 
 @app.route('/answer', methods=['POST'])
 def answer():
