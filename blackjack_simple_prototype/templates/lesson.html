@@ -84,8 +84,16 @@
         })
     </script>
 
-    <div class="row center">
+    <div id="learn-legend">
+        Press <span class="legend-button">H</span> to Hit <br>
+        Press <span class="legend-button">S</span> to Stand <br>
+        Press <span class="legend-button">T</span> to Split <br>
+        Press <span class="legend-button">D</span> to Double <br>
+    </div>
+
+    <div class=" center">
         <h1 id="title_header" class="outfit-900 pb-3">INTRODUCTION TO BLACKJACK</h1>
+        
         <div id="learn-table" class="center-div"> 
             <div id="left-table-text"></div>
             <div id="mid-table-text"></div>
@@ -97,8 +105,8 @@
             <img id="card-4" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
             <img id="card-5" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
             <img id="card-6" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
-            <img id="card-7" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
-            <img id="card-8" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
+            <img id="card-split-7" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
+            <img id="card-split-8" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
         </div>
     </div>
 
