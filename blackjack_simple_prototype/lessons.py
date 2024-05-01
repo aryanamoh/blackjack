@@ -432,7 +432,7 @@ lesson_text = [
             "What if you have a soft hand of 18 or higher?",
             "It's best to stay soft on any hand above 18?",
             "You win!",
-        ],
+        ]
         [
             "Let's talk about when to split.",
             "Do you recall what to do with two aces?",
@@ -544,7 +544,7 @@ titles = [
     ]
 ]
 
-modules = [[
+lessons = [[
     [
         {
             "lesson_id" : lesson + 1,
