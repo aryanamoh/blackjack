@@ -534,7 +534,7 @@ dark-green {
     transform: translate(650px, 400px);
 }
 
-.mid-table-text {
+#mid-table-text {
     width: 400px;
     height: 150px;
     position: absolute;
@@ -542,7 +542,7 @@ dark-green {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-.left-table-text {
+#left-table-text {
     width: 250px;
     height: 250px;
     position: absolute;

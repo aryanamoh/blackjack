@@ -3,7 +3,7 @@
 
 def card_image(card):
     rank, suit = card
-    card_dir = "/static/assets/images/card_images/"
+    card_dir = "/../static/assets/images/card_images/"
     
     # handle the case where we don't want to show the back of the cards
     # for an empty slot 
@@ -1196,9 +1196,9 @@ lessons = {
 """
 
 
-for module in lessons:
-     for lesson in module:
-          for screen in module:
-                for s in screen:
-                     for k, v in s.items():
-                          print(k, v)
+# for module in lessons:
+#      for lesson in module:
+#           for screen in module:
+#                 for s in screen:
+#                      for k, v in s.items():
+#                           print(k, v)
