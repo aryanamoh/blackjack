@@ -99,10 +99,10 @@ function next_screen_change() {
   let next_lesson = next_screen[1] + 1;
   let next_sheet = next_screen[2] + 1;
 
-  if (next_sheet == 0) {
+  if (next_sheet == 1 && next_lesson == 1) {
     if (next_mod == 2) {
       window.location.href = '/lesson_complete/1';
-    } else {
+    } else if (next_mod == 3) {
       window.location.href = '/lesson_complete/2';
     }
   } else {

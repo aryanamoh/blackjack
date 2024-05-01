@@ -74,7 +74,7 @@ def lesson(module_id, lesson_id, screen_id):
 def lesson_complete(module_id):
     
     lesson = lessons[int(module_id) - 1]
-    return render_template('lesson_complete.html', module_id = int(module_id) - 1, lesson = lesson)
+    return render_template('lesson_complete.html', module_id = int(module_id) - 1, next_module_id=int(module_id) + 1, lesson=lesson)
 
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):

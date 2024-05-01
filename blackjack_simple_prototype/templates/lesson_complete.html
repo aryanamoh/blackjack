@@ -25,7 +25,7 @@
 
     <script type="text/javascript">
         let lesson = {{lesson|tojson}}
-        let next_module_id = '{{lesson["next_module_id"]}}'
+        let next_module_id = {{next_module_id|tojson}}
     </script>
     <script type="text/javascript" src="{{ url_for('static', filename = 'js/lesson_complete.js') }}"></script>
     
