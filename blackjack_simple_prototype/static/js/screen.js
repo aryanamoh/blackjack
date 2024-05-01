@@ -1,6 +1,8 @@
-let interaction = "N";
-
+let interaction = "h";
+let action = "";
 $(document).ready(function(){
+
+    set_action();
     set_table();
 
     $("#next_button").click(function(){
@@ -8,29 +10,42 @@ $(document).ready(function(){
     });
 
     $(document).keydown(function(event) {
-        if (event.key === 'H') {
-            // Handle the key down event for H key
-            next_screen_change();
-        } else if (event.key === 'T') {
-            // Handle the key down event for T key
-            next_screen_change();
-        } else if (event.key === 'S') {
-            // Handle the key down event for S key
-            next_screen_change();
-        } else if (event.key === 'D') {
-            // Handle the key down event for D key
-            next_screen_change();
-        }
+        if (event.key === 'h' || event.key === 't' || event.key === 's' || event.key === 's') {
+            console.log(event.key);
+            handle_key_down(event.key);
+        } 
     });
 });
 
+
+function handle_key_down(key) {
+    if (interaction != key) {
+        $("#popup").fadeIn();
+        $("#popup_text").text("Try again! We want to " + action + " here.");
+    } else {
+        next_screen_change();
+    }
+}
+
+function set_action() {
+    if (interaction == 'h') {
+        action = "hit";
+    } else if (interaction == 't') {
+        action = "split";
+    } else if (interaction == 's') {
+        action = "stand";
+    } else if (interaction == 'd') {
+        action = "double";
+    } else {
+        action = "continue";
+    }
+}
+
 function set_table() {
     // Reset table
-    // $("#learn-table").empty();
-    $("#learn-table").append(`<img class="deck-card" src="/../static/assets/images/back.png" alt="Card Deck"></img>`);
+    clear_table();
 
     // Set text
-    // TODO: middle text/text array
     $('#left-table-text').append(`<p>${text}</p>`);
 
     // Display dealer cards
@@ -63,6 +78,13 @@ function set_table() {
     }
 }
 
+function clear_table() {
+    $('img').remove();
+    $("#learn-table").append(`<img class="deck-card" src="/../static/assets/images/back.png" alt="Card Deck"></img>`);
+    $('#left-table-text').empty();
+    $('#mid-table-text').empty();
+}
+
 function next_screen_change() {
     // Check if next screen is new module
     let next_mod = next_screen[0] ;
@@ -79,3 +101,7 @@ function next_screen_change() {
         window.location.href = '/lesson/' + next_mod + '/' + next_lesson + '/' + next_sheet;
     }
 }
+
+$(".close").click(function() {
+    $("#popup").fadeOut();
+  });
