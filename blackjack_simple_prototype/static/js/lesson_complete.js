@@ -12,7 +12,7 @@ $(document).ready(function() {
     if (next_module_id == "Quiz" || next_module_id == 3 || next_module_id == "3") {
       window.location.href = "/quiz_start"
     } else {
-      window.location.href = `/lesson/${next_module_id}/1/1`
+      window.location.href = `/lesson/${next_module_id}`
     }
   })
 

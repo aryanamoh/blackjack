@@ -65,10 +65,10 @@ def learn_table():
 def quiz_start():
     return render_template('quiz_start.html')
 
-@app.route('/lesson/<module_id>/<lesson_id>/<screen_id>')
-def lesson(module_id, lesson_id, screen_id):
-    screen = lessons[int(module_id) - 1][int(lesson_id) - 1][int(screen_id) - 1]
-    return render_template('lesson.html', screen=screen, module_id=int(module_id) - 1, lesson_id=int(lesson_id) - 1, screen_id=int(screen_id) - 1)
+@app.route('/lesson/<module_id>')
+def lesson(module_id):
+    screen = lessons[int(module_id) - 1]
+    return render_template('lesson.html', screen=screen, module_id=int(module_id) - 1)
 
 @app.route('/lesson_complete/<module_id>')
 def lesson_complete(module_id):

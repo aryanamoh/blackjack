@@ -3,7 +3,7 @@ let action = "";
 $(document).ready(function() {
 
   set_action();
-  set_table();
+  set_table(0, 0);
 
   $("#next_button").click(function() {
     next_screen_change();
@@ -41,7 +41,7 @@ function set_action() {
   }
 }
 
-function set_table() {
+function set_table(new_lesson, new_screen) {
   // Reset table
   // $("#learn-table").empty();
 
@@ -52,7 +52,14 @@ function set_table() {
   // TODO: middle text/text array
   // Reset table
   clear_table();
-  // Set text
+  // Set text 
+
+  lesson = scr[new_lesson][new_screen];
+  spotlight = lesson.spotlight;
+  dealer = lesson.media_array[0];
+  player = lesson.media_array[1];
+  text = lesson.text;
+  next_screen = lesson.next_screen;
   $('#left-table-text').append(`<p>${text}</p>`);
 
 
@@ -106,7 +113,7 @@ function next_screen_change() {
       window.location.href = '/lesson_complete/2';
     }
   } else {
-    window.location.href = '/lesson/' + next_mod + '/' + next_lesson + '/' + next_sheet;
+    set_table(next_lesson - 1, next_sheet - 1);
   }
 }
 

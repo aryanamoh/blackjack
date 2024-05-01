@@ -4,8 +4,10 @@
 {% block content %}
 
     <script type="text/javascript">
-        let lesson = {{screen|tojson}};            
-        let scrn_id = {{screen_id|tojson}};
+        let li = 0;
+        let si = 0;
+        let scr = {{screen|tojson}};
+        let lesson = scr[li][si];            
         let spotlight = screen.spotlight;
         let dealer = lesson.media_array[0];
         let player = lesson.media_array[1];
