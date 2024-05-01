@@ -1,15 +1,31 @@
-# Usage: lessons[<Module ID>][<Lesson ID>]
+# Usage: lessons[<Module ID>][<Lesson ID>][<Screen ID>]
 
 
 def card_image(card):
     rank, suit = card
-    card_dir = "/../static/assets/images/card_images/"
+    card_dir = "/../static/assets/images/"
     
-    # handle the case where we don't want to show the back of the cards
-    # for an empty slot 
+    # TODO: handle the case where we want to show no cards 
     if rank=="_" or suit=="_" or not rank or not suit:
-        return f"{card_dir}back_of_card.png"
-    return f"{card_dir}{str(rank)}_of_{suit}.png"
+        
+        return f"{card_dir}back.png"
+    
+    else:
+        
+        if(suit[0] == "h"):
+            suit = "Heart"
+        if(suit[0] == "c"):
+            suit = "Club"
+        if(suit[0] == "d"):
+            suit = "Diamond"
+        if(suit[0] == "s"):
+            suit = "Spade"
+        
+        if(type(rank) == int):
+            return f"{card_dir}{str(rank)}{suit}.png"   
+        else:
+            return f"{card_dir}{str(rank[0]).capitalize()}{suit}.png"
+    
 
 lesson_media = [
     [
@@ -538,6 +554,12 @@ lessons = [[
     ] for lesson, lesson_screens in enumerate(lesson_text[module])
 ] for module in range(len(lesson_text))]
 
+# for module in lessons:
+#      for lesson in module:
+#           for screen in module:
+#                 for s in screen:
+#                      for k, v in s.items():
+#                           print(k, v)
 
 """
 
@@ -1194,11 +1216,3 @@ lessons = {
 
 
 """
-
-
-# for module in lessons:
-#      for lesson in module:
-#           for screen in module:
-#                 for s in screen:
-#                      for k, v in s.items():
-#                           print(k, v)
