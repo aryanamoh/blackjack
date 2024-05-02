@@ -703,3 +703,15 @@ alt_lessons = [
 		],
 	],
 ]
+#
+# class Screen:
+#     def __init__(self, lesson_id, title, text, spotlight, next_screen, media_array, start_time):
+#         self.lesson_id = lesson_id
+#         self.title = title
+#         self.text = text
+#         self.spotlight = spotlight
+#         self.next_screen = next_screen
+#         self.media_array = media_array
+#         self.start_time = start_time
+#
+#

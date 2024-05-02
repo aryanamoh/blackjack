@@ -12,6 +12,9 @@ def card_image(card):
     
     else:
         
+        if(rank == "back" and suit == "card"):
+            return f"{card_dir}back.png"
+        
         if(suit[0] == "h"):
             suit = "Heart"
         if(suit[0] == "c"):
@@ -411,6 +414,80 @@ lesson_spotlight = [
     ]
 ]
 
+# " Hit, Stand, Double, Split, Discard, Deal, Nothing"
+lesson_interaction = [
+    [
+        [
+            "Deal",
+            "Nothing",
+            "Nothing",
+            "Discard"
+        ],
+        [
+            "Nothing",
+            "Nothing",
+            "Deal",
+            ["Discard","Deal"],
+            "Nothing",
+            "Nothing",
+            "Hit",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Discard"
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+    ],
+       [
+        [
+            "Deal",
+            "Nothing",
+            "Nothing",
+            "Discard"
+        ],
+        [
+            "Nothing",
+            "Nothing",
+            "Deal",
+            ["Discard","Deal"],
+            "Nothing",
+            "Nothing",
+            "Hit",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Nothing",
+            "Discard"
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+        [
+            
+        ],
+       ]
+]
+
 lesson_text = [
     [
         [
@@ -546,51 +623,9 @@ lessons = [
             "next_screen" : [(module + (0 if ((screen + 1) < len(lesson_screens)) or (lesson + 1) < len(lesson_text[module]) else 1)), #% len(lesson_text)""",
                              (lesson + (0 if (screen + 1) < len(lesson_screens) else 1)) % len(lesson_text[module]),
                              (screen + 1) % len(lesson_screens)],
-            # "media_array" : lesson_media[module][lesson][screen],
             "media_array" : filename_generator(lesson_media[module][lesson][screen]),
             "start_time" : 0,
-            } for screen in range(len(lesson_screens))
-            ] for lesson, lesson_screens in enumerate(lesson_text[module])
-] for module in range(len(lesson_text))
-]
-
-
-# lessons = {
-#     module : {
-#         lesson : {
-#             screen : {
-#             "lesson_id" : lesson + 1,
-#             "title" : titles[module][lesson],
-#             "text" : lesson_text[module][lesson][screen],
-#             "spotlight" : lesson_spotlight[module][lesson][screen],
-#             "next_screen" : [(module + (0 if ((screen + 1) < len(lesson_screens)) or (lesson + 1) < len(lesson_text[module]) else 1)), #% len(lesson_text)""",
-#                              (lesson + (0 if (screen + 1) < len(lesson_screens) else 1)) % len(lesson_text[module]),
-#                              (screen + 1) % len(lesson_screens)],
-#             # "media_array" : lesson_media[module][lesson][screen],
-#             "media_array" : filename_generator(lesson_media[module][lesson][screen]),
-#             "start_time" : 0,
-#         } for screen in range(len(lesson_screens))
-#         } for lesson, lesson_screens in enumerate(lesson_text[module])
-#     } for module in range(len(lesson_text))
-# }
-
-import json
-import pprint
-
-print("lessons = [")
-
-for module in lessons:
-    print("\t[")
-    for lesson in module:
-        print('\t\t[')
-        for screens in lesson:
-            print("\t\t\t{")
-            for k, v in screens.items():
-                if isinstance(v, str):
-                    print(f"\t\t\t\"{k}\" : \"{v}\",")
-                else:
-                    print(f"\t\t\t\"{k}\" : {v},")
-            print("\t\t\t},")
-        print('\t\t],')
-    print("\t],")
-print("]")
+            "lesson_interaction": lesson_interaction[module]
+        } for screen in range(len(lesson_screens))
+    ] for lesson, lesson_screens in enumerate(lesson_text[module])
+] for module in range(len(lesson_text))]
