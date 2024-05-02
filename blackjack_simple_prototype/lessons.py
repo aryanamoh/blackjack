@@ -20,12 +20,19 @@ def card_image(card):
             suit = "Diamond"
         if(suit[0] == "s"):
             suit = "Spade"
-        
+ 
         if(type(rank) == int):
             return f"{card_dir}{str(rank)}{suit}.png"   
         else:
             return f"{card_dir}{str(rank[0]).capitalize()}{suit}.png"
-    
+
+actions = [
+    [
+        [
+
+        ]
+    ]
+]
 
 lesson_media = [
     [
@@ -103,38 +110,38 @@ lesson_media = [
         ],
         [
             [
-                [(4, "clubs"), ("back", "card")],
+                [(4, "clubs"), ("", "")],
                 [(9, "spades"), (2, "hearts")],
             ],
             
             [
-                [(4, "clubs"), ("back", "card")],
+                [(4, "clubs"), ("", "")],
                 [(9, "spades"), (2, "hearts")],
             ],
             
             [
-                [(4, "clubs"), ("back", "card")],
+                [(4, "clubs"), ("", "")],
                 [(9, "spades"), (2, "hearts")],
             ],
             
             [
-                [(4, "clubs"), ("back", "card")],
+                [(4, "clubs"), ("", "")],
                 [(9, "spades"), (2, "hearts")],
             ],
             [
-                [(4, "clubs"), ("back", "card")],
+                [(4, "clubs"), ("", "")],
                 [(9, "spades"), (2, "hearts"), (9, "spades")],
             ],
             [
-                [(4, "clubs"), ("back", "card")],
+                [(4, "clubs"), ("", "")],
                 [(9, "spades"), (2, "hearts"), (9, "spades")],
             ],
             [
-                [(4, "clubs"), ("back", "card")],
+                [(4, "clubs"), ("", "")],
                 [(9, "spades"), (2, "hearts"), (9, "spades")],
             ],
             [
-                [(4, "clubs"), ("back", "card")],
+                [(4, "clubs"), ("", "")],
                 [(9, "spades"), (2, "hearts"), (9, "spades")],
             ],
             [
@@ -160,20 +167,20 @@ lesson_media = [
                 [("", ""), ("", "")],
             ],
             [
-                [("jack", "diamonds"), ("back", "card")],
+                [("jack", "diamonds"), ("", "")],
                 [("ace", "clubs"), ("",""), ("ace", "clubs")],
             ],
             [
-                [("jack", "diamonds"), ("back", "card")],
+                [("jack", "diamonds"), ("", "")],
                 [("ace", "clubs"), ("",""), ("ace", "clubs")],
             ],
             [
-                [("jack", "diamonds"), ("back", "card")],
+                [("jack", "diamonds"), ("", "")],
                 [("ace", "clubs"), (2,"hearts"), ("ace", "clubs"), ("jack", "diamonds")],
             ],
             [
-                [("jack", "diamonds"), ("back", "card")],
-                [("ace", "clubs"), (2,"hearts"), (8, "hearts"), ("ace", "clubs"), ("jack", "diamonds")],
+                [("jack", "diamonds"), ("", "")],
+                [("ace", "clubs"), (2,"hearts"), (8, "hearts"), ("ace", "clubs")], #, ("jack", "diamonds")
             ],
         ],
         [
@@ -182,15 +189,15 @@ lesson_media = [
                 [("", ""), ("", "")],
             ],
             [
-                [("4", "clubs"), ("back", "card")],
+                [("4", "clubs"), ("", "")],
                 [("9", "spades"), ("2", "hearts")],
             ],
             [
-                [("4", "clubs"), ("back", "card")],
+                [("4", "clubs"), ("", "")],
                 [("9", "spades"), ("2", "hearts"), ("jack", "diamonds2")],
             ],
             [
-                [("4", "clubs"), ("back", "card")],
+                [("4", "clubs"), ("", "")],
                 [("9", "spades"), ("2", "hearts"), ("jack", "diamonds2"), ("king", "hearts2")],
             ]
         ],
@@ -200,7 +207,7 @@ lesson_media = [
                 [("", ""), ("", "")],
             ],
             [
-                [("ace", "clubs"), ("back", "card")],
+                [("ace", "clubs"), ("", "")],
                 [("jack", "diamonds"), ("4", "clubs")]
             ],
             [
@@ -216,37 +223,37 @@ lesson_media = [
                 [("", ""), ("", "")],
             ],
             [
-                [("ace", "clubs"), ("back", "card")],
+                [("ace", "clubs"), ("", "")],
                 [("2", "hearts"), ("jack", "diamonds")]
             ],
             [
-                [("ace", "clubs"), ("back", "card")],
+                [("ace", "clubs"), ("", "")],
                 [("2", "hearts"), ("jack", "diamonds")]
             ],
             [
-                [("ace", "clubs"), ("back", "card")],
-                [("2", "hearts"), ("jack", "diamonds")]
-            ],
-            [
-                [("ace", "clubs"), ("jack", "diamonds")],
+                [("ace", "clubs"), ("", "")],
                 [("2", "hearts"), ("jack", "diamonds")]
             ],
             [
                 [("ace", "clubs"), ("jack", "diamonds")],
-                [("2", "hearts"), ("jack", "diamonds"), ("jack", "diamonds")]
+                [("2", "hearts"), ("jack", "diamonds")]
             ],
             [
                 [("ace", "clubs"), ("jack", "diamonds")],
                 [("2", "hearts"), ("jack", "diamonds"), ("jack", "diamonds")]
             ],
             [
-                [("ace", "clubs"), ("back", "card")],
+                [("ace", "clubs"), ("jack", "diamonds")],
+                [("2", "hearts"), ("jack", "diamonds"), ("jack", "diamonds")]
+            ],
+            [
+                [("ace", "clubs"), ("", "")],
                 [("2", "hearts"), ("jack", "diamonds")],
             ],
         ],
         [
             [
-                [("7", "diamonds"), ("back", "card")],
+                [("7", "diamonds"), ("", "")],
                 [("ace", "clubs"), ("6", "hearts")],
             ],
             [
@@ -258,7 +265,7 @@ lesson_media = [
                 [("ace", "clubs"), ("6", "hearts"), ("jack", "diamonds")],
             ],
             [
-                [("7", "diamonds"), ("back", "card")],
+                [("7", "diamonds"), ("", "")],
                 [("ace", "clubs"), ("6", "hearts"), ("4", "clubs")],
             ],
             [
@@ -268,11 +275,11 @@ lesson_media = [
         ],
         [
             [
-                [("7", "diamonds"), ("back", "card")],
+                [("7", "diamonds"), ("", "")],
                 [("ace", "clubs"), ("6", "hearts"),],
             ],
             [
-                [("7", "diamonds"), ("back", "card")],
+                [("7", "diamonds"), ("", "")],
                 [("ace", "clubs"), ("6", "hearts"),],
             ],
             [
@@ -298,7 +305,7 @@ lesson_media = [
         ],
         [
             [
-                [("7", "diamonds"), ("back", "card")],
+                [("7", "diamonds"), ("", "")],
                 [("ace", "clubs"), ("6", "diamonds")],
             ],
             [
@@ -316,7 +323,7 @@ lesson_media = [
                 [("", ""), ("", "")],
             ],
             [
-                [("jack", "diamonds"), ("back", "card")],
+                [("jack", "diamonds"), ("", "")],
                 [("ace", "clubs"), ("ace", "clubs")],
             ],
             [
@@ -324,7 +331,7 @@ lesson_media = [
                 [("jack", "diamonds"), ("ace", "clubs"), ("jack", "diamonds"), ("ace", "clubs")],
             ],
             [
-                [("jack", "diamonds"), ("back", "card")],
+                [("jack", "diamonds"), ("", "")],
                 [("8", "diamonds"), ("8", "diamonds")],
             ],
             [
@@ -342,15 +349,15 @@ lesson_media = [
                 [("", ""), ("", "")],
             ],
             [
-                [("jack", "diamonds"), ("back", "card")],
+                [("jack", "diamonds"), ("", "")],
                 [("8", "hearts"), ("3", "diamonds"), ("jack", "diamonds")],
             ],
             [
-                [("jack", "diamonds"), ("back", "card")],
+                [("jack", "diamonds"), ("", "")],
                 [("8", "hearts"), ("3", "diamonds"), ("jack", "diamonds")],
             ],
             [
-                [("8", "hearts"), ("back", "card")],
+                [("8", "hearts"), ("", "")],
                 [("3", "diamonds"), ("7", "diamonds")],
             ],
             [
@@ -361,7 +368,7 @@ lesson_media = [
     ]
 ]
 
-lesson_spotlight= [
+lesson_spotlight = [
     [
         [
             2, 3, 2, 3
@@ -458,7 +465,7 @@ lesson_text = [
             "The last thing you need to know is Insurance",
             "If the dealer shows an ace, you'll be offered Insurance. Don't Take It. EVER!",
             "Insurance is a house advantage. If you take it and they have 21, you won't lose your bet. But it's never worth it.",
-        ]
+        ],
     ],
     [
         [
@@ -510,16 +517,6 @@ lesson_text = [
     ]
 ]
 
-def list_of_cards(idx):
-    lst = []
-    for hand in lesson_media[idx]:
-        inner_lst = []
-        for rank, suit in hand:
-                inner_lst.append(card_image((rank, suit)))
-        lst.append([inner_lst[:2], inner_lst[2:]])
-    return lst
-
-
 titles = [
     [
         "What is blackjack and how does a player win or lose?",
@@ -537,9 +534,11 @@ titles = [
 def filename_generator(hand):
     return list(map(lambda tple : tuple(card_image(x) for x in tple), hand))
 
-lessons = [[
-    [
-        {
+
+lessons = [
+   [ 
+       [ 
+        { 
             "lesson_id" : lesson + 1,
             "title" : titles[module][lesson],
             "text" : lesson_text[module][lesson][screen],
@@ -550,12 +549,48 @@ lessons = [[
             # "media_array" : lesson_media[module][lesson][screen],
             "media_array" : filename_generator(lesson_media[module][lesson][screen]),
             "start_time" : 0,
-        } for screen in range(len(lesson_screens))
-    ] for lesson, lesson_screens in enumerate(lesson_text[module])
-] for module in range(len(lesson_text))]
+            } for screen in range(len(lesson_screens))
+            ] for lesson, lesson_screens in enumerate(lesson_text[module])
+] for module in range(len(lesson_text))
+]
 
 
-# for mod in lessons:
-#     for les in mod:
-#         for scr in les:
-#             print(scr["next_screen"])
+# lessons = {
+#     module : {
+#         lesson : {
+#             screen : {
+#             "lesson_id" : lesson + 1,
+#             "title" : titles[module][lesson],
+#             "text" : lesson_text[module][lesson][screen],
+#             "spotlight" : lesson_spotlight[module][lesson][screen],
+#             "next_screen" : [(module + (0 if ((screen + 1) < len(lesson_screens)) or (lesson + 1) < len(lesson_text[module]) else 1)), #% len(lesson_text)""",
+#                              (lesson + (0 if (screen + 1) < len(lesson_screens) else 1)) % len(lesson_text[module]),
+#                              (screen + 1) % len(lesson_screens)],
+#             # "media_array" : lesson_media[module][lesson][screen],
+#             "media_array" : filename_generator(lesson_media[module][lesson][screen]),
+#             "start_time" : 0,
+#         } for screen in range(len(lesson_screens))
+#         } for lesson, lesson_screens in enumerate(lesson_text[module])
+#     } for module in range(len(lesson_text))
+# }
+
+import json
+import pprint
+
+print("lessons = [")
+
+for module in lessons:
+    print("\t[")
+    for lesson in module:
+        print('\t\t[')
+        for screens in lesson:
+            print("\t\t\t{")
+            for k, v in screens.items():
+                if isinstance(v, str):
+                    print(f"\t\t\t\"{k}\" : \"{v}\",")
+                else:
+                    print(f"\t\t\t\"{k}\" : {v},")
+            print("\t\t\t},")
+        print('\t\t],')
+    print("\t],")
+print("]")

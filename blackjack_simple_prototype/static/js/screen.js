@@ -62,7 +62,6 @@ function set_table(new_lesson, new_screen) {
   next_screen = lesson.next_screen;
   $('#left-table-text').append(`<p>${text}</p>`);
 
-
   // Display dealer cards
   for (let i = 0; i < dealer.length; i++) {
     let class_name = "card-" + (i + 1);
@@ -73,7 +72,7 @@ function set_table(new_lesson, new_screen) {
   // Display player cards
   for (let i = 0; i < player.length; i++) {
     // index of player starts at 5 
-    let class_name = ""
+    let class_name = "";
     if (player.length > 3 && i > 1) {
       class_name = "card-split-" + (i + 5);
     } else {

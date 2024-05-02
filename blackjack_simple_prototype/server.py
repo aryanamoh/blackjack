@@ -3,6 +3,7 @@ from flask import Flask, redirect, url_for, render_template, Response, request, 
 # Importing the lessons and quiz questions
 from lessons import lessons
 from questions import quiz_questions
+from alt_lessons import alt_lessons
 
 progress = "0%"
 score = 0
@@ -67,13 +68,13 @@ def quiz_start():
 
 @app.route('/lesson/<module_id>')
 def lesson(module_id):
-    screen = lessons[int(module_id) - 1]
+    screen = alt_lessons[int(module_id) - 1]
     return render_template('lesson.html', screen=screen, module_id=int(module_id) - 1)
 
 @app.route('/lesson_complete/<module_id>')
 def lesson_complete(module_id):
     
-    lesson = lessons[int(module_id) - 1]
+    lesson = alt_lessons[int(module_id) - 1]
     return render_template('lesson_complete.html', module_id = int(module_id) - 1, next_module_id=int(module_id) + 1, lesson=lesson)
 
 @app.route('/quiz/<quiz_id>')
