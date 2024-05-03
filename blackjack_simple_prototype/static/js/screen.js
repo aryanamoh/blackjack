@@ -60,7 +60,9 @@ function set_table(new_lesson, new_screen) {
   player = lesson.media_array[1];
   text = lesson.text;
   next_screen = lesson.next_screen;
-  $('#left-table-text').append(`<p>${text}</p>`);
+  $('#left-table-text').append(`<p>${text[0]}</p>`);
+  $('#mid-table-text').append(`<p>${text[1]}</p>`);
+  $('#bottom-table-text').append(`<p>${text[2]}</p>`);
 
   // Display dealer cards
   for (let i = 0; i < dealer.length; i++) {
@@ -97,6 +99,7 @@ function clear_table() {
   $("#learn-table").append(`<img class="deck-card" src="/../static/assets/images/back.png" alt="Card Deck"></img>`);
   $('#left-table-text').empty();
   $('#mid-table-text').empty();
+  $('#bottom-table-text').empty();
 }
 
 function next_screen_change() {
