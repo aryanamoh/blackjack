@@ -4,19 +4,25 @@
 {% block content %}
 
     <script type="text/javascript">
-        let lesson = {{screen|tojson}};            
-        let scrn_id = {{screen_id|tojson}};
+        let li = 0;
+        let si = 0;
+        let scr = {{screen|tojson}};
+        let lesson = scr[li][si];            
         let spotlight = screen.spotlight;
         let dealer = lesson.media_array[0];
         let player = lesson.media_array[1];
         let text = lesson.text;
+        let module_interactions = lesson.lesson_interaction;
         let next_screen = lesson.next_screen;
+
+        console.log("All interactions within this module");
+        console.log(module_interactions);
 
         console.log("Lesson Screen");
         console.log(lesson);
 
         console.log("Lesson Screen ID")
-        console.log(scrn_id);
+        console.log(next_screen[0] + 1);
 
         console.log("Spotlight");
         console.log(spotlight);
@@ -31,7 +37,9 @@
         console.log(text);
 
         console.log("Next Screen");
-        console.log(next_screen);
+        for (let i = 0; i < next_screen.length; i++) {
+          console.log(next_screen[i] + 1);
+        }
 
     </script> 
 
@@ -56,6 +64,7 @@
             
             <div id="left-table-text"></div> 
             <div id="mid-table-text"></div>
+            <div id="bottom-table-text"></div>
 
             <!--
             <img id="deck-card" src="{{ url_for('static', filename = 'assets/images/back_of_card.png') }}" alt="Learn Table">
@@ -64,9 +73,9 @@
             <img id="card-3" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
             <img id="card-4" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
             <img id="card-5" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
-            <img id="card-6" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">-->
+            <img id="card-6" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
             <img class="card-split-7" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
-            <img class="card-split-8" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
+            <img class="card-split-8" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}"> -->
             
         </div>
     </div>

@@ -11,7 +11,7 @@
 
         <div class="col">
             <h1 id="title_header" class="outfit-900">GOOD WORK</h1>
-            <p>You completed Module {{module_id}}!</p>
+            <p>You completed Module {{module_id + 1}}!</p>
             <br> <br> <br>
             <button id="return_home_button" class="btn btn-outline-secondary">RETURN HOME</button>
             <button id="next_module_button" class="btn btn-primary">NEXT</button>
@@ -25,7 +25,7 @@
 
     <script type="text/javascript">
         let lesson = {{lesson|tojson}}
-        let next_module_id = '{{lesson["next_module_id"]}}'
+        let next_module_id = {{next_module_id|tojson}}
     </script>
     <script type="text/javascript" src="{{ url_for('static', filename = 'js/lesson_complete.js') }}"></script>
     
