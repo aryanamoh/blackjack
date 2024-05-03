@@ -3,6 +3,7 @@ from flask import Flask, redirect, url_for, render_template, Response, request, 
 # Importing the lessons and quiz questions
 from lessons import lessons
 from questions import quiz_questions
+# from alt_lessons import alt_lessons
 from alt_lessons import alt_lessons
 
 progress = "0%"
