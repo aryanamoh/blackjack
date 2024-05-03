@@ -541,7 +541,7 @@ dark-green {
     height: 150px;
     position: absolute;
     transform: translate(300px, 200px);
-    background-color: rgba(0, 0, 0, 0.1);
+    /* background-color: rgba(0, 0, 0, 0.1); */
     margin: auto;
     text-align: center;
 }
@@ -551,8 +551,8 @@ dark-green {
     width: 250px;
     height: 250px;
     position: absolute;
-    transform: translate(0px, 10px);
-    background-color: rgba(0, 0, 0, 0.1);
+    transform: translate(0px, 30px);
+    /* background-color: rgba(0, 0, 0, 0.1); */
 }
 
 #bottom-table-text {
@@ -561,7 +561,7 @@ dark-green {
     height: 150px;
     position: absolute;
     transform: translate(0px, 420px);
-    background-color: rgba(0, 0, 0, 0.1);
+    /* background-color: rgba(0, 0, 0, 0.1); */
 }
 
 #learn-legend {
