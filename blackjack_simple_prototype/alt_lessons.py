@@ -4,64 +4,79 @@ alt_lessons = [
 			{
 				'lesson_id' : 1,
 				'title' : "What is blackjack and how does a player win or lose?",
-				'text' : "The object of blackjack is to beat the dealer",
+				'text' : ["The object of blackjack is to beat the dealer", "", ""],
 				'spotlight' : 2,
 				'next_screen' : [0, 0, 1],
-				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/KClub.png', '/../static/assets/images/KClub.png')],
+				'media_array' : [('/../static/assets/images/7Diamond.png'), ('/../static/assets/images/KClub.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Deal'],
+				"animation" : ['Deal'],
+				"interaction" : "N",
 			},
 			{
 				'lesson_id' : 1,
 				'title' : "What is blackjack and how does a player win or lose?",
-				'text' : "The player wants to get as close to 21 as possible without going over",
+				'text' : ["", "Press H to hit!", ""],
 				'spotlight' : 3,
 				'next_screen' : [0, 0, 2],
-				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/KClub.png', '/../static/assets/images/KClub.png')],
+				'media_array' : [('/../static/assets/images/7Diamond.png'), ('/../static/assets/images/KClub.png', '/../static/assets/images/JClub.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
-			},
-			{
+				"animation" : ['Hit'],
+    			"interaction" : "H",
+			},	
+   			{
 				'lesson_id' : 1,
 				'title' : "What is blackjack and how does a player win or lose?",
-				'text' : "When the dealer has a 17 or more, they can't draw another card",
-				'spotlight' : 2,
+				'text' : ["", "", "The player wants to get as close to 21 as possible without going over"],
+				'spotlight' : 3,
 				'next_screen' : [0, 0, 3],
-				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/KClub.png', '/../static/assets/images/KClub.png')],
+				'media_array' : [('/../static/assets/images/7Diamond.png'), ('/../static/assets/images/KClub.png', '/../static/assets/images/JClub.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
+    			"interaction" : "N",
+			},	
+   			{
+				'lesson_id' : 1,
+				'title' : "What is blackjack and how does a player win or lose?",
+				'text' : ["When the dealer has a 17 or more, they can't draw another card", "", ""],
+				'spotlight' : 2,
+				'next_screen' : [0, 0, 4],
+				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/KClub.png', '/../static/assets/images/JClub.png')],
+				'start_time' : 0,
+				"animation" : ['Reveal'],
+    			"interaction" : "N",
 			},
 			{
 				'lesson_id' : 1,
 				'title' : "What is blackjack and how does a player win or lose?",
-				'text' : "You have 20 so you win!",
+				'text' : ["", "", "You have 20 so you win!"],
 				'spotlight' : 3,
 				'next_screen' : [0, 1, 0],
-				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/KClub.png', '/../static/assets/images/KClub.png')],
+				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/KClub.png', '/../static/assets/images/JClub.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Discard'],
+				"animation" : ['Nothing'],
+				"interaction" : "N",
 			},
 		],
 		[
 			{
 				'lesson_id' : 2,
 				'title' : "What do the cards mean?",
-				'text' : "Let's learn the value of the cards.",
+				'text' : ["", "Let's learn the value of the cards.", ""],
 				'spotlight' : 0,
 				'next_screen' : [0, 1, 1],
-				'media_array' : [('/../static/assets/images/10Diamond.png', '/../static/assets/images/2Heart.png'), ('/../static/assets/images/3Diamond.png', '/../static/assets/images/4Club.png')],
+				'media_array' : [('/../static/assets/images/10Diamond.png'), ('/../static/assets/images/3Diamond.png', '/../static/assets/images/4Club.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Discard', 'Deal'],
 			},
 			{
 				'lesson_id' : 2,
 				'title' : "What do the cards mean?",
-				'text' : "Numbers add their face value.",
+				'text' : ["Numbers add their face value."],
 				'spotlight' : 0,
 				'next_screen' : [0, 1, 2],
 				'media_array' : [('/../static/assets/images/10Diamond.png', '/../static/assets/images/2Heart.png'), ('/../static/assets/images/3Diamond.png', '/../static/assets/images/4Club.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 2,
@@ -71,7 +86,7 @@ alt_lessons = [
 				'next_screen' : [0, 1, 3],
 				'media_array' : [('/../static/assets/images/JDiamond.png', '/../static/assets/images/QHeart.png'), ('/../static/assets/images/KClub.png', '/../static/assets/images/KSpade.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Deal'],
+				"animation" : ['Deal'],
 			},
 			{
 				'lesson_id' : 2,
@@ -81,7 +96,7 @@ alt_lessons = [
 				'next_screen' : [0, 1, 4],
 				'media_array' : [('/../static/assets/images/back.png', '/../static/assets/images/back.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/7Diamond.png')],
 				'start_time' : 0,
-				'lesson_interaction' : ['Discard', 'Deal'],
+				'animation' : ['Discard', 'Deal'],
 			},
 			{
 				'lesson_id' : 2,
@@ -91,7 +106,7 @@ alt_lessons = [
 				'next_screen' : [0, 1, 5],
 				'media_array' : [('/../static/assets/images/back.png', '/../static/assets/images/back.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/7Diamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 2,
@@ -101,7 +116,7 @@ alt_lessons = [
 				'next_screen' : [0, 1, 6],
 				'media_array' : [('/../static/assets/images/back.png', '/../static/assets/images/back.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/7Diamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 2,
@@ -111,7 +126,7 @@ alt_lessons = [
 				'next_screen' : [0, 1, 7],
 				'media_array' : [('/../static/assets/images/back.png', '/../static/assets/images/back.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/7Diamond.png', '/../static/assets/images/KSpade.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Hit'],
+				"animation" : ['Hit'],
 			},
 			{
 				'lesson_id' : 2,
@@ -121,7 +136,7 @@ alt_lessons = [
 				'next_screen' : [0, 1, 8],
 				'media_array' : [('/../static/assets/images/back.png', '/../static/assets/images/back.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/7Diamond.png', '/../static/assets/images/KSpade.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 2,
@@ -131,7 +146,7 @@ alt_lessons = [
 				'next_screen' : [0, 1, 9],
 				'media_array' : [('/../static/assets/images/back.png', '/../static/assets/images/back.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/7Diamond.png', '/../static/assets/images/KSpade.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 2,
@@ -141,7 +156,7 @@ alt_lessons = [
 				'next_screen' : [0, 1, 10],
 				'media_array' : [('/../static/assets/images/back.png', '/../static/assets/images/KSpade.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/7Diamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 2,
@@ -151,7 +166,7 @@ alt_lessons = [
 				'next_screen' : [0, 1, 11],
 				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/KSpade.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/back.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 2,
@@ -161,7 +176,7 @@ alt_lessons = [
 				'next_screen' : [0, 1, 12],
 				'media_array' : [('/../static/assets/images/AClub.png', '/../static/assets/images/7Diamond.png'), ('/../static/assets/images/back.png', '/../static/assets/images/back.png', '/../static/assets/images/KSpade.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 2,
@@ -171,7 +186,7 @@ alt_lessons = [
 				'next_screen' : [0, 2, 0],
 				'media_array' : [('/../static/assets/images/AClub.png', '/../static/assets/images/7Diamond.png'), ('/../static/assets/images/back.png', '/../static/assets/images/back.png', '/../static/assets/images/KSpade.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Discard'],
+				"animation" : ['Discard'],
 			},
 		],
 		[
@@ -183,7 +198,7 @@ alt_lessons = [
 				'next_screen' : [0, 2, 1],
 				'media_array' : [('/../static/assets/images/4Club.png', '/../static/assets/images/back.png'), ('/../static/assets/images/9Spade.png', '/../static/assets/images/2Heart.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 3,
@@ -193,7 +208,7 @@ alt_lessons = [
 				'next_screen' : [0, 2, 2],
 				'media_array' : [('/../static/assets/images/4Club.png', '/../static/assets/images/back.png'), ('/../static/assets/images/9Spade.png', '/../static/assets/images/2Heart.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 3,
@@ -203,7 +218,7 @@ alt_lessons = [
 				'next_screen' : [0, 2, 3],
 				'media_array' : [('/../static/assets/images/4Club.png', '/../static/assets/images/back.png'), ('/../static/assets/images/9Spade.png', '/../static/assets/images/2Heart.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 3,
@@ -213,7 +228,7 @@ alt_lessons = [
 				'next_screen' : [0, 2, 4],
 				'media_array' : [('/../static/assets/images/4Club.png', '/../static/assets/images/back.png'), ('/../static/assets/images/9Spade.png', '/../static/assets/images/2Heart.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 3,
@@ -223,7 +238,7 @@ alt_lessons = [
 				'next_screen' : [0, 2, 5],
 				'media_array' : [('/../static/assets/images/4Club.png', '/../static/assets/images/back.png'), ('/../static/assets/images/9Spade.png', '/../static/assets/images/2Heart.png', '/../static/assets/images/9Spade.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 3,
@@ -233,7 +248,7 @@ alt_lessons = [
 				'next_screen' : [0, 2, 6],
 				'media_array' : [('/../static/assets/images/4Club.png', '/../static/assets/images/back.png'), ('/../static/assets/images/9Spade.png', '/../static/assets/images/2Heart.png', '/../static/assets/images/9Spade.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 3,
@@ -243,7 +258,7 @@ alt_lessons = [
 				'next_screen' : [0, 2, 7],
 				'media_array' : [('/../static/assets/images/4Club.png', '/../static/assets/images/back.png'), ('/../static/assets/images/9Spade.png', '/../static/assets/images/2Heart.png', '/../static/assets/images/9Spade.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 3,
@@ -253,7 +268,7 @@ alt_lessons = [
 				'next_screen' : [0, 2, 8],
 				'media_array' : [('/../static/assets/images/4Club.png', '/../static/assets/images/back.png'), ('/../static/assets/images/9Spade.png', '/../static/assets/images/2Heart.png', '/../static/assets/images/9Spade.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 3,
@@ -263,7 +278,7 @@ alt_lessons = [
 				'next_screen' : [0, 2, 9],
 				'media_array' : [('/../static/assets/images/4Club.png', '/../static/assets/images/10Diamond.png'), ('/../static/assets/images/9Spade.png', '/../static/assets/images/2Heart.png', '/../static/assets/images/9Spade.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 3,
@@ -273,7 +288,7 @@ alt_lessons = [
 				'next_screen' : [0, 2, 10],
 				'media_array' : [('/../static/assets/images/4Club.png', '/../static/assets/images/10Diamond.png'), ('/../static/assets/images/9Spade.png', '/../static/assets/images/2Heart.png', '/../static/assets/images/9Spade.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 3,
@@ -283,7 +298,7 @@ alt_lessons = [
 				'next_screen' : [0, 2, 11],
 				'media_array' : [('/../static/assets/images/4Club.png', '/../static/assets/images/10Diamond.png'), ('/../static/assets/images/9Spade.png', '/../static/assets/images/2Heart.png', '/../static/assets/images/10Diamond.png', '/../static/assets/images/9Spade.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 3,
@@ -293,7 +308,7 @@ alt_lessons = [
 				'next_screen' : [0, 3, 0],
 				'media_array' : [('/../static/assets/images/4Club.png', '/../static/assets/images/10Diamond.png'), ('/../static/assets/images/9Spade.png', '/../static/assets/images/2Heart.png', '/../static/assets/images/10Diamond.png', '/../static/assets/images/9Spade.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 		],
 		[
@@ -305,7 +320,7 @@ alt_lessons = [
 				'next_screen' : [0, 3, 1],
 				'media_array' : [('/../static/assets/images/back.png', '/../static/assets/images/back.png'), ('/../static/assets/images/back.png', '/../static/assets/images/back.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 4,
@@ -315,7 +330,7 @@ alt_lessons = [
 				'next_screen' : [0, 3, 2],
 				'media_array' : [('/../static/assets/images/JDiamond.png', '/../static/assets/images/back.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/back.png', '/../static/assets/images/AClub.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 4,
@@ -325,7 +340,7 @@ alt_lessons = [
 				'next_screen' : [0, 3, 3],
 				'media_array' : [('/../static/assets/images/JDiamond.png', '/../static/assets/images/back.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/back.png', '/../static/assets/images/AClub.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 4,
@@ -335,7 +350,7 @@ alt_lessons = [
 				'next_screen' : [0, 3, 4],
 				'media_array' : [('/../static/assets/images/JDiamond.png', '/../static/assets/images/back.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/2Heart.png', '/../static/assets/images/AClub.png', '/../static/assets/images/JDiamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 4,
@@ -345,7 +360,7 @@ alt_lessons = [
 				'next_screen' : [0, 4, 0],
 				'media_array' : [('/../static/assets/images/JDiamond.png', '/../static/assets/images/back.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/2Heart.png', '/../static/assets/images/8Heart.png', '/../static/assets/images/AClub.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 		],
 		[
@@ -357,7 +372,7 @@ alt_lessons = [
 				'next_screen' : [0, 4, 1],
 				'media_array' : [('/../static/assets/images/back.png', '/../static/assets/images/back.png'), ('/../static/assets/images/back.png', '/../static/assets/images/back.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 5,
@@ -367,7 +382,7 @@ alt_lessons = [
 				'next_screen' : [0, 4, 2],
 				'media_array' : [('/../static/assets/images/4Club.png', '/../static/assets/images/back.png'), ('/../static/assets/images/9Spade.png', '/../static/assets/images/2Heart.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 5,
@@ -377,7 +392,7 @@ alt_lessons = [
 				'next_screen' : [0, 4, 3],
 				'media_array' : [('/../static/assets/images/4Club.png', '/../static/assets/images/back.png'), ('/../static/assets/images/9Spade.png', '/../static/assets/images/2Heart.png', '/../static/assets/images/JDiamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 5,
@@ -387,7 +402,7 @@ alt_lessons = [
 				'next_screen' : [0, 5, 0],
 				'media_array' : [('/../static/assets/images/4Club.png', '/../static/assets/images/back.png'), ('/../static/assets/images/9Spade.png', '/../static/assets/images/2Heart.png', '/../static/assets/images/JDiamond.png', '/../static/assets/images/KHeart.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 		],
 		[
@@ -399,7 +414,7 @@ alt_lessons = [
 				'next_screen' : [0, 5, 1],
 				'media_array' : [('/../static/assets/images/back.png', '/../static/assets/images/back.png'), ('/../static/assets/images/back.png', '/../static/assets/images/back.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 6,
@@ -409,7 +424,7 @@ alt_lessons = [
 				'next_screen' : [0, 5, 2],
 				'media_array' : [('/../static/assets/images/AClub.png', '/../static/assets/images/back.png'), ('/../static/assets/images/JDiamond.png', '/../static/assets/images/4Club.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 6,
@@ -419,7 +434,7 @@ alt_lessons = [
 				'next_screen' : [1, 0, 0],
 				'media_array' : [('/../static/assets/images/AClub.png', '/../static/assets/images/7Diamond.png'), ('/../static/assets/images/JDiamond.png', '/../static/assets/images/4Club.png', '/../static/assets/images/7Diamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 		],
 	],
@@ -433,7 +448,7 @@ alt_lessons = [
 				'next_screen' : [1, 0, 1],
 				'media_array' : [('/../static/assets/images/back.png', '/../static/assets/images/back.png'), ('/../static/assets/images/back.png', '/../static/assets/images/back.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Deal'],
+				"animation" : ['Deal'],
 			},
 			{
 				'lesson_id' : 1,
@@ -443,7 +458,7 @@ alt_lessons = [
 				'next_screen' : [1, 0, 2],
 				'media_array' : [('/../static/assets/images/AClub.png', '/../static/assets/images/back.png'), ('/../static/assets/images/2Heart.png', '/../static/assets/images/JDiamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 1,
@@ -453,7 +468,7 @@ alt_lessons = [
 				'next_screen' : [1, 0, 3],
 				'media_array' : [('/../static/assets/images/AClub.png', '/../static/assets/images/back.png'), ('/../static/assets/images/2Heart.png', '/../static/assets/images/JDiamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 1,
@@ -463,7 +478,7 @@ alt_lessons = [
 				'next_screen' : [1, 0, 4],
 				'media_array' : [('/../static/assets/images/AClub.png', '/../static/assets/images/back.png'), ('/../static/assets/images/2Heart.png', '/../static/assets/images/JDiamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Discard'],
+				"animation" : ['Discard'],
 			},
 			{
 				'lesson_id' : 1,
@@ -473,7 +488,7 @@ alt_lessons = [
 				'next_screen' : [1, 0, 5],
 				'media_array' : [('/../static/assets/images/AClub.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/2Heart.png', '/../static/assets/images/JDiamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 1,
@@ -483,7 +498,7 @@ alt_lessons = [
 				'next_screen' : [1, 0, 6],
 				'media_array' : [('/../static/assets/images/AClub.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/2Heart.png', '/../static/assets/images/JDiamond.png', '/../static/assets/images/JDiamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 1,
@@ -493,7 +508,7 @@ alt_lessons = [
 				'next_screen' : [1, 0, 7],
 				'media_array' : [('/../static/assets/images/AClub.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/2Heart.png', '/../static/assets/images/JDiamond.png', '/../static/assets/images/JDiamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 1,
@@ -503,7 +518,7 @@ alt_lessons = [
 				'next_screen' : [1, 1, 0],
 				'media_array' : [('/../static/assets/images/AClub.png', '/../static/assets/images/back.png'), ('/../static/assets/images/2Heart.png', '/../static/assets/images/JDiamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 		],
 		[
@@ -515,7 +530,7 @@ alt_lessons = [
 				'next_screen' : [1, 1, 1],
 				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/back.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/6Heart.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 2,
@@ -525,7 +540,7 @@ alt_lessons = [
 				'next_screen' : [1, 1, 2],
 				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/6Heart.png', '/../static/assets/images/JDiamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 2,
@@ -535,7 +550,7 @@ alt_lessons = [
 				'next_screen' : [1, 1, 3],
 				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/6Heart.png', '/../static/assets/images/JDiamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 2,
@@ -545,7 +560,7 @@ alt_lessons = [
 				'next_screen' : [1, 1, 4],
 				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/back.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/6Heart.png', '/../static/assets/images/4Club.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Deal'],
+				"animation" : ['Deal'],
 			},
 			{
 				'lesson_id' : 2,
@@ -555,7 +570,7 @@ alt_lessons = [
 				'next_screen' : [1, 2, 0],
 				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/JDiamond.png', '/../static/assets/images/6Heart.png', '/../static/assets/images/4Club.png')],
 				'start_time' : 0,
-				'lesson_interaction' : ['Discard', 'Deal'],
+				'animation' : ['Discard', 'Deal'],
 			},
 		],
 		[
@@ -567,7 +582,7 @@ alt_lessons = [
 				'next_screen' : [1, 2, 1],
 				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/back.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/6Heart.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 3,
@@ -577,7 +592,7 @@ alt_lessons = [
 				'next_screen' : [1, 2, 2],
 				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/back.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/6Heart.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 3,
@@ -587,7 +602,7 @@ alt_lessons = [
 				'next_screen' : [1, 2, 3],
 				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/6Heart.png', '/../static/assets/images/JDiamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Hit'],
+				"animation" : ['Hit'],
 			},
 			{
 				'lesson_id' : 3,
@@ -597,7 +612,7 @@ alt_lessons = [
 				'next_screen' : [1, 2, 4],
 				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/6Heart.png', '/../static/assets/images/JDiamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 3,
@@ -607,7 +622,7 @@ alt_lessons = [
 				'next_screen' : [1, 2, 5],
 				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/6Heart.png', '/../static/assets/images/AClub.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 3,
@@ -617,7 +632,7 @@ alt_lessons = [
 				'next_screen' : [1, 2, 6],
 				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/6Heart.png', '/../static/assets/images/AClub.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 3,
@@ -627,7 +642,7 @@ alt_lessons = [
 				'next_screen' : [1, 3, 0],
 				'media_array' : [('/../static/assets/images/back.png', '/../static/assets/images/back.png'), ('/../static/assets/images/back.png', '/../static/assets/images/back.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 		],
 		[
@@ -639,7 +654,7 @@ alt_lessons = [
 				'next_screen' : [1, 3, 1],
 				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/back.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/6Diamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 4,
@@ -649,7 +664,7 @@ alt_lessons = [
 				'next_screen' : [1, 3, 2],
 				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/6Heart.png', '/../static/assets/images/JDiamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 4,
@@ -659,7 +674,7 @@ alt_lessons = [
 				'next_screen' : [1, 4, 0],
 				'media_array' : [('/../static/assets/images/7Diamond.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/6Heart.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 		],
 		[
@@ -671,7 +686,7 @@ alt_lessons = [
 				'next_screen' : [1, 4, 1],
 				'media_array' : [('/../static/assets/images/back.png', '/../static/assets/images/back.png'), ('/../static/assets/images/back.png', '/../static/assets/images/back.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 5,
@@ -681,7 +696,7 @@ alt_lessons = [
 				'next_screen' : [1, 4, 2],
 				'media_array' : [('/../static/assets/images/JDiamond.png', '/../static/assets/images/back.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/AClub.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 5,
@@ -691,7 +706,7 @@ alt_lessons = [
 				'next_screen' : [1, 4, 3],
 				'media_array' : [('/../static/assets/images/JDiamond.png', '/../static/assets/images/7Diamond.png'), ('/../static/assets/images/JDiamond.png', '/../static/assets/images/AClub.png', '/../static/assets/images/JDiamond.png', '/../static/assets/images/AClub.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 5,
@@ -701,7 +716,7 @@ alt_lessons = [
 				'next_screen' : [1, 4, 4],
 				'media_array' : [('/../static/assets/images/JDiamond.png', '/../static/assets/images/back.png'), ('/../static/assets/images/8Diamond.png', '/../static/assets/images/8Diamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 5,
@@ -711,7 +726,7 @@ alt_lessons = [
 				'next_screen' : [1, 4, 5],
 				'media_array' : [('/../static/assets/images/JDiamond.png', '/../static/assets/images/7Diamond.png'), ('/../static/assets/images/JDiamond.png', '/../static/assets/images/8Diamond.png', '/../static/assets/images/JDiamond.png', '/../static/assets/images/8Diamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 5,
@@ -721,7 +736,7 @@ alt_lessons = [
 				'next_screen' : [1, 5, 0],
 				'media_array' : [('/../static/assets/images/back.png', '/../static/assets/images/back.png'), ('/../static/assets/images/back.png', '/../static/assets/images/back.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 		],
 		[
@@ -733,7 +748,7 @@ alt_lessons = [
 				'next_screen' : [1, 5, 1],
 				'media_array' : [('/../static/assets/images/back.png', '/../static/assets/images/back.png'), ('/../static/assets/images/back.png', '/../static/assets/images/back.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 6,
@@ -743,7 +758,7 @@ alt_lessons = [
 				'next_screen' : [1, 5, 2],
 				'media_array' : [('/../static/assets/images/JDiamond.png', '/../static/assets/images/back.png'), ('/../static/assets/images/8Heart.png', '/../static/assets/images/3Diamond.png', '/../static/assets/images/JDiamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 6,
@@ -753,7 +768,7 @@ alt_lessons = [
 				'next_screen' : [1, 5, 3],
 				'media_array' : [('/../static/assets/images/JDiamond.png', '/../static/assets/images/back.png'), ('/../static/assets/images/8Heart.png', '/../static/assets/images/3Diamond.png', '/../static/assets/images/JDiamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 6,
@@ -763,7 +778,7 @@ alt_lessons = [
 				'next_screen' : [1, 5, 4],
 				'media_array' : [('/../static/assets/images/8Heart.png', '/../static/assets/images/back.png'), ('/../static/assets/images/3Diamond.png', '/../static/assets/images/7Diamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 			{
 				'lesson_id' : 6,
@@ -773,7 +788,7 @@ alt_lessons = [
 				'next_screen' : [2, 0, 0],
 				'media_array' : [('/../static/assets/images/8Heart.png', '/../static/assets/images/JDiamond.png'), ('/../static/assets/images/7Diamond.png', '/../static/assets/images/3Diamond.png', '/../static/assets/images/JDiamond.png')],
 				'start_time' : 0,
-				"lesson_interaction" : ['Nothing'],
+				"animation" : ['Nothing'],
 			},
 		],
 	],
