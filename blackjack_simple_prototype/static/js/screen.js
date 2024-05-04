@@ -5,6 +5,10 @@ $(document).ready(function() {
   set_action();
   set_table(0, 0);
 
+  $("#back_button").click(function() {
+    prev_screen_change();
+  });
+
   $("#next_button").click(function() {
     next_screen_change();
   });
