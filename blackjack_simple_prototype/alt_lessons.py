@@ -488,7 +488,7 @@ alt_lessons = [
 			{
 				'lesson_id' : 1,
 				'title' : "title needed",
-				'text' : "And it is again! Dealer busts!",
+				'text' : ["And it is again! Dealer busts!", "", ""],
 				'spotlight' : 2,
 				'next_screen' : [1, 0, 6],
 				'media_array' : [('/../static/assets/images/AClub.png', '/../static/assets/images/JDiamond.png', '/../static/assets/images/QHeart.png'), ('/../static/assets/images/2Heart.png', '/../static/assets/images/JDiamond.png')],
