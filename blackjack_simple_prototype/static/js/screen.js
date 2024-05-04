@@ -102,6 +102,27 @@ function clear_table() {
   $('#bottom-table-text').empty();
 }
 
+
+
+function prev_screen_change() {
+  let prev_mod = prev_screen[0] + 1;
+  let prev_lesson = prev_screen[1] + 1;
+  let prev_sheet = prev_screen[2] + 1;
+
+  if (prev_mod < next_screen[0] + 1) {
+    if (false && prev_mod == 1) {
+      window.location.href = '/lesson_complete/1';
+    } else if (false && prev_mod == 2) {
+      window.location.href = '/lesson_complete/2';
+    } else if (prev_mod == 0) {
+      window.location.href = '/learn';
+    }
+  } else {
+    set_table(prev_lesson - 1, prev_sheet - 1);
+  }
+}
+
+
 function next_screen_change() {
   // Check if next screen is new module
   let next_mod = next_screen[0] + 1;
