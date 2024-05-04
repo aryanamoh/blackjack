@@ -97,7 +97,7 @@ alt_lessons = [
 				'media_array' : [('/../static/assets/images/10Diamond.png', '/../static/assets/images/back.png'), ('/../static/assets/images/7Heart.png', '/../static/assets/images/AClub.png')],
 				'start_time' : 0,
 				"animation" : ['Nothing'],
-				"interacction" : "N",
+				"interaction" : "N",
 			},
 			{
 				'lesson_id' : 2,
@@ -133,7 +133,7 @@ alt_lessons = [
 				'media_array' : [('/../static/assets/images/10Diamond.png', '/../static/assets/images/back.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/7Diamond.png', '/../static/assets/images/KSpade.png')],
 				'start_time' : 0,
 				"animation" : ['Nothing'],
-				"intraction" : "N",
+				"interaction" : "N",
 			},
 			{
 				'lesson_id' : 2,
@@ -145,7 +145,7 @@ alt_lessons = [
 				'media_array' : [('/../static/assets/images/10Diamond.png', '/../static/assets/images/QSpade.png'), ('/../static/assets/images/AClub.png', '/../static/assets/images/7Diamond.png', '/../static/assets/images/KSpade.png')],
 				'start_time' : 0,
 				"animation" : ['Reveal'],
-				"intraction" : "N",
+				"interaction" : "N",
 			},
 		],
 		[
@@ -405,6 +405,7 @@ alt_lessons = [
 				'media_array' : [('/../static/assets/images/AClub.png', '/../static/assets/images/back.png'), ('/../static/assets/images/JDiamond.png', '/../static/assets/images/4Club.png')],
 				'start_time' : 0,
 				"animation" : ['Nothing'],
+    			"interaction" : "N",
 			},
 			{
 				'lesson_id' : 6,
@@ -416,6 +417,7 @@ alt_lessons = [
 				'media_array' : [('/../static/assets/images/AClub.png', '/../static/assets/images/back.png'), ('/../static/assets/images/JDiamond.png', '/../static/assets/images/4Club.png')],
 				'start_time' : 0,
 				"animation" : ['Nothing'],
+    			"interaction" : "N",
 			},
 			{
 				'lesson_id' : 6,
@@ -427,6 +429,7 @@ alt_lessons = [
 				'media_array' : [('/../static/assets/images/AClub.png', '/../static/assets/images/back.png'), ('/../static/assets/images/JDiamond.png', '/../static/assets/images/4Club.png')],
 				'start_time' : 0,
 				"animation" : ['Nothing'],
+    			"interaction" : "N",
 			},
 			{
 				'lesson_id' : 6,

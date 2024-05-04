@@ -1,4 +1,4 @@
-let interaction = "h";
+let interaction = "";
 let action = "";
 $(document).ready(function() {
 
@@ -14,8 +14,8 @@ $(document).ready(function() {
   });
 
   $(document).keydown(function(event) {
-    if (event.key === 'h' || event.key === 't' || event.key === 's' || event.key === 's') {
-      console.log(event.key);
+    if (event.key === 'h' || event.key === 't' || event.key === 's' || event.key === 'd') {
+      console.log("User pressed key: "+event.key);
       handle_key_down(event.key);
     }
   });
@@ -23,6 +23,11 @@ $(document).ready(function() {
 
 
 function handle_key_down(key) {
+
+  // to ensure proper comparison
+  interaction = interaction.toLowerCase();
+  key = key.toLowerCase();
+
   if (interaction != key) {
     $("#popup").fadeIn();
     $("#popup_text").text("Try again! We want to " + action + " here.");
@@ -32,6 +37,9 @@ function handle_key_down(key) {
 }
 
 function set_action() {
+
+  console.log("setting action to link w/: "+interaction);
+
   if (interaction == 'h') {
     action = "hit";
   } else if (interaction == 't') {
@@ -65,6 +73,7 @@ function set_table(new_lesson, new_screen) {
   text = lesson.text;
   next_screen = lesson.next_screen;
   prev_screen = lesson.prev_screen;
+  interaction = lesson.interaction; // delete to stop interaction stops 
   $('#left-table-text').append(`<p>${text[0]}</p>`);
   $('#mid-table-text').append(`<p>${text[1]}</p>`);
   $('#bottom-table-text').append(`<p>${text[2]}</p>`);
@@ -90,12 +99,18 @@ function set_table(new_lesson, new_screen) {
     $("#learn-table").append(`<img class=${class_name} src=${url} alt="Playing Card"></img>`);
   }
 
-  // Enable interactions
+  console.log("This lesson requires interaction: "+interaction);
+  // Enable interactions by hiding the next button if interaction is needed
   if (interaction == 'N') {
-    $("next_button").show()
+    $("#next_button").show()
+    action = "continue"
   }
   else {
-    $("next_button").hide()
+
+    // set the wanted action which is displayed to user as keypress feedback
+    interaction = interaction.toLowerCase();
+    set_action();
+    $("#next_button").hide()
   }
 }
 
