@@ -60,6 +60,7 @@ function set_table(new_lesson, new_screen) {
   player = lesson.media_array[1];
   text = lesson.text;
   next_screen = lesson.next_screen;
+  prev_screen = lesson.prev_screen;
   $('#left-table-text').append(`<p>${text[0]}</p>`);
   $('#mid-table-text').append(`<p>${text[1]}</p>`);
   $('#bottom-table-text').append(`<p>${text[2]}</p>`);
