@@ -5,6 +5,10 @@ $(document).ready(function() {
   set_action();
   set_table(0, 0);
 
+  $("#back_button").click(function() {
+    prev_screen_change();
+  });
+
   $("#next_button").click(function() {
     next_screen_change();
   });
@@ -60,6 +64,7 @@ function set_table(new_lesson, new_screen) {
   player = lesson.media_array[1];
   text = lesson.text;
   next_screen = lesson.next_screen;
+  prev_screen = lesson.prev_screen;
   $('#left-table-text').append(`<p>${text[0]}</p>`);
   $('#mid-table-text').append(`<p>${text[1]}</p>`);
   $('#bottom-table-text').append(`<p>${text[2]}</p>`);
@@ -101,6 +106,27 @@ function clear_table() {
   $('#mid-table-text').empty();
   $('#bottom-table-text').empty();
 }
+
+
+
+function prev_screen_change() {
+  let prev_mod = prev_screen[0] + 1;
+  let prev_lesson = prev_screen[1] + 1;
+  let prev_sheet = prev_screen[2] + 1;
+
+  if (prev_mod < next_screen[0] + 1) {
+    if (false && prev_mod == 1) {
+      window.location.href = '/lesson_complete/1';
+    } else if (false && prev_mod == 2) {
+      window.location.href = '/lesson_complete/2';
+    } else if (prev_mod == 0) {
+      window.location.href = '/learn';
+    }
+  } else {
+    set_table(prev_lesson - 1, prev_sheet - 1);
+  }
+}
+
 
 function next_screen_change() {
   // Check if next screen is new module
