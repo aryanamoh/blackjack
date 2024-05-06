@@ -9,8 +9,8 @@
         let scr = {{screen|tojson}};
         let lesson = scr[li][si];            
         let spotlight = screen.spotlight;
-        let dealer = lesson.media_array[0];
-        let player = lesson.media_array[1];
+        let dealer = lesson.media_array;
+        
         let text = lesson.text;
         let module_interactions = lesson.lesson_interaction;
         let next_screen = lesson.next_screen;
@@ -42,7 +42,7 @@
         }
 
     </script> 
-
+    
     <div id="learn-legend">
         Press <span class="legend-button">H</span> to Hit <br>
         Press <span class="legend-button">S</span> to Stand <br>
@@ -61,23 +61,23 @@
         <h1 id="title_header" class="outfit-900 pb-3">INTRODUCTION TO BLACKJACK</h1>
  
         <div id="learn-table" class="center-div">
-            
-            <div id="left-table-text"></div> 
+            <div id="image-container"></div>
+            <div id="left-table-text"></div>
             <div id="mid-table-text"></div>
+            <div id="bottom-table-text"></div>
 
             <!--
-            <img id="deck-card" src="{{ url_for('static', filename = 'assets/images/back_of_card.png') }}" alt="Learn Table">
-            <img id="card-1" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
-            <img id="card-2" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
-            <img id="card-3" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
-            <img id="card-4" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
-            <img id="card-5" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
-            <img id="card-6" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">-->
-            <img class="card-split-7" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
-            <img class="card-split-8" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
-            
+    <img id="deck-card" src="{{ url_for('static', filename = 'assets/images/back_of_card.png') }}" alt="Learn Table">
+    <img id="card-1" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
+    <img id="card-2" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
+    <img id="card-3" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
+    <img id="card-4" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
+    <img id="card-5" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">
+    <img id="card-6" src="{{ url_for('static', filename = 'assets/images/8Diamond.png') }}">-->
+
+
         </div>
-    </div>
+        </div>
 
     <div class="center pt-4">
         <button id="back_button" type="button" class="btn btn-outline-secondary">BACK</button>

@@ -190,12 +190,28 @@ p {
     text-align: center;
     padding-bottom: 20px;
 }
+.deck-card {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    transform: translate(800px, 20px);
+    z-index: 1000;
+}
+
+.cards {
+    width: 100px;
+    height: auto;
+    transform: translate(800px, 20px);
+    position: absolute;
+    transition: transform 1s ease-in-out;
+}
 .card1 {
-    width: 100px;  
+    width: 100px;
     height: 150px;
     z-index: 1;
 }
-.cardback {
+
+    .cardback {
     width: 100px;
     height: 150px;
     z-index: 25;
@@ -465,6 +481,13 @@ dark-green {
     transform: translate(800px, 20px);
 }
 
+.card {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    transform: translate(800px, 20px);
+}
+
 .card-1 {
     width: 100px; 
     height: auto; 
@@ -551,7 +574,14 @@ dark-green {
     transform: translate(0px, 100px);
     background-color: rgba(0, 0, 0, 0.1);
 }
-
+#bottom-table-text {
+    margin: auto;
+    width: 250px;
+    height: 150px;
+    position: absolute;
+    transform: translate(0px, 420px);
+    /* background-color: rgba(0, 0, 0, 0.1); */
+}
 #learn-legend {
     width: 180px;
     height: 135px;
