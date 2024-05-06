@@ -481,12 +481,12 @@ dark-green {
     transform: translate(800px, 20px);
 }
 
-.card {
+/* .card {
     width: 100px;
     height: auto;
     position: absolute;
     transform: translate(800px, 20px);
-}
+} */
 
 .card-1 {
     width: 100px; 
