@@ -197,7 +197,9 @@ p {
     transform: translate(800px, 20px);
     z-index: 1000;
 }
-
+.results-text {
+    text-align: center;
+}
 .cards {
     width: 100px;
     height: auto;
@@ -481,12 +483,7 @@ dark-green {
     transform: translate(800px, 20px);
 }
 
-.card {
-    width: 100px;
-    height: auto;
-    position: absolute;
-    transform: translate(800px, 20px);
-}
+
 
 .card-1 {
     width: 100px; 
@@ -564,7 +561,7 @@ dark-green {
     height: 150px;
     position: absolute;
     transform: translate(300px, 200px);
-    background-color: rgba(0, 0, 0, 0.1);
+    
 }
 
 #left-table-text {
@@ -572,7 +569,7 @@ dark-green {
     height: 250px;
     position: absolute;
     transform: translate(0px, 100px);
-    background-color: rgba(0, 0, 0, 0.1);
+    
 }
 #bottom-table-text {
     margin: auto;
