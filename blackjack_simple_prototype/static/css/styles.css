@@ -564,15 +564,15 @@ dark-green {
     height: 150px;
     position: absolute;
     transform: translate(300px, 200px);
-    background-color: rgba(0, 0, 0, 0.1);
+    /* background-color: rgba(0, 0, 0, 0.1); */
 }
 
 #left-table-text {
     width: 250px;
     height: 250px;
     position: absolute;
-    transform: translate(0px, 100px);
-    background-color: rgba(0, 0, 0, 0.1);
+    transform: translate(0px, 50px);
+    /* background-color: rgba(0, 0, 0, 0.1); */
 }
 #bottom-table-text {
     margin: auto;
