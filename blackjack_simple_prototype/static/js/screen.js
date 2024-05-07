@@ -6,6 +6,9 @@ let dealerID = "";
 var count = 0;
 let counter = 0;
 var cardSetCount = 0;
+var screenStates = []; // Array to store current screen states
+var initialScreenStates = []; // Array to store initial screen states
+
 $(document).ready(function() {
     
     dealer = lesson.media_array;
@@ -16,7 +19,10 @@ $(document).ready(function() {
     dealerID = dealResult.uniqueId;
     playerSplit = dealResult.playerSplit;
 
-
+    $("#back_button").click(function () {
+        rewind(); // Restore previous screen state
+        // Existing code...
+    });
     
   $("#next_button").click(function() {
       
@@ -259,7 +265,7 @@ function prev_screen_change() {
 }
 function next_screen_change() {
   // Check if next screen is new module
-    
+    storeScreenState();  
   let next_mod = next_screen[0] + 1;
   let next_lesson = next_screen[1] + 1;
     let next_sheet = next_screen[2] + 1;
@@ -287,6 +293,7 @@ function dealCards(dealer) {
 
     var cardSetClass = "card-set-" + cardSetCount;
     var uniqueId = "dealer" + cardSetCount;
+    var upId = "dealerup" + cardSetCount;
     var $nextButton = $("#next_button");
     var playerSplit;
     $nextButton.prop("disabled", true);
@@ -300,6 +307,9 @@ function dealCards(dealer) {
             playerSplit = "player-split" + counter
             counter++;
             $image.attr("id", playerSplit);
+        }
+        if (index === 3) {
+            $image.attr("id", upId);
         }
         setTimeout(() => {
             const images = $("." + cardSetClass);
@@ -390,3 +400,33 @@ function discardCards(cardClass) {
         });
     }, 200); // Initial delay of 1 second before starting the translation process
 }
+function storeScreenState() {
+    var currentState = {}; // Object to store current state
+    $(".cards").each(function () {
+        var id = $(this).attr("id");
+        var offset = $(this).offset();
+        currentState[id] = { left: offset.left, top: offset.top };
+    });
+    screenStates.push(currentState); // Store current state in the array
+    // Store initial state if it's the first time
+    if (initialScreenStates.length === 0) {
+        initialScreenStates.push($.extend(true, {}, currentState)); // Deep copy of currentState
+    }
+}
+
+function rewind() {
+    if (screenStates.length > 0 && initialScreenStates.length > 0) {
+        var initialState = initialScreenStates.pop(); // Get the initial state
+        // Restore initial state
+        $(".cards").each(function () {
+            var id = $(this).attr("id");
+            var position = initialState[id];
+            if (position) {
+                $(this).offset({ left: position.left, top: position.top });
+            }
+        });
+        // Clear subsequent changes
+        screenStates.length = 0;
+    }
+}
+

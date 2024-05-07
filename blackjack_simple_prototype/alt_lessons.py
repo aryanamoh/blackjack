@@ -321,7 +321,7 @@ alt_lessons = [
 			{
 				'lesson_id' : 4,
 				'title' : "Splitting...what is it? ",
-				'text' : ["", "You have 21 for both hands and the dealer has 17 so you win twice!", ""],
+				'text' : ["", "You have 21 for both hands and the dealer has 17 so you win both hands!", ""],
 				'spotlight' : 3,
 				'prev_screen' : [0, 3, 3],
 				'next_screen' : [0, 4, 0],
@@ -505,7 +505,7 @@ alt_lessons = [
 			{
 				'lesson_id' : 1,
 				'title' : "title needed",
-				'text' : ["There are more 10's than any other value card. Always assume the dealer's hidden card is a ten and the next card dealt will be a 10.", "Stand is the correct answer!", ""],
+				'text' : ["Stand was the correct answer!", "There are more 10's than any other value card. Always assume the dealer's hidden card is a 10 and the next card dealt will be a 10.", ""],
 				'spotlight' : 0,
 				'next_screen' : [1, 0, 5],
 				'media_array' : ['/../static/assets/images/QSpade.png', '/../static/assets/images/back.png', '/../static/assets/images/2Heart.png', '/../static/assets/images/4Heart.png', '/../static/assets/images/back.png'],
@@ -549,7 +549,7 @@ alt_lessons = [
 			{
 				'lesson_id' : 1,
 				'title' : "title needed",
-				'text' : ["So if the dealer's upcard is a 2-6, always stand on 12+", "", "Remember, still hit on 11 or less because you can't bust!"],
+				'text' : ["So if the dealer's upcard is a 2 thru 6, always stand on 12+", "", "Remember, still hit on 11 or less because you can't bust!"],
 				'spotlight' : 0,
 				'next_screen' : [1, 1, 0],
 				'media_array' : [('/../static/assets/images/AClub.png', '/../static/assets/images/JDiamond.png', '/../static/assets/images/QHeart.png'), ('/../static/assets/images/2Heart.png', '/../static/assets/images/JDiamond.png')],
@@ -606,7 +606,7 @@ alt_lessons = [
 			{
 				'lesson_id' : 2,
 				'title' : "title needed",
-				'text' : ["", "So if the dealer's upcard is 7-A, always hit when you have 16 or less.", "You win!"],
+				'text' : ["", "So if the dealer's upcard is 7 thru Ace, always hit when you have 16 or less.", "You win!"],
 				'spotlight' : 0,
 				'next_screen' : [1, 2, 0],
 				'media_array' : ['/../static/assets/images/6Diamond.png', '/../static/assets/images/back.png', '/../static/assets/images/10Spade.png', '/../static/assets/images/7Club.png', '/../static/assets/images/JClub.png'],
@@ -788,7 +788,7 @@ alt_lessons = [
    			{ 
 				'lesson_id' : 5,
 				'title' : "title needed",
-				'text' : ["Let's hope for some good cards!", "", ""],
+				'text' : ["", "", "Let's hope for some good cards!"],
 				'spotlight' : 3,
 				'next_screen' : [1, 4, 4],
 				'media_array' : ['/../static/assets/images/AHeart.png', '/../static/assets/images/back.png', '/../static/assets/images/AClub.png', '/../static/assets/images/KSpade.png', '/../static/assets/images/QClub.png', '/../static/assets/images/9Spade.png', '/../static/assets/images/8Spade.png'],
@@ -802,7 +802,7 @@ alt_lessons = [
 				'text' : ["The dealer only had 18!", "You won both hands!", ""],
 				'spotlight' : 3,
 				'next_screen' : [1, 4, 5],
-				'media_array' : ['/../static/assets/images/AHeart.png', '/../static/assets/images/back.png', '/../static/assets/images/AClub.png', '/../static/assets/images/KSpade.png', '/../static/assets/images/QClub.png', '/../static/assets/images/9Spade.png', '/../static/assets/images/8Spade.png'],
+				'media_array' : ['/../static/assets/images/AHeart.png', '/../static/assets/images/back.png', '/../static/assets/images/AClub.png', '/../static/assets/images/KSpade.png', '/../static/assets/images/8Spade.png', '/../static/assets/images/9Spade.png', '/../static/assets/images/8Spade.png'],
 				'start_time' : 0,
 				"lesson_interaction" : ['Reveal'],
 				"interaction": "N",
@@ -845,7 +845,7 @@ alt_lessons = [
 			{
 				'lesson_id' : 5,
 				'title' : "title needed",
-				'text' : ["The dealer only had 17. Nice win!", "So, always split As and 8s!", ""],
+				'text' : ["The dealer only had 17. Nice win!", "So, always split Aces and 8s!", ""],
 				'spotlight' : 0,
 				'next_screen' : [1, 5, 0],
 				'media_array' : ['/../static/assets/images/8Club.png', '/../static/assets/images/back.png', '/../static/assets/images/8Diamond.png', '/../static/assets/images/10Club.png', '/../static/assets/images/7Club.png'],
