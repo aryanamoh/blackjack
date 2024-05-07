@@ -12,8 +12,8 @@ var initialScreenStates = []; // Array to store initial screen states
 $(document).ready(function() {
     
     dealer = lesson.media_array;
-  set_action();
-  set_table(0, 0);
+    set_action();
+    set_table(0, 0);
     dealResult = dealCards(dealer);
     dealtCardClass = dealResult.cardSetClass;
     dealerID = dealResult.uniqueId;
