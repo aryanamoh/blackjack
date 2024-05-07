@@ -19,9 +19,13 @@ $(document).ready(function() {
     dealerID = dealResult.uniqueId;
     playerSplit = dealResult.playerSplit;
 
+    // Back button kicks back to module selection
     $("#back_button").click(function () {
-        rewind(); // Restore previous screen state
-        // Existing code...
+
+      window.location.href = '/learn';
+      // rewind(); // Restore previous screen state
+      // Existing code...
+
     });
     
   $("#next_button").click(function() {
@@ -204,31 +208,20 @@ function set_action() {
 }
 
 function set_table(new_lesson, new_screen) {
-  // Reset table
-  // $("#learn-table").empty();
 
-  // $("#learn-table").append(`<img class="deck-card" src="/../static/assets/images/back.png" alt="Card Deck"></img>`);
-  // $('#left-table-text').append(`<p>${text}</p>`);
-
-  // Set text
-  // TODO: middle text/text array
   // Reset table
   clear_table();
-  // Set text 
-
+  
   lesson = scr[new_lesson][new_screen];
   spotlight = lesson.spotlight;
   prev_screen = lesson.prev_screen;
-  
+
+  // Set text 
   text = lesson.text;
   next_screen = lesson.next_screen;
-    $('#left-table-text').append(`<p>${text[0]}</p>`);
-    $('#mid-table-text').append(`<p>${text[1]}</p>`);
-    $('#bottom-table-text').append(`<p>${text[2]}</p>`);
-
-  // Display dealer cards
-  
-  // Display player cards
+  $('#left-table-text').append(`<p>${text[0]}</p>`);
+  $('#mid-table-text').append(`<p>${text[1]}</p>`);
+  $('#bottom-table-text').append(`<p>${text[2]}</p>`);
  
   // Enable interactions
   if (interaction == 'N') {
@@ -243,34 +236,40 @@ function clear_table() {
   
   $("#learn-table").append(`<img class="deck-card" src="/../static/assets/images/back.png" alt="Card Deck"></img>`);
   $('#left-table-text').empty();
-    $('#mid-table-text').empty();
-    $('#bottom-table-text').empty();
+  $('#mid-table-text').empty();
+  $('#bottom-table-text').empty();
 }
-function prev_screen_change() {
-    let prev_mod = prev_screen[0] + 1;
-    let prev_lesson = prev_screen[1] + 1;
-    let prev_sheet = prev_screen[2] + 1;
 
-    if (prev_mod < next_screen[0] + 1) {
-        if (false && prev_mod == 1) {
-            window.location.href = '/lesson_complete/1';
-        } else if (false && prev_mod == 2) {
-            window.location.href = '/lesson_complete/2';
-        } else if (prev_mod == 0) {
-            window.location.href = '/learn';
-        }
-    } else {
-        set_table(prev_lesson - 1, prev_sheet - 1);
-    }
+function prev_screen_change() {
+    // let prev_mod = prev_screen[0] + 1;
+    // let prev_lesson = prev_screen[1] + 1;
+    // let prev_sheet = prev_screen[2] + 1;
+
+    // if (prev_mod < next_screen[0] + 1) {
+    //     if (false && prev_mod == 1) {
+    //         window.location.href = '/lesson_complete/1';
+    //     } else if (false && prev_mod == 2) {
+    //         window.location.href = '/lesson_complete/2';
+    //     } else if (prev_mod == 0) {
+    //         window.location.href = '/learn';
+    //     }
+    // } else {
+    //     // This populates the text fields with the correct information from
+    //     // prev screen
+    //     set_table(prev_lesson - 1, prev_sheet - 1);
+    // }
+
+    // kicks back to the module selection page 
+    window.location.href = '/learn';
 }
 function next_screen_change() {
   // Check if next screen is new module
-    storeScreenState();  
+  storeScreenState();  
   let next_mod = next_screen[0] + 1;
   let next_lesson = next_screen[1] + 1;
-    let next_sheet = next_screen[2] + 1;
+  let next_sheet = next_screen[2] + 1;
       
-    $("#next_button").show();
+  $("#next_button").show();
     
   if (next_sheet == 1 && next_lesson == 1) {
     if (next_mod == 2) {
