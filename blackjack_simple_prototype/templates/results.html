@@ -38,8 +38,8 @@
                         {% if loop.index <= 5 %}
                         <div class="question_result">
                             <p>
-                                Question #<a href="/quiz/{{loop.index}}">{{loop.index}}</a>: {{question_data.client_response}}
-                                {% if question_data.client_response == question_data.panswers[question_data.answer] %}
+                                <a class="btn btn-outline-secondary" href="/quiz/{{loop.index}}">QUESTION {{loop.index}}   </a> {{question_data.client_response}}
+                                {% if question_data.client_response == question_data.panswers[question_data.answer] %} 
                                 <i class="fas fa-circle" style="color: #4e8c57; "></i>
                                 {% else %}
                                 <i class="fas fa-ban" style="color: grey;"></i>
@@ -56,7 +56,7 @@
                         {% if loop.index > 5 %}
                         <div class="question_result2">
                             <p>
-                                Question #<a href="/quiz/{{loop.index}}">{{loop.index}}</a>: {{question_data.client_response}}
+                                <a class="btn btn-outline-secondary" href="/quiz/{{loop.index}}">QUESTION {{loop.index}}</a> {{question_data.client_response}}
                                 {% if question_data.client_response == question_data.panswers[question_data.answer] %}
                                 <i class="fas fa-circle" style="color: #4e8c57; "></i>
                                 {% else %}
